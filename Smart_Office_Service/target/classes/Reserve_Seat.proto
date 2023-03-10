@@ -16,7 +16,7 @@ package office_service;
 service ReserveSeatService {
 
   // rpc method for unary calls
-  rpc reserve(ReserveSeatRequest) returns (ReserveSeatRequestResponse) {}
+  rpc reserve(ReserveSeatRequest) returns (ReserveSeatResponse) {}
 
   // rpc method that does not return any response
   rpc empty(Message) returns (Empty) {}
@@ -28,7 +28,7 @@ message ReserveSeatRequest {
   string val = 1;
 }
 
-message ReserveSeatRequestResponse {
+message ReserveSeatResponse {
   string val = 1;
 }
 

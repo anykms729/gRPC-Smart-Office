@@ -20,10 +20,10 @@ public final class ReserveSeatServiceImpl {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_office_service_ReserveSeatRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_office_service_ReserveSeatRequestResponse_descriptor;
+    internal_static_office_service_ReserveSeatResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_office_service_ReserveSeatRequestResponse_fieldAccessorTable;
+      internal_static_office_service_ReserveSeatResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_office_service_Message_descriptor;
   static final 
@@ -44,17 +44,17 @@ public final class ReserveSeatServiceImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\022Reserve_Seat.proto\022\016office_service\"!\n\022" +
-      "ReserveSeatRequest\022\013\n\003val\030\001 \001(\t\")\n\032Reser" +
-      "veSeatRequestResponse\022\013\n\003val\030\001 \001(\t\"_\n\007Me" +
-      "ssage\022,\n\006detail\030\001 \001(\0162\034.office_service.M" +
-      "essage.Enum\"&\n\004Enum\022\013\n\007UNKNOWN\020\000\022\007\n\003LOW\020" +
-      "\001\022\010\n\004HIGH\020\002\"\007\n\005Empty2\254\001\n\022ReserveSeatServ" +
-      "ice\022[\n\007reserve\022\".office_service.ReserveS" +
-      "eatRequest\032*.office_service.ReserveSeatR" +
-      "equestResponse\"\000\0229\n\005empty\022\027.office_servi" +
-      "ce.Message\032\025.office_service.Empty\"\000B6\n\032g" +
-      "rpc.services.reserve_seatB\026ReserveSeatSe" +
-      "rviceImplP\001b\006proto3"
+      "ReserveSeatRequest\022\013\n\003val\030\001 \001(\t\"\"\n\023Reser" +
+      "veSeatResponse\022\013\n\003val\030\001 \001(\t\"_\n\007Message\022," +
+      "\n\006detail\030\001 \001(\0162\034.office_service.Message." +
+      "Enum\"&\n\004Enum\022\013\n\007UNKNOWN\020\000\022\007\n\003LOW\020\001\022\010\n\004HI" +
+      "GH\020\002\"\007\n\005Empty2\245\001\n\022ReserveSeatService\022T\n\007" +
+      "reserve\022\".office_service.ReserveSeatRequ" +
+      "est\032#.office_service.ReserveSeatResponse" +
+      "\"\000\0229\n\005empty\022\027.office_service.Message\032\025.o" +
+      "ffice_service.Empty\"\000B6\n\032grpc.services.r" +
+      "eserve_seatB\026ReserveSeatServiceImplP\001b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -74,11 +74,11 @@ public final class ReserveSeatServiceImpl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_office_service_ReserveSeatRequest_descriptor,
         new java.lang.String[] { "Val", });
-    internal_static_office_service_ReserveSeatRequestResponse_descriptor =
+    internal_static_office_service_ReserveSeatResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_office_service_ReserveSeatRequestResponse_fieldAccessorTable = new
+    internal_static_office_service_ReserveSeatResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_office_service_ReserveSeatRequestResponse_descriptor,
+        internal_static_office_service_ReserveSeatResponse_descriptor,
         new java.lang.String[] { "Val", });
     internal_static_office_service_Message_descriptor =
       getDescriptor().getMessageTypes().get(2);

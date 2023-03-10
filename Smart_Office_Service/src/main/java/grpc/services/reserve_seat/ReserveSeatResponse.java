@@ -4,18 +4,18 @@
 package grpc.services.reserve_seat;
 
 /**
- * Protobuf type {@code office_service.ReserveSeatRequestResponse}
+ * Protobuf type {@code office_service.ReserveSeatResponse}
  */
-public  final class ReserveSeatRequestResponse extends
+public  final class ReserveSeatResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:office_service.ReserveSeatRequestResponse)
-    ReserveSeatRequestResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:office_service.ReserveSeatResponse)
+    ReserveSeatResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ReserveSeatRequestResponse.newBuilder() to construct.
-  private ReserveSeatRequestResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ReserveSeatResponse.newBuilder() to construct.
+  private ReserveSeatResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ReserveSeatRequestResponse() {
+  private ReserveSeatResponse() {
     val_ = "";
   }
 
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ReserveSeatRequestResponse(
+  private ReserveSeatResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -78,7 +78,7 @@ private static final long serialVersionUID = 0L;
       internalGetFieldAccessorTable() {
     return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_ReserveSeatResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            grpc.services.reserve_seat.ReserveSeatRequestResponse.class, grpc.services.reserve_seat.ReserveSeatRequestResponse.Builder.class);
+            grpc.services.reserve_seat.ReserveSeatResponse.class, grpc.services.reserve_seat.ReserveSeatResponse.Builder.class);
   }
 
   public static final int VAL_FIELD_NUMBER = 1;
@@ -154,10 +154,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof grpc.services.reserve_seat.ReserveSeatRequestResponse)) {
+    if (!(obj instanceof grpc.services.reserve_seat.ReserveSeatResponse)) {
       return super.equals(obj);
     }
-    grpc.services.reserve_seat.ReserveSeatRequestResponse other = (grpc.services.reserve_seat.ReserveSeatRequestResponse) obj;
+    grpc.services.reserve_seat.ReserveSeatResponse other = (grpc.services.reserve_seat.ReserveSeatResponse) obj;
 
     boolean result = true;
     result = result && getVal()
@@ -180,69 +180,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(byte[] data)
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(java.io.InputStream input)
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseDelimitedFrom(java.io.InputStream input)
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseDelimitedFrom(
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse parseFrom(
+  public static grpc.services.reserve_seat.ReserveSeatResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(grpc.services.reserve_seat.ReserveSeatRequestResponse prototype) {
+  public static Builder newBuilder(grpc.services.reserve_seat.ReserveSeatResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,12 +271,12 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code office_service.ReserveSeatRequestResponse}
+   * Protobuf type {@code office_service.ReserveSeatResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:office_service.ReserveSeatRequestResponse)
-      grpc.services.reserve_seat.ReserveSeatRequestResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:office_service.ReserveSeatResponse)
+      grpc.services.reserve_seat.ReserveSeatResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_ReserveSeatResponse_descriptor;
@@ -287,10 +287,10 @@ private static final long serialVersionUID = 0L;
         internalGetFieldAccessorTable() {
       return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_ReserveSeatResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              grpc.services.reserve_seat.ReserveSeatRequestResponse.class, grpc.services.reserve_seat.ReserveSeatRequestResponse.Builder.class);
+              grpc.services.reserve_seat.ReserveSeatResponse.class, grpc.services.reserve_seat.ReserveSeatResponse.Builder.class);
     }
 
-    // Construct using grpc.services.reserve_seat.ReserveSeatRequestResponse.newBuilder()
+    // Construct using grpc.services.reserve_seat.ReserveSeatResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -320,13 +320,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public grpc.services.reserve_seat.ReserveSeatRequestResponse getDefaultInstanceForType() {
-      return grpc.services.reserve_seat.ReserveSeatRequestResponse.getDefaultInstance();
+    public grpc.services.reserve_seat.ReserveSeatResponse getDefaultInstanceForType() {
+      return grpc.services.reserve_seat.ReserveSeatResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public grpc.services.reserve_seat.ReserveSeatRequestResponse build() {
-      grpc.services.reserve_seat.ReserveSeatRequestResponse result = buildPartial();
+    public grpc.services.reserve_seat.ReserveSeatResponse build() {
+      grpc.services.reserve_seat.ReserveSeatResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,8 +334,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public grpc.services.reserve_seat.ReserveSeatRequestResponse buildPartial() {
-      grpc.services.reserve_seat.ReserveSeatRequestResponse result = new grpc.services.reserve_seat.ReserveSeatRequestResponse(this);
+    public grpc.services.reserve_seat.ReserveSeatResponse buildPartial() {
+      grpc.services.reserve_seat.ReserveSeatResponse result = new grpc.services.reserve_seat.ReserveSeatResponse(this);
       result.val_ = val_;
       onBuilt();
       return result;
@@ -375,16 +375,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof grpc.services.reserve_seat.ReserveSeatRequestResponse) {
-        return mergeFrom((grpc.services.reserve_seat.ReserveSeatRequestResponse)other);
+      if (other instanceof grpc.services.reserve_seat.ReserveSeatResponse) {
+        return mergeFrom((grpc.services.reserve_seat.ReserveSeatResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(grpc.services.reserve_seat.ReserveSeatRequestResponse other) {
-      if (other == grpc.services.reserve_seat.ReserveSeatRequestResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(grpc.services.reserve_seat.ReserveSeatResponse other) {
+      if (other == grpc.services.reserve_seat.ReserveSeatResponse.getDefaultInstance()) return this;
       if (!other.getVal().isEmpty()) {
         val_ = other.val_;
         onChanged();
@@ -404,11 +404,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      grpc.services.reserve_seat.ReserveSeatRequestResponse parsedMessage = null;
+      grpc.services.reserve_seat.ReserveSeatResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (grpc.services.reserve_seat.ReserveSeatRequestResponse) e.getUnfinishedMessage();
+        parsedMessage = (grpc.services.reserve_seat.ReserveSeatResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -499,41 +499,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:office_service.ReserveSeatRequestResponse)
+    // @@protoc_insertion_point(builder_scope:office_service.ReserveSeatResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:office_service.ReserveSeatRequestResponse)
-  private static final grpc.services.reserve_seat.ReserveSeatRequestResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:office_service.ReserveSeatResponse)
+  private static final grpc.services.reserve_seat.ReserveSeatResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new grpc.services.reserve_seat.ReserveSeatRequestResponse();
+    DEFAULT_INSTANCE = new grpc.services.reserve_seat.ReserveSeatResponse();
   }
 
-  public static grpc.services.reserve_seat.ReserveSeatRequestResponse getDefaultInstance() {
+  public static grpc.services.reserve_seat.ReserveSeatResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReserveSeatRequestResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ReserveSeatRequestResponse>() {
+  private static final com.google.protobuf.Parser<ReserveSeatResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ReserveSeatResponse>() {
     @java.lang.Override
-    public ReserveSeatRequestResponse parsePartialFrom(
+    public ReserveSeatResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReserveSeatRequestResponse(input, extensionRegistry);
+      return new ReserveSeatResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ReserveSeatRequestResponse> parser() {
+  public static com.google.protobuf.Parser<ReserveSeatResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ReserveSeatRequestResponse> getParserForType() {
+  public com.google.protobuf.Parser<ReserveSeatResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public grpc.services.reserve_seat.ReserveSeatRequestResponse getDefaultInstanceForType() {
+  public grpc.services.reserve_seat.ReserveSeatResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

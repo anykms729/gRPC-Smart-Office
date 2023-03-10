@@ -4,6 +4,7 @@ C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\j
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\order_automation\OrderAutomationRequestOrBuilder.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\payroll_year_end\PayrollYearEndRequest.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\weekly_working_hour\WeeklyWorkingHourServiceGrpc.java
+C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\reserve_seat\ReserveSeatResponseOrBuilder.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\order_automation\OrderAutomationResponse.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\reserve_seat\MessageOrBuilder.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\reserve_seat\ReserveSeatRequestResponse.java
@@ -18,6 +19,7 @@ C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\j
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\payroll_year_end\PayrollYearEndServiceImpl.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\reserve_seat\ReserveSeatServiceGrpc.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\reserve_seat\ReserveSeatServiceImpl.java
+C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\reserve_seat\ReserveSeatResponse.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\payroll_year_end\PayrollYearEndServiceGrpc.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\weekly_working_hour\WeeklyWorkingHourResponseOrBuilder.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\reserve_seat\Message.java
