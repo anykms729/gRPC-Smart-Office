@@ -4,7 +4,7 @@
 package grpc.services.weekly_working_hour;
 
 public interface WeeklyWorkingHourRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:strings.WeeklyWorkingHourRequest)
+    // @@protoc_insertion_point(interface_extends:office_service.WeeklyWorkingHourRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

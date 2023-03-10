@@ -4,7 +4,7 @@
 package grpc.services.order_automation;
 
 public interface OrderAutomationRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:strings.OrderAutomationRequest)
+    // @@protoc_insertion_point(interface_extends:office_service.OrderAutomationRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

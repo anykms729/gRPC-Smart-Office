@@ -4,11 +4,11 @@
 package grpc.services.payroll_year_end;
 
 /**
- * Protobuf type {@code strings.PayrollYearEndResponse}
+ * Protobuf type {@code office_service.PayrollYearEndResponse}
  */
 public  final class PayrollYearEndResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:strings.PayrollYearEndResponse)
+    // @@protoc_insertion_point(message_implements:office_service.PayrollYearEndResponse)
     PayrollYearEndResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use PayrollYearEndResponse.newBuilder() to construct.
@@ -70,13 +70,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_strings_PayrollYearEndResponse_descriptor;
+    return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_office_service_PayrollYearEndResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_strings_PayrollYearEndResponse_fieldAccessorTable
+    return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_office_service_PayrollYearEndResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             grpc.services.payroll_year_end.PayrollYearEndResponse.class, grpc.services.payroll_year_end.PayrollYearEndResponse.Builder.class);
   }
@@ -271,21 +271,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code strings.PayrollYearEndResponse}
+   * Protobuf type {@code office_service.PayrollYearEndResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:strings.PayrollYearEndResponse)
+      // @@protoc_insertion_point(builder_implements:office_service.PayrollYearEndResponse)
       grpc.services.payroll_year_end.PayrollYearEndResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_strings_PayrollYearEndResponse_descriptor;
+      return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_office_service_PayrollYearEndResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_strings_PayrollYearEndResponse_fieldAccessorTable
+      return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_office_service_PayrollYearEndResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               grpc.services.payroll_year_end.PayrollYearEndResponse.class, grpc.services.payroll_year_end.PayrollYearEndResponse.Builder.class);
     }
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_strings_PayrollYearEndResponse_descriptor;
+      return grpc.services.payroll_year_end.PayrollYearEndServiceImpl.internal_static_office_service_PayrollYearEndResponse_descriptor;
     }
 
     @java.lang.Override
@@ -499,10 +499,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:strings.PayrollYearEndResponse)
+    // @@protoc_insertion_point(builder_scope:office_service.PayrollYearEndResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:strings.PayrollYearEndResponse)
+  // @@protoc_insertion_point(class_scope:office_service.PayrollYearEndResponse)
   private static final grpc.services.payroll_year_end.PayrollYearEndResponse DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new grpc.services.payroll_year_end.PayrollYearEndResponse();

@@ -15,15 +15,15 @@ public final class OrderAutomationServiceImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_strings_OrderAutomationRequest_descriptor;
+    internal_static_office_service_OrderAutomationRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_strings_OrderAutomationRequest_fieldAccessorTable;
+      internal_static_office_service_OrderAutomationRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_strings_OrderAutomationResponse_descriptor;
+    internal_static_office_service_OrderAutomationResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_strings_OrderAutomationResponse_fieldAccessorTable;
+      internal_static_office_service_OrderAutomationResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -33,14 +33,14 @@ public final class OrderAutomationServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026Order_Automation.proto\022\007strings\"%\n\026Ord" +
-      "erAutomationRequest\022\013\n\003val\030\001 \001(\t\"&\n\027Orde" +
-      "rAutomationResponse\022\013\n\003val\030\001 \001(\t2j\n\026Orde" +
-      "rAutomationService\022P\n\005order\022\037.strings.Or" +
-      "derAutomationRequest\032 .strings.OrderAuto" +
-      "mationResponse\"\000(\0010\001B>\n\036grpc.services.or" +
-      "der_automationB\032OrderAutomationServiceIm" +
-      "plP\001b\006proto3"
+      "\n\026Order_Automation.proto\022\016office_service" +
+      "\"%\n\026OrderAutomationRequest\022\013\n\003val\030\001 \001(\t\"" +
+      "&\n\027OrderAutomationResponse\022\013\n\003val\030\001 \001(\t2" +
+      "x\n\026OrderAutomationService\022^\n\005order\022&.off" +
+      "ice_service.OrderAutomationRequest\032\'.off" +
+      "ice_service.OrderAutomationResponse\"\000(\0010" +
+      "\001B>\n\036grpc.services.order_automationB\032Ord" +
+      "erAutomationServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54,17 +54,17 @@ public final class OrderAutomationServiceImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_strings_OrderAutomationRequest_descriptor =
+    internal_static_office_service_OrderAutomationRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_strings_OrderAutomationRequest_fieldAccessorTable = new
+    internal_static_office_service_OrderAutomationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_strings_OrderAutomationRequest_descriptor,
+        internal_static_office_service_OrderAutomationRequest_descriptor,
         new java.lang.String[] { "Val", });
-    internal_static_strings_OrderAutomationResponse_descriptor =
+    internal_static_office_service_OrderAutomationResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_strings_OrderAutomationResponse_fieldAccessorTable = new
+    internal_static_office_service_OrderAutomationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_strings_OrderAutomationResponse_descriptor,
+        internal_static_office_service_OrderAutomationResponse_descriptor,
         new java.lang.String[] { "Val", });
   }
 

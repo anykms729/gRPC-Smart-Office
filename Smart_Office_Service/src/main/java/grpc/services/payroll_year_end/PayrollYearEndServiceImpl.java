@@ -15,15 +15,15 @@ public final class PayrollYearEndServiceImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_strings_PayrollYearEndRequest_descriptor;
+    internal_static_office_service_PayrollYearEndRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_strings_PayrollYearEndRequest_fieldAccessorTable;
+      internal_static_office_service_PayrollYearEndRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_strings_PayrollYearEndResponse_descriptor;
+    internal_static_office_service_PayrollYearEndResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_strings_PayrollYearEndResponse_fieldAccessorTable;
+      internal_static_office_service_PayrollYearEndResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -33,14 +33,14 @@ public final class PayrollYearEndServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026Payroll_Year_End.proto\022\007strings\"\'\n\025Pay" +
-      "rollYearEndRequest\022\016\n\006length\030\001 \001(\005\"%\n\026Pa" +
-      "yrollYearEndResponse\022\013\n\003val\030\001 \001(\t2h\n\025Pay" +
-      "rollYearEndService\022O\n\ninput_hour\022\036.strin" +
-      "gs.PayrollYearEndRequest\032\037.strings.Payro" +
-      "llYearEndResponse(\001B=\n\036grpc.services.pay" +
-      "roll_year_endB\031PayrollYearEndServiceImpl" +
-      "P\001b\006proto3"
+      "\n\026Payroll_Year_End.proto\022\016office_service" +
+      "\"\'\n\025PayrollYearEndRequest\022\016\n\006length\030\001 \001(" +
+      "\005\"%\n\026PayrollYearEndResponse\022\013\n\003val\030\001 \001(\t" +
+      "2v\n\025PayrollYearEndService\022]\n\ninput_hour\022" +
+      "%.office_service.PayrollYearEndRequest\032&" +
+      ".office_service.PayrollYearEndResponse(\001" +
+      "B=\n\036grpc.services.payroll_year_endB\031Payr" +
+      "ollYearEndServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54,17 +54,17 @@ public final class PayrollYearEndServiceImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_strings_PayrollYearEndRequest_descriptor =
+    internal_static_office_service_PayrollYearEndRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_strings_PayrollYearEndRequest_fieldAccessorTable = new
+    internal_static_office_service_PayrollYearEndRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_strings_PayrollYearEndRequest_descriptor,
+        internal_static_office_service_PayrollYearEndRequest_descriptor,
         new java.lang.String[] { "Length", });
-    internal_static_strings_PayrollYearEndResponse_descriptor =
+    internal_static_office_service_PayrollYearEndResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_strings_PayrollYearEndResponse_fieldAccessorTable = new
+    internal_static_office_service_PayrollYearEndResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_strings_PayrollYearEndResponse_descriptor,
+        internal_static_office_service_PayrollYearEndResponse_descriptor,
         new java.lang.String[] { "Val", });
   }
 

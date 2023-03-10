@@ -4,7 +4,7 @@
 package grpc.services.payroll_year_end;
 
 public interface PayrollYearEndResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:strings.PayrollYearEndResponse)
+    // @@protoc_insertion_point(interface_extends:office_service.PayrollYearEndResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

@@ -10,7 +10,7 @@ option java_package = "grpc.services.payroll_year_end";
 option java_outer_classname = "PayrollYearEndServiceImpl";
 
 // package name to avoid name collisions
-package strings;
+package office_service;
 
 // Interface exported by the server.
 service PayrollYearEndService {

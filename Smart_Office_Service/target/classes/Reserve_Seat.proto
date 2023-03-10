@@ -10,7 +10,7 @@ option java_package = "grpc.services.reserve_seat";
 option java_outer_classname = "ReserveSeatServiceImpl";
 
 // package name to avoid name collisions
-package strings;
+package office_service;
 
 // Interface exported by the server.
 service ReserveSeatService {

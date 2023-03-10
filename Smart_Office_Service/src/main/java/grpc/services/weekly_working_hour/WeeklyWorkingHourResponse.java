@@ -4,11 +4,11 @@
 package grpc.services.weekly_working_hour;
 
 /**
- * Protobuf type {@code strings.WeeklyWorkingHourResponse}
+ * Protobuf type {@code office_service.WeeklyWorkingHourResponse}
  */
 public  final class WeeklyWorkingHourResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:strings.WeeklyWorkingHourResponse)
+    // @@protoc_insertion_point(message_implements:office_service.WeeklyWorkingHourResponse)
     WeeklyWorkingHourResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use WeeklyWorkingHourResponse.newBuilder() to construct.
@@ -70,13 +70,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_strings_WeeklyWorkingHourResponse_descriptor;
+    return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_office_service_WeeklyWorkingHourResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_strings_WeeklyWorkingHourResponse_fieldAccessorTable
+    return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_office_service_WeeklyWorkingHourResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             grpc.services.weekly_working_hour.WeeklyWorkingHourResponse.class, grpc.services.weekly_working_hour.WeeklyWorkingHourResponse.Builder.class);
   }
@@ -271,21 +271,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code strings.WeeklyWorkingHourResponse}
+   * Protobuf type {@code office_service.WeeklyWorkingHourResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:strings.WeeklyWorkingHourResponse)
+      // @@protoc_insertion_point(builder_implements:office_service.WeeklyWorkingHourResponse)
       grpc.services.weekly_working_hour.WeeklyWorkingHourResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_strings_WeeklyWorkingHourResponse_descriptor;
+      return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_office_service_WeeklyWorkingHourResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_strings_WeeklyWorkingHourResponse_fieldAccessorTable
+      return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_office_service_WeeklyWorkingHourResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               grpc.services.weekly_working_hour.WeeklyWorkingHourResponse.class, grpc.services.weekly_working_hour.WeeklyWorkingHourResponse.Builder.class);
     }
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_strings_WeeklyWorkingHourResponse_descriptor;
+      return grpc.services.weekly_working_hour.WeeklyWorkingHourServiceImpl.internal_static_office_service_WeeklyWorkingHourResponse_descriptor;
     }
 
     @java.lang.Override
@@ -499,10 +499,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:strings.WeeklyWorkingHourResponse)
+    // @@protoc_insertion_point(builder_scope:office_service.WeeklyWorkingHourResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:strings.WeeklyWorkingHourResponse)
+  // @@protoc_insertion_point(class_scope:office_service.WeeklyWorkingHourResponse)
   private static final grpc.services.weekly_working_hour.WeeklyWorkingHourResponse DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new grpc.services.weekly_working_hour.WeeklyWorkingHourResponse();

@@ -27,7 +27,7 @@ public final class OrderAutomationServiceGrpc {
 
   private OrderAutomationServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "strings.OrderAutomationService";
+  public static final String SERVICE_NAME = "office_service.OrderAutomationService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<grpc.services.order_automation.OrderAutomationRequest,
@@ -48,7 +48,7 @@ public final class OrderAutomationServiceGrpc {
               io.grpc.MethodDescriptor.<grpc.services.order_automation.OrderAutomationRequest, grpc.services.order_automation.OrderAutomationResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "strings.OrderAutomationService", "order"))
+                  "office_service.OrderAutomationService", "order"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.services.order_automation.OrderAutomationRequest.getDefaultInstance()))

@@ -15,15 +15,15 @@ public final class WeeklyWorkingHourServiceImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_strings_WeeklyWorkingHourRequest_descriptor;
+    internal_static_office_service_WeeklyWorkingHourRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_strings_WeeklyWorkingHourRequest_fieldAccessorTable;
+      internal_static_office_service_WeeklyWorkingHourRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_strings_WeeklyWorkingHourResponse_descriptor;
+    internal_static_office_service_WeeklyWorkingHourResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_strings_WeeklyWorkingHourResponse_fieldAccessorTable;
+      internal_static_office_service_WeeklyWorkingHourResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -33,14 +33,15 @@ public final class WeeklyWorkingHourServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031Weekly_Working_Hour.proto\022\007strings\"\'\n\030" +
-      "WeeklyWorkingHourRequest\022\013\n\003val\030\001 \001(\t\"(\n" +
-      "\031WeeklyWorkingHourResponse\022\013\n\003val\030\001 \001(\t2" +
-      "l\n\030WeeklyWorkingHourService\022P\n\005check\022!.s" +
-      "trings.WeeklyWorkingHourRequest\032\".string" +
-      "s.WeeklyWorkingHourResponse0\001BC\n!grpc.se" +
-      "rvices.weekly_working_hourB\034WeeklyWorkin" +
-      "gHourServiceImplP\001b\006proto3"
+      "\n\031Weekly_Working_Hour.proto\022\016office_serv" +
+      "ice\"\'\n\030WeeklyWorkingHourRequest\022\013\n\003val\030\001" +
+      " \001(\t\"(\n\031WeeklyWorkingHourResponse\022\013\n\003val" +
+      "\030\001 \001(\t2z\n\030WeeklyWorkingHourService\022^\n\005ch" +
+      "eck\022(.office_service.WeeklyWorkingHourRe" +
+      "quest\032).office_service.WeeklyWorkingHour" +
+      "Response0\001BC\n!grpc.services.weekly_worki" +
+      "ng_hourB\034WeeklyWorkingHourServiceImplP\001b" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54,17 +55,17 @@ public final class WeeklyWorkingHourServiceImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_strings_WeeklyWorkingHourRequest_descriptor =
+    internal_static_office_service_WeeklyWorkingHourRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_strings_WeeklyWorkingHourRequest_fieldAccessorTable = new
+    internal_static_office_service_WeeklyWorkingHourRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_strings_WeeklyWorkingHourRequest_descriptor,
+        internal_static_office_service_WeeklyWorkingHourRequest_descriptor,
         new java.lang.String[] { "Val", });
-    internal_static_strings_WeeklyWorkingHourResponse_descriptor =
+    internal_static_office_service_WeeklyWorkingHourResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_strings_WeeklyWorkingHourResponse_fieldAccessorTable = new
+    internal_static_office_service_WeeklyWorkingHourResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_strings_WeeklyWorkingHourResponse_descriptor,
+        internal_static_office_service_WeeklyWorkingHourResponse_descriptor,
         new java.lang.String[] { "Val", });
   }
 

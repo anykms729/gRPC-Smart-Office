@@ -4,11 +4,11 @@
 package grpc.services.order_automation;
 
 /**
- * Protobuf type {@code strings.OrderAutomationRequest}
+ * Protobuf type {@code office_service.OrderAutomationRequest}
  */
 public  final class OrderAutomationRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:strings.OrderAutomationRequest)
+    // @@protoc_insertion_point(message_implements:office_service.OrderAutomationRequest)
     OrderAutomationRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use OrderAutomationRequest.newBuilder() to construct.
@@ -70,13 +70,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_strings_OrderAutomationRequest_descriptor;
+    return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_office_service_OrderAutomationRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_strings_OrderAutomationRequest_fieldAccessorTable
+    return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_office_service_OrderAutomationRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             grpc.services.order_automation.OrderAutomationRequest.class, grpc.services.order_automation.OrderAutomationRequest.Builder.class);
   }
@@ -271,21 +271,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code strings.OrderAutomationRequest}
+   * Protobuf type {@code office_service.OrderAutomationRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:strings.OrderAutomationRequest)
+      // @@protoc_insertion_point(builder_implements:office_service.OrderAutomationRequest)
       grpc.services.order_automation.OrderAutomationRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_strings_OrderAutomationRequest_descriptor;
+      return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_office_service_OrderAutomationRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_strings_OrderAutomationRequest_fieldAccessorTable
+      return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_office_service_OrderAutomationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               grpc.services.order_automation.OrderAutomationRequest.class, grpc.services.order_automation.OrderAutomationRequest.Builder.class);
     }
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_strings_OrderAutomationRequest_descriptor;
+      return grpc.services.order_automation.OrderAutomationServiceImpl.internal_static_office_service_OrderAutomationRequest_descriptor;
     }
 
     @java.lang.Override
@@ -499,10 +499,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:strings.OrderAutomationRequest)
+    // @@protoc_insertion_point(builder_scope:office_service.OrderAutomationRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:strings.OrderAutomationRequest)
+  // @@protoc_insertion_point(class_scope:office_service.OrderAutomationRequest)
   private static final grpc.services.order_automation.OrderAutomationRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new grpc.services.order_automation.OrderAutomationRequest();

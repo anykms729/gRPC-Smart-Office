@@ -4,11 +4,11 @@
 package grpc.services.reserve_seat;
 
 /**
- * Protobuf type {@code strings.Empty}
+ * Protobuf type {@code office_service.Empty}
  */
 public  final class Empty extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:strings.Empty)
+    // @@protoc_insertion_point(message_implements:office_service.Empty)
     EmptyOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use Empty.newBuilder() to construct.
@@ -62,13 +62,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Empty_descriptor;
+    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Empty_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Empty_fieldAccessorTable
+    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Empty_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             grpc.services.reserve_seat.Empty.class, grpc.services.reserve_seat.Empty.Builder.class);
   }
@@ -219,21 +219,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code strings.Empty}
+   * Protobuf type {@code office_service.Empty}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:strings.Empty)
+      // @@protoc_insertion_point(builder_implements:office_service.Empty)
       grpc.services.reserve_seat.EmptyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Empty_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Empty_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Empty_fieldAccessorTable
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Empty_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               grpc.services.reserve_seat.Empty.class, grpc.services.reserve_seat.Empty.Builder.class);
     }
@@ -262,7 +262,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Empty_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Empty_descriptor;
     }
 
     @java.lang.Override
@@ -371,10 +371,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:strings.Empty)
+    // @@protoc_insertion_point(builder_scope:office_service.Empty)
   }
 
-  // @@protoc_insertion_point(class_scope:strings.Empty)
+  // @@protoc_insertion_point(class_scope:office_service.Empty)
   private static final grpc.services.reserve_seat.Empty DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new grpc.services.reserve_seat.Empty();

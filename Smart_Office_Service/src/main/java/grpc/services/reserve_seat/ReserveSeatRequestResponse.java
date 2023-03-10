@@ -4,11 +4,11 @@
 package grpc.services.reserve_seat;
 
 /**
- * Protobuf type {@code strings.ReserveSeatRequestResponse}
+ * Protobuf type {@code office_service.ReserveSeatRequestResponse}
  */
 public  final class ReserveSeatRequestResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:strings.ReserveSeatRequestResponse)
+    // @@protoc_insertion_point(message_implements:office_service.ReserveSeatRequestResponse)
     ReserveSeatRequestResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use ReserveSeatRequestResponse.newBuilder() to construct.
@@ -70,13 +70,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_ReserveSeatRequestResponse_descriptor;
+    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_ReserveSeatRequestResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_ReserveSeatRequestResponse_fieldAccessorTable
+    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_ReserveSeatRequestResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             grpc.services.reserve_seat.ReserveSeatRequestResponse.class, grpc.services.reserve_seat.ReserveSeatRequestResponse.Builder.class);
   }
@@ -271,21 +271,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code strings.ReserveSeatRequestResponse}
+   * Protobuf type {@code office_service.ReserveSeatRequestResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:strings.ReserveSeatRequestResponse)
+      // @@protoc_insertion_point(builder_implements:office_service.ReserveSeatRequestResponse)
       grpc.services.reserve_seat.ReserveSeatRequestResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_ReserveSeatRequestResponse_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_ReserveSeatRequestResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_ReserveSeatRequestResponse_fieldAccessorTable
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_ReserveSeatRequestResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               grpc.services.reserve_seat.ReserveSeatRequestResponse.class, grpc.services.reserve_seat.ReserveSeatRequestResponse.Builder.class);
     }
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_ReserveSeatRequestResponse_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_ReserveSeatRequestResponse_descriptor;
     }
 
     @java.lang.Override
@@ -499,10 +499,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:strings.ReserveSeatRequestResponse)
+    // @@protoc_insertion_point(builder_scope:office_service.ReserveSeatRequestResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:strings.ReserveSeatRequestResponse)
+  // @@protoc_insertion_point(class_scope:office_service.ReserveSeatRequestResponse)
   private static final grpc.services.reserve_seat.ReserveSeatRequestResponse DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new grpc.services.reserve_seat.ReserveSeatRequestResponse();

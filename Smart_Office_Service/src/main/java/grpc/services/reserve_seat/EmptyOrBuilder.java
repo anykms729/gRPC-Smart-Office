@@ -4,6 +4,6 @@
 package grpc.services.reserve_seat;
 
 public interface EmptyOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:strings.Empty)
+    // @@protoc_insertion_point(interface_extends:office_service.Empty)
     com.google.protobuf.MessageOrBuilder {
 }

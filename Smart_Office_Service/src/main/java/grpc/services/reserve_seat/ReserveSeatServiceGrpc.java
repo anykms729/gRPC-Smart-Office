@@ -27,7 +27,7 @@ public final class ReserveSeatServiceGrpc {
 
   private ReserveSeatServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "strings.ReserveSeatService";
+  public static final String SERVICE_NAME = "office_service.ReserveSeatService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<grpc.services.reserve_seat.ReserveSeatRequest,
@@ -48,7 +48,7 @@ public final class ReserveSeatServiceGrpc {
               io.grpc.MethodDescriptor.<grpc.services.reserve_seat.ReserveSeatRequest, grpc.services.reserve_seat.ReserveSeatRequestResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "strings.ReserveSeatService", "reserve"))
+                  "office_service.ReserveSeatService", "reserve"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.services.reserve_seat.ReserveSeatRequest.getDefaultInstance()))
@@ -80,7 +80,7 @@ public final class ReserveSeatServiceGrpc {
               io.grpc.MethodDescriptor.<grpc.services.reserve_seat.Message, grpc.services.reserve_seat.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "strings.ReserveSeatService", "empty"))
+                  "office_service.ReserveSeatService", "empty"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.services.reserve_seat.Message.getDefaultInstance()))

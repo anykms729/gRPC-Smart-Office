@@ -4,15 +4,15 @@
 package grpc.services.reserve_seat;
 
 public interface MessageOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:strings.Message)
+    // @@protoc_insertion_point(interface_extends:office_service.Message)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.strings.Message.Enum detail = 1;</code>
+   * <code>.office_service.Message.Enum detail = 1;</code>
    */
   int getDetailValue();
   /**
-   * <code>.strings.Message.Enum detail = 1;</code>
+   * <code>.office_service.Message.Enum detail = 1;</code>
    */
   grpc.services.reserve_seat.Message.Enum getDetail();
 }

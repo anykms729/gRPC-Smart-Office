@@ -27,7 +27,7 @@ public final class PayrollYearEndServiceGrpc {
 
   private PayrollYearEndServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "strings.PayrollYearEndService";
+  public static final String SERVICE_NAME = "office_service.PayrollYearEndService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<grpc.services.payroll_year_end.PayrollYearEndRequest,
@@ -48,7 +48,7 @@ public final class PayrollYearEndServiceGrpc {
               io.grpc.MethodDescriptor.<grpc.services.payroll_year_end.PayrollYearEndRequest, grpc.services.payroll_year_end.PayrollYearEndResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "strings.PayrollYearEndService", "input_hour"))
+                  "office_service.PayrollYearEndService", "input_hour"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.services.payroll_year_end.PayrollYearEndRequest.getDefaultInstance()))

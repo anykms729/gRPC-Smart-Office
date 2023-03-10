@@ -4,7 +4,7 @@
 package grpc.services.reserve_seat;
 
 public interface ReserveSeatRequestResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:strings.ReserveSeatRequestResponse)
+    // @@protoc_insertion_point(interface_extends:office_service.ReserveSeatRequestResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

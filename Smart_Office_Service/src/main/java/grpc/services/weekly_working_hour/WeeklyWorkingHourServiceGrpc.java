@@ -24,7 +24,7 @@ public final class WeeklyWorkingHourServiceGrpc {
 
   private WeeklyWorkingHourServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "strings.WeeklyWorkingHourService";
+  public static final String SERVICE_NAME = "office_service.WeeklyWorkingHourService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<grpc.services.weekly_working_hour.WeeklyWorkingHourRequest,
@@ -45,7 +45,7 @@ public final class WeeklyWorkingHourServiceGrpc {
               io.grpc.MethodDescriptor.<grpc.services.weekly_working_hour.WeeklyWorkingHourRequest, grpc.services.weekly_working_hour.WeeklyWorkingHourResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "strings.WeeklyWorkingHourService", "check"))
+                  "office_service.WeeklyWorkingHourService", "check"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.services.weekly_working_hour.WeeklyWorkingHourRequest.getDefaultInstance()))

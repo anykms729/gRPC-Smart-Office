@@ -10,7 +10,7 @@ option java_package = "grpc.services.order_automation";
 option java_outer_classname = "OrderAutomationServiceImpl";
 
 // package name to avoid name collisions
-package strings;
+package office_service;
 
 // Interface exported by the server.
 service OrderAutomationService {

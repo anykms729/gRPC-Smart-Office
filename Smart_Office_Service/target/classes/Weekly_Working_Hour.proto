@@ -10,7 +10,7 @@ option java_package = "grpc.services.weekly_working_hour";
 option java_outer_classname = "WeeklyWorkingHourServiceImpl";
 
 // package name to avoid name collisions
-package strings;
+package office_service;
 
 // Interface exported by the server.
 

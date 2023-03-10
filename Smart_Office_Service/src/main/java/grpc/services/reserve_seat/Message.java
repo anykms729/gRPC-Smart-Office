@@ -8,11 +8,11 @@ package grpc.services.reserve_seat;
  * Enum is a complex datatype that may contain other variables
  * </pre>
  *
- * Protobuf type {@code strings.Message}
+ * Protobuf type {@code office_service.Message}
  */
 public  final class Message extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:strings.Message)
+    // @@protoc_insertion_point(message_implements:office_service.Message)
     MessageOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use Message.newBuilder() to construct.
@@ -74,19 +74,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Message_descriptor;
+    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Message_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Message_fieldAccessorTable
+    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Message_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             grpc.services.reserve_seat.Message.class, grpc.services.reserve_seat.Message.Builder.class);
   }
 
   /**
-   * Protobuf enum {@code strings.Message.Enum}
+   * Protobuf enum {@code office_service.Message.Enum}
    */
   public enum Enum
       implements com.google.protobuf.ProtocolMessageEnum {
@@ -189,19 +189,19 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:strings.Message.Enum)
+    // @@protoc_insertion_point(enum_scope:office_service.Message.Enum)
   }
 
   public static final int DETAIL_FIELD_NUMBER = 1;
   private int detail_;
   /**
-   * <code>.strings.Message.Enum detail = 1;</code>
+   * <code>.office_service.Message.Enum detail = 1;</code>
    */
   public int getDetailValue() {
     return detail_;
   }
   /**
-   * <code>.strings.Message.Enum detail = 1;</code>
+   * <code>.office_service.Message.Enum detail = 1;</code>
    */
   public grpc.services.reserve_seat.Message.Enum getDetail() {
     @SuppressWarnings("deprecation")
@@ -369,21 +369,21 @@ private static final long serialVersionUID = 0L;
    * Enum is a complex datatype that may contain other variables
    * </pre>
    *
-   * Protobuf type {@code strings.Message}
+   * Protobuf type {@code office_service.Message}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:strings.Message)
+      // @@protoc_insertion_point(builder_implements:office_service.Message)
       grpc.services.reserve_seat.MessageOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Message_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Message_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Message_fieldAccessorTable
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Message_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               grpc.services.reserve_seat.Message.class, grpc.services.reserve_seat.Message.Builder.class);
     }
@@ -414,7 +414,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_strings_Message_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_Message_descriptor;
     }
 
     @java.lang.Override
@@ -517,13 +517,13 @@ private static final long serialVersionUID = 0L;
 
     private int detail_ = 0;
     /**
-     * <code>.strings.Message.Enum detail = 1;</code>
+     * <code>.office_service.Message.Enum detail = 1;</code>
      */
     public int getDetailValue() {
       return detail_;
     }
     /**
-     * <code>.strings.Message.Enum detail = 1;</code>
+     * <code>.office_service.Message.Enum detail = 1;</code>
      */
     public Builder setDetailValue(int value) {
       detail_ = value;
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.strings.Message.Enum detail = 1;</code>
+     * <code>.office_service.Message.Enum detail = 1;</code>
      */
     public grpc.services.reserve_seat.Message.Enum getDetail() {
       @SuppressWarnings("deprecation")
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? grpc.services.reserve_seat.Message.Enum.UNRECOGNIZED : result;
     }
     /**
-     * <code>.strings.Message.Enum detail = 1;</code>
+     * <code>.office_service.Message.Enum detail = 1;</code>
      */
     public Builder setDetail(grpc.services.reserve_seat.Message.Enum value) {
       if (value == null) {
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.strings.Message.Enum detail = 1;</code>
+     * <code>.office_service.Message.Enum detail = 1;</code>
      */
     public Builder clearDetail() {
       
@@ -572,10 +572,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:strings.Message)
+    // @@protoc_insertion_point(builder_scope:office_service.Message)
   }
 
-  // @@protoc_insertion_point(class_scope:strings.Message)
+  // @@protoc_insertion_point(class_scope:office_service.Message)
   private static final grpc.services.reserve_seat.Message DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new grpc.services.reserve_seat.Message();
