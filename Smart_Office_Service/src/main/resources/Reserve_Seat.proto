@@ -1,5 +1,3 @@
-// Unary rpc
-
 syntax = "proto3"; // Make sure to have proto3 for your proto files.
 
 // generate separate or multiple java file for each generated class.
@@ -19,8 +17,7 @@ service ReserveSeatService {
   rpc reserve(ReserveSeatRequest) returns (ReserveSeatResponse) {}
 
   // rpc method that does not return any response
-  rpc empty(Message) returns (Empty) {}
-
+  rpc same_seat(NoSameSeatRequest) returns (No_SameSeatResponse) {}
 }
 
 // define each variable in rpc method separately
@@ -32,17 +29,10 @@ message ReserveSeatResponse {
   string val = 1;
 }
 
-// Enum is a complex datatype that may contain other variables
-message Message {
-  enum Enum {
-    UNKNOWN = 0;
-    LOW = 1;
-    HIGH = 2;
-  }
-
-  Enum detail = 1;
+message NoSameSeatRequest {
+  string val = 2;
 }
 
-message Empty {
-
+message No_SameSeatResponse {
+  string val = 2;
 }
