@@ -37,7 +37,7 @@ public final class ReserveSeatServiceGrpc {
       fullMethodName = SERVICE_NAME + '/' + "reserve",
       requestType = grpc.services.reserve_seat.ReserveSeatRequest.class,
       responseType = grpc.services.reserve_seat.ReserveSeatResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<grpc.services.reserve_seat.ReserveSeatRequest,
       grpc.services.reserve_seat.ReserveSeatResponse> getReserveMethod() {
     io.grpc.MethodDescriptor<grpc.services.reserve_seat.ReserveSeatRequest, grpc.services.reserve_seat.ReserveSeatResponse> getReserveMethod;
@@ -46,7 +46,7 @@ public final class ReserveSeatServiceGrpc {
         if ((getReserveMethod = ReserveSeatServiceGrpc.getReserveMethod) == null) {
           ReserveSeatServiceGrpc.getReserveMethod = getReserveMethod = 
               io.grpc.MethodDescriptor.<grpc.services.reserve_seat.ReserveSeatRequest, grpc.services.reserve_seat.ReserveSeatResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "office_service.ReserveSeatService", "reserve"))
               .setSampledToLocalTracing(true)
@@ -62,36 +62,36 @@ public final class ReserveSeatServiceGrpc {
      return getReserveMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<grpc.services.reserve_seat.Message,
-      grpc.services.reserve_seat.Empty> getEmptyMethod;
+  private static volatile io.grpc.MethodDescriptor<grpc.services.reserve_seat.NoSameSeatRequest,
+      grpc.services.reserve_seat.NoSameSeatResponse> getSameSeatMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "empty",
-      requestType = grpc.services.reserve_seat.Message.class,
-      responseType = grpc.services.reserve_seat.Empty.class,
+      fullMethodName = SERVICE_NAME + '/' + "same_seat",
+      requestType = grpc.services.reserve_seat.NoSameSeatRequest.class,
+      responseType = grpc.services.reserve_seat.NoSameSeatResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<grpc.services.reserve_seat.Message,
-      grpc.services.reserve_seat.Empty> getEmptyMethod() {
-    io.grpc.MethodDescriptor<grpc.services.reserve_seat.Message, grpc.services.reserve_seat.Empty> getEmptyMethod;
-    if ((getEmptyMethod = ReserveSeatServiceGrpc.getEmptyMethod) == null) {
+  public static io.grpc.MethodDescriptor<grpc.services.reserve_seat.NoSameSeatRequest,
+      grpc.services.reserve_seat.NoSameSeatResponse> getSameSeatMethod() {
+    io.grpc.MethodDescriptor<grpc.services.reserve_seat.NoSameSeatRequest, grpc.services.reserve_seat.NoSameSeatResponse> getSameSeatMethod;
+    if ((getSameSeatMethod = ReserveSeatServiceGrpc.getSameSeatMethod) == null) {
       synchronized (ReserveSeatServiceGrpc.class) {
-        if ((getEmptyMethod = ReserveSeatServiceGrpc.getEmptyMethod) == null) {
-          ReserveSeatServiceGrpc.getEmptyMethod = getEmptyMethod = 
-              io.grpc.MethodDescriptor.<grpc.services.reserve_seat.Message, grpc.services.reserve_seat.Empty>newBuilder()
+        if ((getSameSeatMethod = ReserveSeatServiceGrpc.getSameSeatMethod) == null) {
+          ReserveSeatServiceGrpc.getSameSeatMethod = getSameSeatMethod = 
+              io.grpc.MethodDescriptor.<grpc.services.reserve_seat.NoSameSeatRequest, grpc.services.reserve_seat.NoSameSeatResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "office_service.ReserveSeatService", "empty"))
+                  "office_service.ReserveSeatService", "same_seat"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.services.reserve_seat.Message.getDefaultInstance()))
+                  grpc.services.reserve_seat.NoSameSeatRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.services.reserve_seat.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new ReserveSeatServiceMethodDescriptorSupplier("empty"))
+                  grpc.services.reserve_seat.NoSameSeatResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new ReserveSeatServiceMethodDescriptorSupplier("same_seat"))
                   .build();
           }
         }
      }
-     return getEmptyMethod;
+     return getSameSeatMethod;
   }
 
   /**
@@ -126,40 +126,40 @@ public final class ReserveSeatServiceGrpc {
 
     /**
      * <pre>
-     * rpc method for unary calls
+     * rpc method for server stream calls
      * </pre>
      */
-    public void reserve(grpc.services.reserve_seat.ReserveSeatRequest request,
-        io.grpc.stub.StreamObserver<grpc.services.reserve_seat.ReserveSeatResponse> responseObserver) {
+    public static void reserve(grpc.services.reserve_seat.ReserveSeatRequest request,
+                               io.grpc.stub.StreamObserver<grpc.services.reserve_seat.ReserveSeatResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getReserveMethod(), responseObserver);
     }
 
     /**
      * <pre>
-     * rpc method that does not return any response
+     * rpc method for unary calls
      * </pre>
      */
-    public void empty(grpc.services.reserve_seat.Message request,
-        io.grpc.stub.StreamObserver<grpc.services.reserve_seat.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getEmptyMethod(), responseObserver);
+    public void sameSeat(grpc.services.reserve_seat.NoSameSeatRequest request,
+        io.grpc.stub.StreamObserver<grpc.services.reserve_seat.NoSameSeatResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSameSeatMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getReserveMethod(),
-            asyncUnaryCall(
+            asyncServerStreamingCall(
               new MethodHandlers<
                 grpc.services.reserve_seat.ReserveSeatRequest,
                 grpc.services.reserve_seat.ReserveSeatResponse>(
                   this, METHODID_RESERVE)))
           .addMethod(
-            getEmptyMethod(),
+            getSameSeatMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                grpc.services.reserve_seat.Message,
-                grpc.services.reserve_seat.Empty>(
-                  this, METHODID_EMPTY)))
+                grpc.services.reserve_seat.NoSameSeatRequest,
+                grpc.services.reserve_seat.NoSameSeatResponse>(
+                  this, METHODID_SAME_SEAT)))
           .build();
     }
   }
@@ -187,24 +187,24 @@ public final class ReserveSeatServiceGrpc {
 
     /**
      * <pre>
-     * rpc method for unary calls
+     * rpc method for server stream calls
      * </pre>
      */
     public void reserve(grpc.services.reserve_seat.ReserveSeatRequest request,
         io.grpc.stub.StreamObserver<grpc.services.reserve_seat.ReserveSeatResponse> responseObserver) {
-      asyncUnaryCall(
+      asyncServerStreamingCall(
           getChannel().newCall(getReserveMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
-     * rpc method that does not return any response
+     * rpc method for unary calls
      * </pre>
      */
-    public void empty(grpc.services.reserve_seat.Message request,
-        io.grpc.stub.StreamObserver<grpc.services.reserve_seat.Empty> responseObserver) {
+    public void sameSeat(grpc.services.reserve_seat.NoSameSeatRequest request,
+        io.grpc.stub.StreamObserver<grpc.services.reserve_seat.NoSameSeatResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getEmptyMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getSameSeatMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -231,22 +231,23 @@ public final class ReserveSeatServiceGrpc {
 
     /**
      * <pre>
-     * rpc method for unary calls
+     * rpc method for server stream calls
      * </pre>
      */
-    public grpc.services.reserve_seat.ReserveSeatResponse reserve(grpc.services.reserve_seat.ReserveSeatRequest request) {
-      return blockingUnaryCall(
+    public java.util.Iterator<grpc.services.reserve_seat.ReserveSeatResponse> reserve(
+        grpc.services.reserve_seat.ReserveSeatRequest request) {
+      return blockingServerStreamingCall(
           getChannel(), getReserveMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
-     * rpc method that does not return any response
+     * rpc method for unary calls
      * </pre>
      */
-    public grpc.services.reserve_seat.Empty empty(grpc.services.reserve_seat.Message request) {
+    public grpc.services.reserve_seat.NoSameSeatResponse sameSeat(grpc.services.reserve_seat.NoSameSeatRequest request) {
       return blockingUnaryCall(
-          getChannel(), getEmptyMethod(), getCallOptions(), request);
+          getChannel(), getSameSeatMethod(), getCallOptions(), request);
     }
   }
 
@@ -276,26 +277,15 @@ public final class ReserveSeatServiceGrpc {
      * rpc method for unary calls
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.services.reserve_seat.ReserveSeatResponse> reserve(
-        grpc.services.reserve_seat.ReserveSeatRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<grpc.services.reserve_seat.NoSameSeatResponse> sameSeat(
+        grpc.services.reserve_seat.NoSameSeatRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getReserveMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * rpc method that does not return any response
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.services.reserve_seat.Empty> empty(
-        grpc.services.reserve_seat.Message request) {
-      return futureUnaryCall(
-          getChannel().newCall(getEmptyMethod(), getCallOptions()), request);
+          getChannel().newCall(getSameSeatMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_RESERVE = 0;
-  private static final int METHODID_EMPTY = 1;
+  private static final int METHODID_SAME_SEAT = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -318,9 +308,9 @@ public final class ReserveSeatServiceGrpc {
           serviceImpl.reserve((grpc.services.reserve_seat.ReserveSeatRequest) request,
               (io.grpc.stub.StreamObserver<grpc.services.reserve_seat.ReserveSeatResponse>) responseObserver);
           break;
-        case METHODID_EMPTY:
-          serviceImpl.empty((grpc.services.reserve_seat.Message) request,
-              (io.grpc.stub.StreamObserver<grpc.services.reserve_seat.Empty>) responseObserver);
+        case METHODID_SAME_SEAT:
+          serviceImpl.sameSeat((grpc.services.reserve_seat.NoSameSeatRequest) request,
+              (io.grpc.stub.StreamObserver<grpc.services.reserve_seat.NoSameSeatResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -384,7 +374,7 @@ public final class ReserveSeatServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new ReserveSeatServiceFileDescriptorSupplier())
               .addMethod(getReserveMethod())
-              .addMethod(getEmptyMethod())
+              .addMethod(getSameSeatMethod())
               .build();
         }
       }

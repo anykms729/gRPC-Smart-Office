@@ -1,0 +1,47 @@
+syntax = "proto3"; // Make sure to have proto3 for your proto files.
+
+// generate separate or multiple java file for each generated class.
+option java_multiple_files = true;
+// Package inside the src/main/java where generated classes will reside.
+option java_package = "grpc.services.hr_department_service";
+// Class name of the wrapper class which represent this file.
+option java_outer_classname = "HRDepartmentServiceImpl";
+
+// package name to avoid name collisions
+package office_service;
+
+// Interface exported by the server.
+service HRDepartmentService {
+  // rpc method for server streaming calls
+  rpc check(stream WeeklyWorkingHourRequest) returns (stream WeeklyWorkingHourResponse);
+
+  // rpc method for client streaming calls
+  rpc input_hour(stream Monthly_Payroll_Request) returns (Monthly_Payroll_Response);
+
+}
+
+// define each variable in rpc method separately
+
+message WeeklyWorkingHourRequest {
+  int32 monday_working_hour = 1;
+  int32 tuesday_working_hour = 2;
+  int32 wednesday_working_hour = 3;
+  int32 thursday_working_hour = 4;
+  int32 friday_working_hour = 5;
+}
+
+message WeeklyWorkingHourResponse {
+  int32 total_weekly_working_hour = 1;
+  string weekly_working_hour_message = 2;
+}
+
+message Monthly_Payroll_Request {
+  int32 normal_working_hour = 1;
+  int32 holiday_pay_working_hour = 2;
+  int32 overtime_working_hour = 3;
+}
+
+message Monthly_Payroll_Response {
+  string monthly_payroll_message = 1;
+}
+

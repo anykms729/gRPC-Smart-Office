@@ -8,12 +8,7 @@ public interface ReserveSeatRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string val = 1;</code>
+   * <code>int32 seat_number = 1;</code>
    */
-  java.lang.String getVal();
-  /**
-   * <code>string val = 1;</code>
-   */
-  com.google.protobuf.ByteString
-      getValBytes();
+  int getSeatNumber();
 }

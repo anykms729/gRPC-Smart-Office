@@ -1,8 +1,7 @@
-syntax = "proto3"; // Make sure to have proto3 for your proto files.
+syntax = "proto3";
 
 // generate separate or multiple java file for each generated class.
 option java_multiple_files = true;
-// Package inside the src/main/java where generated classes will reside.
 option java_package = "grpc.services.reserve_seat";
 // Class name of the wrapper class which represent this file.
 option java_outer_classname = "ReserveSeatServiceImpl";
@@ -13,26 +12,28 @@ package office_service;
 // Interface exported by the server.
 service ReserveSeatService {
 
-  // rpc method for unary calls
-  rpc reserve(ReserveSeatRequest) returns (ReserveSeatResponse) {}
+  // rpc method for server stream calls
+  rpc reserve(ReserveSeatRequest) returns (stream ReserveSeatResponse) {}
 
-  // rpc method that does not return any response
-  rpc same_seat(NoSameSeatRequest) returns (No_SameSeatResponse) {}
+  // rpc method for unary calls
+  rpc same_seat(NoSameSeatRequest) returns (NoSameSeatResponse) {}
 }
 
 // define each variable in rpc method separately
 message ReserveSeatRequest {
-  string val = 1;
+  int32 seat_number = 1;
 }
 
 message ReserveSeatResponse {
-  string val = 1;
+  int32 seat_number = 1;
+  int32 seat_number_min = 2;
+  int32 seat_number_max = 3;
 }
 
 message NoSameSeatRequest {
-  string val = 2;
+  int32 same_seat_number = 1;
 }
 
-message No_SameSeatResponse {
-  string val = 2;
+message NoSameSeatResponse {
+  string no_same_seat_message = 2;
 }
