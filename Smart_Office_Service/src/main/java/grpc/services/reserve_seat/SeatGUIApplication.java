@@ -1,33 +1,19 @@
 package grpc.services.reserve_seat;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.stub.StreamObserver;
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceEvent;
 import javax.jmdns.ServiceInfo;
 import javax.jmdns.ServiceListener;
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.FlowLayout;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
-
-
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.awt.event.ActionEvent;
-import java.util.Iterator;
 
 public class SeatGUIApplication {
     private static ReserveSeatServiceGrpc.ReserveSeatServiceBlockingStub blockingStub;
@@ -41,9 +27,6 @@ public class SeatGUIApplication {
     private JTextArea textResponse;
 
 
-    /**
-     * Launch the application.
-     */
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
@@ -55,20 +38,17 @@ public class SeatGUIApplication {
         });
     }
 
-    /**
-     * Create the application.
-     */
     public SeatGUIApplication() {
         String seat_reserve_service_type = "_seats._tcp.local.";
         discoverSeatReserveService(seat_reserve_service_type);
 
         ManagedChannel channel = ManagedChannelBuilder
-                .forAddress("localhost", 50052)
+                .forAddress("localhost", 50053)
                 .usePlaintext()
                 .build();
 
         //stubs -- generate from proto
-        blockingStub = ReserveSeatServiceGrpc.newBlockingStub(channel);
+//        blockingStub = ReserveSeatServiceGrpc.newBlockingStub(channel);
         asyncStub = ReserveSeatServiceGrpc.newStub(channel);
 
         initialize();
@@ -95,27 +75,21 @@ public class SeatGUIApplication {
                     System.out.println("\t name: " + event.getName());
                     System.out.println("\t description/properties: " + reserveSeatService.getNiceTextString());
                     System.out.println("\t host: " + reserveSeatService.getHostAddresses()[0]);
-
-
                 }
 
                 @Override
                 public void serviceRemoved(ServiceEvent event) {
                     System.out.println("Reserve Seat Service removed: " + event.getInfo());
-
-
                 }
 
                 @Override
                 public void serviceAdded(ServiceEvent event) {
                     System.out.println("Reserve Seat Service added: " + event.getInfo());
-
-
                 }
             });
 
             // Wait a bit
-            Thread.sleep(2000);
+            Thread.sleep(1000);
 
             jmdns.close();
 
@@ -135,7 +109,7 @@ public class SeatGUIApplication {
      */
     private void initialize() {
         frame = new JFrame();
-        frame.setTitle("Client - Service Controller");
+        frame.setTitle("Seat Reservation Service");
         frame.setBounds(100, 100, 500, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -154,56 +128,97 @@ public class SeatGUIApplication {
         panel_service_1.add(textNumber1);
         textNumber1.setColumns(10);
 
-//        JLabel lblNewLabel_2 = new JLabel("Number 2");
-//        panel_service_1.add(lblNewLabel_2);
+        JButton btnReserve = new JButton("Reserve");
+        JButton btnAvailableSeat = new JButton("Available Seat");
+
+//        btnReserve.addActionListener(new ActionListener() {
 //
-//        textNumber2 = new JTextField();
-//        panel_service_1.add(textNumber2);
-//        textNumber2.setColumns(10);
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                int num1 = Integer.parseInt(textNumber1.getText());
+//
+//                AvailableSeatRequest reserveSeatRequest = AvailableSeatRequest.newBuilder().setSeatNumber(num1).build();
+//                StreamObserver<AvailableSeatResponse> responseObserver = new StreamObserver<AvailableSeatResponse>() {
+//
+//
+//                    @Override
+//                    public void onNext(AvailableSeatResponse seat) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable t) {
+//                        t.printStackTrace();
+//
+//                    }
+//
+//                    @Override
+//                    public void onCompleted() {
+//                        System.out.println("Seat reservation is done");
+//                    }
+//                };
+//                asyncStub.reserve(reserveSeatRequest, responseObserver);
+//
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException Ie) {
+//                    // TODO Auto-generated catch block
+//                    Ie.printStackTrace();
+//                }
+//            }
+//        });
 
-
-//        JComboBox comboOperation = new JComboBox();
-//        comboOperation.setModel(new DefaultComboBoxModel(new String[]{"ADDITION", "SUBTRACTION", "MULTIPLICATION", "DIVISION"}));
-//        panel_service_1.add(comboOperation);
-
-
-        JButton btnCalculate = new JButton("Reservation");
-        btnCalculate.addActionListener(new ActionListener() {
+        btnAvailableSeat.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            int num1 = Integer.parseInt(textNumber1.getText());
+            AvailableSeatRequest req = AvailableSeatRequest.newBuilder().setAvailableSeatRequest(num1).build();
+            StreamObserver<AvailableSeatResponse> responseObserver = new StreamObserver<AvailableSeatResponse>() {
+                @Override
+                public void onNext(AvailableSeatResponse seat) {
+                    panel_service_1.add(new JButton("Seat " + seat.getAvailableSeatResponse()));
+                    panel_service_1.validate();
+                }
 
-                int num1 = Integer.parseInt(textNumber1.getText());
+                @Override
+                public void onError(Throwable t) {
+                    t.printStackTrace();
+                }
 
-//                int index = comboOperation.getSelectedIndex();
-//                Operation operation = Operation.forNumber(index);
+                @Override
+                public void onCompleted() {
+                    System.out.println("Stream is completed ... received all available seats number");
+                }
+            };
+            asyncStub.availableSeat(req, responseObserver);
 
-                ReserveSeatRequest req = ReserveSeatRequest.newBuilder().setSeatNumber(num1).build();
-
-                Iterator<ReserveSeatResponse> response = blockingStub.reserve(req);
-
-//                textResponse.append("reply:" + response.getResult() + " mes:" + response.getMessage() + "\n");
-//                System.out.println("res: " + response.getResult() + " mes: " + response.getMessage());
-                textResponse.append("Reply: " + response.toString()+"\n");
-                System.out.println("Reply: " + response.toString());
-
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException Ie) {
+                // TODO Auto-generated catch block
+                Ie.printStackTrace();
+            }
 
             }
-        });
-        panel_service_1.add(btnCalculate);
-
-        textResponse = new JTextArea(3, 20);
-        textResponse.setLineWrap(true);
-        textResponse.setWrapStyleWord(true);
-
-        JScrollPane scrollPane = new JScrollPane(textResponse);
-
-        //textResponse.setSize(new Dimension(15, 30));
-        panel_service_1.add(scrollPane);
+        }
+        );
 
 
-        JPanel panel_service_2 = new JPanel();
-        frame.getContentPane().add(panel_service_2);
+        panel_service_1.add(btnReserve);
+        panel_service_1.add(btnAvailableSeat);
 
-        JPanel panel_service_3 = new JPanel();
-        frame.getContentPane().add(panel_service_3);
+//        textResponse = new JTextArea(3, 20);
+//        textResponse.setLineWrap(true);
+//        textResponse.setWrapStyleWord(true);
+//
+//        JScrollPane scrollPane = new JScrollPane(textResponse);
+//
+//        panel_service_1.add(scrollPane);
+//
+//
+//        JPanel panel_service_2 = new JPanel();
+//        frame.getContentPane().add(panel_service_2);
+//
+//        JPanel panel_service_3 = new JPanel();
+//        frame.getContentPane().add(panel_service_3);
     }
 }

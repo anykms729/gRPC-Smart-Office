@@ -13,27 +13,30 @@ package office_service;
 service ReserveSeatService {
 
   // rpc method for server stream calls
-  rpc reserve(ReserveSeatRequest) returns (stream ReserveSeatResponse) {}
+  rpc availableSeat(AvailableSeatRequest) returns (stream AvailableSeatResponse) {}
 
   // rpc method for unary calls
-  rpc same_seat(NoSameSeatRequest) returns (NoSameSeatResponse) {}
+  rpc reserveSeat(ReserveSeatRequest) returns (ReserveSeatResponse) {}
+
+  //  rpc same_seat(NoSameSeatRequest) returns (NoSameSeatResponse) {}
 }
 
 // define each variable in rpc method separately
 message ReserveSeatRequest {
-  int32 seat_number = 1;
+  int32 reserve_seat_request = 1;
 }
 
 message ReserveSeatResponse {
-  int32 seat_number = 1;
-  int32 seat_number_min = 2;
-  int32 seat_number_max = 3;
+  int32 reserve_seat_request = 1;
+  string reserve_seat_request_message = 2;
 }
 
-message NoSameSeatRequest {
-  int32 same_seat_number = 1;
+message AvailableSeatRequest {
+  int32 available_seat_request = 1;
 }
 
-message NoSameSeatResponse {
-  string no_same_seat_message = 2;
+message AvailableSeatResponse {
+  int32 available_seat_response = 1;
+  string available_seat_response_message = 2;
+
 }

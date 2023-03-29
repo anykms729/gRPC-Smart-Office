@@ -25,15 +25,15 @@ public final class ReserveSeatServiceImpl {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_office_service_ReserveSeatResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_office_service_NoSameSeatRequest_descriptor;
+    internal_static_office_service_AvailableSeatRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_office_service_NoSameSeatRequest_fieldAccessorTable;
+      internal_static_office_service_AvailableSeatRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_office_service_NoSameSeatResponse_descriptor;
+    internal_static_office_service_AvailableSeatResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_office_service_NoSameSeatResponse_fieldAccessorTable;
+      internal_static_office_service_AvailableSeatResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -43,20 +43,22 @@ public final class ReserveSeatServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022Reserve_Seat.proto\022\016office_service\")\n\022" +
-      "ReserveSeatRequest\022\023\n\013seat_number\030\001 \001(\005\"" +
-      "\\\n\023ReserveSeatResponse\022\023\n\013seat_number\030\001 " +
-      "\001(\005\022\027\n\017seat_number_min\030\002 \001(\005\022\027\n\017seat_num" +
-      "ber_max\030\003 \001(\005\"-\n\021NoSameSeatRequest\022\030\n\020sa" +
-      "me_seat_number\030\001 \001(\005\"2\n\022NoSameSeatRespon" +
-      "se\022\034\n\024no_same_seat_message\030\002 \001(\t2\302\001\n\022Res" +
-      "erveSeatService\022V\n\007reserve\022\".office_serv" +
-      "ice.ReserveSeatRequest\032#.office_service." +
-      "ReserveSeatResponse\"\0000\001\022T\n\tsame_seat\022!.o" +
-      "ffice_service.NoSameSeatRequest\032\".office" +
-      "_service.NoSameSeatResponse\"\000B6\n\032grpc.se" +
-      "rvices.reserve_seatB\026ReserveSeatServiceI" +
-      "mplP\001b\006proto3"
+      "\n\022Reserve_Seat.proto\022\016office_service\"2\n\022" +
+      "ReserveSeatRequest\022\034\n\024reserve_seat_reque" +
+      "st\030\001 \001(\005\"Y\n\023ReserveSeatResponse\022\034\n\024reser" +
+      "ve_seat_request\030\001 \001(\005\022$\n\034reserve_seat_re" +
+      "quest_message\030\002 \001(\t\"6\n\024AvailableSeatRequ" +
+      "est\022\036\n\026available_seat_request\030\001 \001(\005\"a\n\025A" +
+      "vailableSeatResponse\022\037\n\027available_seat_r" +
+      "esponse\030\001 \001(\005\022\'\n\037available_seat_response" +
+      "_message\030\002 \001(\t2\320\001\n\022ReserveSeatService\022`\n" +
+      "\ravailableSeat\022$.office_service.Availabl" +
+      "eSeatRequest\032%.office_service.AvailableS" +
+      "eatResponse\"\0000\001\022X\n\013reserveSeat\022\".office_" +
+      "service.ReserveSeatRequest\032#.office_serv" +
+      "ice.ReserveSeatResponse\"\000B6\n\032grpc.servic" +
+      "es.reserve_seatB\026ReserveSeatServiceImplP" +
+      "\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -75,25 +77,25 @@ public final class ReserveSeatServiceImpl {
     internal_static_office_service_ReserveSeatRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_office_service_ReserveSeatRequest_descriptor,
-        new java.lang.String[] { "SeatNumber", });
+        new java.lang.String[] { "ReserveSeatRequest", });
     internal_static_office_service_ReserveSeatResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_office_service_ReserveSeatResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_office_service_ReserveSeatResponse_descriptor,
-        new java.lang.String[] { "SeatNumber", "SeatNumberMin", "SeatNumberMax", });
-    internal_static_office_service_NoSameSeatRequest_descriptor =
+        new java.lang.String[] { "ReserveSeatRequest", "ReserveSeatRequestMessage", });
+    internal_static_office_service_AvailableSeatRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_office_service_NoSameSeatRequest_fieldAccessorTable = new
+    internal_static_office_service_AvailableSeatRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_office_service_NoSameSeatRequest_descriptor,
-        new java.lang.String[] { "SameSeatNumber", });
-    internal_static_office_service_NoSameSeatResponse_descriptor =
+        internal_static_office_service_AvailableSeatRequest_descriptor,
+        new java.lang.String[] { "AvailableSeatRequest", });
+    internal_static_office_service_AvailableSeatResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_office_service_NoSameSeatResponse_fieldAccessorTable = new
+    internal_static_office_service_AvailableSeatResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_office_service_NoSameSeatResponse_descriptor,
-        new java.lang.String[] { "NoSameSeatMessage", });
+        internal_static_office_service_AvailableSeatResponse_descriptor,
+        new java.lang.String[] { "AvailableSeatResponse", "AvailableSeatResponseMessage", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

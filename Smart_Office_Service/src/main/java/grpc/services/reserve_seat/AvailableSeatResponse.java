@@ -4,19 +4,20 @@
 package grpc.services.reserve_seat;
 
 /**
- * Protobuf type {@code office_service.NoSameSeatResponse}
+ * Protobuf type {@code office_service.AvailableSeatResponse}
  */
-public  final class NoSameSeatResponse extends
+public  final class AvailableSeatResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:office_service.NoSameSeatResponse)
-    NoSameSeatResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:office_service.AvailableSeatResponse)
+    AvailableSeatResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use NoSameSeatResponse.newBuilder() to construct.
-  private NoSameSeatResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use AvailableSeatResponse.newBuilder() to construct.
+  private AvailableSeatResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private NoSameSeatResponse() {
-    noSameSeatMessage_ = "";
+  private AvailableSeatResponse() {
+    availableSeatResponse_ = 0;
+    availableSeatResponseMessage_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +25,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private NoSameSeatResponse(
+  private AvailableSeatResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -43,10 +44,15 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 8: {
+
+            availableSeatResponse_ = input.readInt32();
+            break;
+          }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            noSameSeatMessage_ = s;
+            availableSeatResponseMessage_ = s;
             break;
           }
           default: {
@@ -70,45 +76,54 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_NoSameSeatResponse_descriptor;
+    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_NoSameSeatResponse_fieldAccessorTable
+    return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            grpc.services.reserve_seat.NoSameSeatResponse.class, grpc.services.reserve_seat.NoSameSeatResponse.Builder.class);
+            grpc.services.reserve_seat.AvailableSeatResponse.class, grpc.services.reserve_seat.AvailableSeatResponse.Builder.class);
   }
 
-  public static final int NO_SAME_SEAT_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object noSameSeatMessage_;
+  public static final int AVAILABLE_SEAT_RESPONSE_FIELD_NUMBER = 1;
+  private int availableSeatResponse_;
   /**
-   * <code>string no_same_seat_message = 2;</code>
+   * <code>int32 available_seat_response = 1;</code>
    */
-  public java.lang.String getNoSameSeatMessage() {
-    java.lang.Object ref = noSameSeatMessage_;
+  public int getAvailableSeatResponse() {
+    return availableSeatResponse_;
+  }
+
+  public static final int AVAILABLE_SEAT_RESPONSE_MESSAGE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object availableSeatResponseMessage_;
+  /**
+   * <code>string available_seat_response_message = 2;</code>
+   */
+  public java.lang.String getAvailableSeatResponseMessage() {
+    java.lang.Object ref = availableSeatResponseMessage_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      noSameSeatMessage_ = s;
+      availableSeatResponseMessage_ = s;
       return s;
     }
   }
   /**
-   * <code>string no_same_seat_message = 2;</code>
+   * <code>string available_seat_response_message = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getNoSameSeatMessageBytes() {
-    java.lang.Object ref = noSameSeatMessage_;
+      getAvailableSeatResponseMessageBytes() {
+    java.lang.Object ref = availableSeatResponseMessage_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      noSameSeatMessage_ = b;
+      availableSeatResponseMessage_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +144,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNoSameSeatMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, noSameSeatMessage_);
+    if (availableSeatResponse_ != 0) {
+      output.writeInt32(1, availableSeatResponse_);
+    }
+    if (!getAvailableSeatResponseMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, availableSeatResponseMessage_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +159,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNoSameSeatMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, noSameSeatMessage_);
+    if (availableSeatResponse_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(1, availableSeatResponse_);
+    }
+    if (!getAvailableSeatResponseMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, availableSeatResponseMessage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,14 +176,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof grpc.services.reserve_seat.NoSameSeatResponse)) {
+    if (!(obj instanceof grpc.services.reserve_seat.AvailableSeatResponse)) {
       return super.equals(obj);
     }
-    grpc.services.reserve_seat.NoSameSeatResponse other = (grpc.services.reserve_seat.NoSameSeatResponse) obj;
+    grpc.services.reserve_seat.AvailableSeatResponse other = (grpc.services.reserve_seat.AvailableSeatResponse) obj;
 
     boolean result = true;
-    result = result && getNoSameSeatMessage()
-        .equals(other.getNoSameSeatMessage());
+    result = result && (getAvailableSeatResponse()
+        == other.getAvailableSeatResponse());
+    result = result && getAvailableSeatResponseMessage()
+        .equals(other.getAvailableSeatResponseMessage());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,76 +197,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NO_SAME_SEAT_MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getNoSameSeatMessage().hashCode();
+    hash = (37 * hash) + AVAILABLE_SEAT_RESPONSE_FIELD_NUMBER;
+    hash = (53 * hash) + getAvailableSeatResponse();
+    hash = (37 * hash) + AVAILABLE_SEAT_RESPONSE_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getAvailableSeatResponseMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(byte[] data)
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(java.io.InputStream input)
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseDelimitedFrom(java.io.InputStream input)
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseDelimitedFrom(
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.services.reserve_seat.NoSameSeatResponse parseFrom(
+  public static grpc.services.reserve_seat.AvailableSeatResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +281,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(grpc.services.reserve_seat.NoSameSeatResponse prototype) {
+  public static Builder newBuilder(grpc.services.reserve_seat.AvailableSeatResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +297,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code office_service.NoSameSeatResponse}
+   * Protobuf type {@code office_service.AvailableSeatResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:office_service.NoSameSeatResponse)
-      grpc.services.reserve_seat.NoSameSeatResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:office_service.AvailableSeatResponse)
+      grpc.services.reserve_seat.AvailableSeatResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_NoSameSeatResponse_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_NoSameSeatResponse_fieldAccessorTable
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              grpc.services.reserve_seat.NoSameSeatResponse.class, grpc.services.reserve_seat.NoSameSeatResponse.Builder.class);
+              grpc.services.reserve_seat.AvailableSeatResponse.class, grpc.services.reserve_seat.AvailableSeatResponse.Builder.class);
     }
 
-    // Construct using grpc.services.reserve_seat.NoSameSeatResponse.newBuilder()
+    // Construct using grpc.services.reserve_seat.AvailableSeatResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -308,7 +334,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      noSameSeatMessage_ = "";
+      availableSeatResponse_ = 0;
+
+      availableSeatResponseMessage_ = "";
 
       return this;
     }
@@ -316,17 +344,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_NoSameSeatResponse_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatResponse_descriptor;
     }
 
     @java.lang.Override
-    public grpc.services.reserve_seat.NoSameSeatResponse getDefaultInstanceForType() {
-      return grpc.services.reserve_seat.NoSameSeatResponse.getDefaultInstance();
+    public grpc.services.reserve_seat.AvailableSeatResponse getDefaultInstanceForType() {
+      return grpc.services.reserve_seat.AvailableSeatResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public grpc.services.reserve_seat.NoSameSeatResponse build() {
-      grpc.services.reserve_seat.NoSameSeatResponse result = buildPartial();
+    public grpc.services.reserve_seat.AvailableSeatResponse build() {
+      grpc.services.reserve_seat.AvailableSeatResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,9 +362,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public grpc.services.reserve_seat.NoSameSeatResponse buildPartial() {
-      grpc.services.reserve_seat.NoSameSeatResponse result = new grpc.services.reserve_seat.NoSameSeatResponse(this);
-      result.noSameSeatMessage_ = noSameSeatMessage_;
+    public grpc.services.reserve_seat.AvailableSeatResponse buildPartial() {
+      grpc.services.reserve_seat.AvailableSeatResponse result = new grpc.services.reserve_seat.AvailableSeatResponse(this);
+      result.availableSeatResponse_ = availableSeatResponse_;
+      result.availableSeatResponseMessage_ = availableSeatResponseMessage_;
       onBuilt();
       return result;
     }
@@ -375,18 +404,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof grpc.services.reserve_seat.NoSameSeatResponse) {
-        return mergeFrom((grpc.services.reserve_seat.NoSameSeatResponse)other);
+      if (other instanceof grpc.services.reserve_seat.AvailableSeatResponse) {
+        return mergeFrom((grpc.services.reserve_seat.AvailableSeatResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(grpc.services.reserve_seat.NoSameSeatResponse other) {
-      if (other == grpc.services.reserve_seat.NoSameSeatResponse.getDefaultInstance()) return this;
-      if (!other.getNoSameSeatMessage().isEmpty()) {
-        noSameSeatMessage_ = other.noSameSeatMessage_;
+    public Builder mergeFrom(grpc.services.reserve_seat.AvailableSeatResponse other) {
+      if (other == grpc.services.reserve_seat.AvailableSeatResponse.getDefaultInstance()) return this;
+      if (other.getAvailableSeatResponse() != 0) {
+        setAvailableSeatResponse(other.getAvailableSeatResponse());
+      }
+      if (!other.getAvailableSeatResponseMessage().isEmpty()) {
+        availableSeatResponseMessage_ = other.availableSeatResponseMessage_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -404,11 +436,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      grpc.services.reserve_seat.NoSameSeatResponse parsedMessage = null;
+      grpc.services.reserve_seat.AvailableSeatResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (grpc.services.reserve_seat.NoSameSeatResponse) e.getUnfinishedMessage();
+        parsedMessage = (grpc.services.reserve_seat.AvailableSeatResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,71 +450,97 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object noSameSeatMessage_ = "";
+    private int availableSeatResponse_ ;
     /**
-     * <code>string no_same_seat_message = 2;</code>
+     * <code>int32 available_seat_response = 1;</code>
      */
-    public java.lang.String getNoSameSeatMessage() {
-      java.lang.Object ref = noSameSeatMessage_;
+    public int getAvailableSeatResponse() {
+      return availableSeatResponse_;
+    }
+    /**
+     * <code>int32 available_seat_response = 1;</code>
+     */
+    public Builder setAvailableSeatResponse(int value) {
+      
+      availableSeatResponse_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 available_seat_response = 1;</code>
+     */
+    public Builder clearAvailableSeatResponse() {
+      
+      availableSeatResponse_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object availableSeatResponseMessage_ = "";
+    /**
+     * <code>string available_seat_response_message = 2;</code>
+     */
+    public java.lang.String getAvailableSeatResponseMessage() {
+      java.lang.Object ref = availableSeatResponseMessage_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        noSameSeatMessage_ = s;
+        availableSeatResponseMessage_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string no_same_seat_message = 2;</code>
+     * <code>string available_seat_response_message = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getNoSameSeatMessageBytes() {
-      java.lang.Object ref = noSameSeatMessage_;
+        getAvailableSeatResponseMessageBytes() {
+      java.lang.Object ref = availableSeatResponseMessage_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        noSameSeatMessage_ = b;
+        availableSeatResponseMessage_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string no_same_seat_message = 2;</code>
+     * <code>string available_seat_response_message = 2;</code>
      */
-    public Builder setNoSameSeatMessage(
+    public Builder setAvailableSeatResponseMessage(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      noSameSeatMessage_ = value;
+      availableSeatResponseMessage_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string no_same_seat_message = 2;</code>
+     * <code>string available_seat_response_message = 2;</code>
      */
-    public Builder clearNoSameSeatMessage() {
+    public Builder clearAvailableSeatResponseMessage() {
       
-      noSameSeatMessage_ = getDefaultInstance().getNoSameSeatMessage();
+      availableSeatResponseMessage_ = getDefaultInstance().getAvailableSeatResponseMessage();
       onChanged();
       return this;
     }
     /**
-     * <code>string no_same_seat_message = 2;</code>
+     * <code>string available_seat_response_message = 2;</code>
      */
-    public Builder setNoSameSeatMessageBytes(
+    public Builder setAvailableSeatResponseMessageBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      noSameSeatMessage_ = value;
+      availableSeatResponseMessage_ = value;
       onChanged();
       return this;
     }
@@ -499,41 +557,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:office_service.NoSameSeatResponse)
+    // @@protoc_insertion_point(builder_scope:office_service.AvailableSeatResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:office_service.NoSameSeatResponse)
-  private static final grpc.services.reserve_seat.NoSameSeatResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:office_service.AvailableSeatResponse)
+  private static final grpc.services.reserve_seat.AvailableSeatResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new grpc.services.reserve_seat.NoSameSeatResponse();
+    DEFAULT_INSTANCE = new grpc.services.reserve_seat.AvailableSeatResponse();
   }
 
-  public static grpc.services.reserve_seat.NoSameSeatResponse getDefaultInstance() {
+  public static grpc.services.reserve_seat.AvailableSeatResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<NoSameSeatResponse>
-      PARSER = new com.google.protobuf.AbstractParser<NoSameSeatResponse>() {
+  private static final com.google.protobuf.Parser<AvailableSeatResponse>
+      PARSER = new com.google.protobuf.AbstractParser<AvailableSeatResponse>() {
     @java.lang.Override
-    public NoSameSeatResponse parsePartialFrom(
+    public AvailableSeatResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new NoSameSeatResponse(input, extensionRegistry);
+      return new AvailableSeatResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<NoSameSeatResponse> parser() {
+  public static com.google.protobuf.Parser<AvailableSeatResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<NoSameSeatResponse> getParserForType() {
+  public com.google.protobuf.Parser<AvailableSeatResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public grpc.services.reserve_seat.NoSameSeatResponse getDefaultInstanceForType() {
+  public grpc.services.reserve_seat.AvailableSeatResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

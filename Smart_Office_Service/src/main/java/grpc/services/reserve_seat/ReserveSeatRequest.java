@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ReserveSeatRequest() {
-    seatNumber_ = 0;
+    reserveSeatRequest_ = 0;
   }
 
   @java.lang.Override
@@ -49,7 +49,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            seatNumber_ = input.readInt32();
+            reserveSeatRequest_ = input.readInt32();
             break;
           }
           default: {
@@ -84,13 +84,13 @@ private static final long serialVersionUID = 0L;
             grpc.services.reserve_seat.ReserveSeatRequest.class, grpc.services.reserve_seat.ReserveSeatRequest.Builder.class);
   }
 
-  public static final int SEAT_NUMBER_FIELD_NUMBER = 1;
-  private int seatNumber_;
+  public static final int RESERVE_SEAT_REQUEST_FIELD_NUMBER = 1;
+  private int reserveSeatRequest_;
   /**
-   * <code>int32 seat_number = 1;</code>
+   * <code>int32 reserve_seat_request = 1;</code>
    */
-  public int getSeatNumber() {
-    return seatNumber_;
+  public int getReserveSeatRequest() {
+    return reserveSeatRequest_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -107,8 +107,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (seatNumber_ != 0) {
-      output.writeInt32(1, seatNumber_);
+    if (reserveSeatRequest_ != 0) {
+      output.writeInt32(1, reserveSeatRequest_);
     }
     unknownFields.writeTo(output);
   }
@@ -119,9 +119,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (seatNumber_ != 0) {
+    if (reserveSeatRequest_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, seatNumber_);
+        .computeInt32Size(1, reserveSeatRequest_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -139,8 +139,8 @@ private static final long serialVersionUID = 0L;
     grpc.services.reserve_seat.ReserveSeatRequest other = (grpc.services.reserve_seat.ReserveSeatRequest) obj;
 
     boolean result = true;
-    result = result && (getSeatNumber()
-        == other.getSeatNumber());
+    result = result && (getReserveSeatRequest()
+        == other.getReserveSeatRequest());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -152,8 +152,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SEAT_NUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getSeatNumber();
+    hash = (37 * hash) + RESERVE_SEAT_REQUEST_FIELD_NUMBER;
+    hash = (53 * hash) + getReserveSeatRequest();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,7 +291,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      seatNumber_ = 0;
+      reserveSeatRequest_ = 0;
 
       return this;
     }
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public grpc.services.reserve_seat.ReserveSeatRequest buildPartial() {
       grpc.services.reserve_seat.ReserveSeatRequest result = new grpc.services.reserve_seat.ReserveSeatRequest(this);
-      result.seatNumber_ = seatNumber_;
+      result.reserveSeatRequest_ = reserveSeatRequest_;
       onBuilt();
       return result;
     }
@@ -368,8 +368,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(grpc.services.reserve_seat.ReserveSeatRequest other) {
       if (other == grpc.services.reserve_seat.ReserveSeatRequest.getDefaultInstance()) return this;
-      if (other.getSeatNumber() != 0) {
-        setSeatNumber(other.getSeatNumber());
+      if (other.getReserveSeatRequest() != 0) {
+        setReserveSeatRequest(other.getReserveSeatRequest());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,28 +400,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int seatNumber_ ;
+    private int reserveSeatRequest_ ;
     /**
-     * <code>int32 seat_number = 1;</code>
+     * <code>int32 reserve_seat_request = 1;</code>
      */
-    public int getSeatNumber() {
-      return seatNumber_;
+    public int getReserveSeatRequest() {
+      return reserveSeatRequest_;
     }
     /**
-     * <code>int32 seat_number = 1;</code>
+     * <code>int32 reserve_seat_request = 1;</code>
      */
-    public Builder setSeatNumber(int value) {
+    public Builder setReserveSeatRequest(int value) {
       
-      seatNumber_ = value;
+      reserveSeatRequest_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 seat_number = 1;</code>
+     * <code>int32 reserve_seat_request = 1;</code>
      */
-    public Builder clearSeatNumber() {
+    public Builder clearReserveSeatRequest() {
       
-      seatNumber_ = 0;
+      reserveSeatRequest_ = 0;
       onChanged();
       return this;
     }

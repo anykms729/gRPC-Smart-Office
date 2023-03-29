@@ -8,7 +8,7 @@ public interface ReserveSeatRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 seat_number = 1;</code>
+   * <code>int32 reserve_seat_request = 1;</code>
    */
-  int getSeatNumber();
+  int getReserveSeatRequest();
 }
