@@ -6,15 +6,18 @@ grpc\services\sales_department_service\Stock_Response$1.class
 grpc\services\sales_department_service\Order_Request$1.class
 grpc\services\reserve_seat\ReserveSeatResponseOrBuilder.class
 grpc\services\hr_department_service\WeeklyWorkingHourRequest.class
+grpc\services\reserve_seat\Smart_Office_Server1$Seat.class
 grpc\services\reserve_seat\ReserveSeatServiceImpl$1.class
 grpc\services\sales_department_service\Stock_Request$Builder.class
 grpc\services\sales_department_service\Stock_Request$1.class
 grpc\services\hr_department_service\HRDepartmentServiceGrpc.class
 grpc\services\reserve_seat\ReserveSeatServiceGrpc.class
 grpc\services\sales_department_service\Stock_Response.class
+grpc\services\reserve_seat\SeatGUIApplication$1.class
 grpc\services\sales_department_service\Stock_RequestOrBuilder.class
 grpc\services\hr_department_service\Monthly_Payroll_Response.class
 grpc\services\hr_department_service\Monthly_Payroll_Request.class
+grpc\services\reserve_seat\Smart_Office_Server1.class
 grpc\services\reserve_seat\ReserveSeatServiceGrpc$MethodHandlers.class
 grpc\services\hr_department_service\WeeklyWorkingHourResponseOrBuilder.class
 grpc\services\hr_department_service\HRDepartmentServiceImpl.class
@@ -32,6 +35,7 @@ grpc\services\sales_department_service\SalesDepartmentServiceGrpc$MethodHandlers
 grpc\services\sales_department_service\SalesDepartmentServiceGrpc.class
 grpc\services\hr_department_service\WeeklyWorkingHourRequest$1.class
 grpc\services\hr_department_service\Monthly_Payroll_Response$Builder.class
+grpc\services\reserve_seat\SeatGUIApplication.class
 grpc\services\reserve_seat\AvailableSeatResponse.class
 grpc\services\sales_department_service\Order_Request.class
 grpc\services\hr_department_service\HRDepartmentServiceGrpc$1.class
@@ -73,6 +77,7 @@ grpc\services\hr_department_service\HRDepartmentGUIApplication.class
 grpc\services\hr_department_service\WeeklyWorkingHourResponse$1.class
 grpc\services\hr_department_service\WeeklyWorkingHourResponse$Builder.class
 grpc\services\reserve_seat\ReserveSeatRequest.class
+grpc\services\reserve_seat\SeatGUIApplication$2.class
 grpc\services\reserve_seat\ReserveSeatResponse$Builder.class
 grpc\services\reserve_seat\AvailableSeatRequest$1.class
 grpc\services\sales_department_service\SalesDepartmentServiceGrpc$SalesDepartmentServiceBaseDescriptorSupplier.class

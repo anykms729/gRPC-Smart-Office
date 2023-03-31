@@ -27,8 +27,8 @@ message ReserveSeatRequest {
 }
 
 message ReserveSeatResponse {
-  int32 reserve_seat_request = 1;
-  string reserve_seat_request_message = 2;
+  int32 reserve_seat_response = 1;
+  string reserve_seat_response_message = 2;
 }
 
 message AvailableSeatRequest {

@@ -3,10 +3,6 @@
 
 package grpc.services.reserve_seat;
 
-import com.google.protobuf.*;
-
-import java.io.IOException;
-
 /**
  * Protobuf type {@code office_service.AvailableSeatRequest}
  */
@@ -253,23 +249,20 @@ private static final long serialVersionUID = 0L;
    * Protobuf type {@code office_service.AvailableSeatRequest}
    */
   public static final class Builder extends
-      GeneratedMessageV3.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:office_service.AvailableSeatRequest)
-      AvailableSeatRequestOrBuilder {
-
-    private int seatNumber;
-
-    public static final Descriptors.Descriptor
+      grpc.services.reserve_seat.AvailableSeatRequestOrBuilder {
+    public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatRequest_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatRequest_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatRequest_fieldAccessorTable
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              AvailableSeatRequest.class, Builder.class);
+              grpc.services.reserve_seat.AvailableSeatRequest.class, grpc.services.reserve_seat.AvailableSeatRequest.Builder.class);
     }
 
     // Construct using grpc.services.reserve_seat.AvailableSeatRequest.newBuilder()
@@ -278,16 +271,16 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
     private void maybeForceBuilderInitialization() {
-      if (GeneratedMessageV3
+      if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       availableSeatRequest_ = 0;
@@ -295,78 +288,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
-    public Descriptors.Descriptor
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatRequest_descriptor;
+      return grpc.services.reserve_seat.ReserveSeatServiceImpl.internal_static_office_service_AvailableSeatRequest_descriptor;
     }
 
-    @Override
-    public AvailableSeatRequest getDefaultInstanceForType() {
-      return AvailableSeatRequest.getDefaultInstance();
+    @java.lang.Override
+    public grpc.services.reserve_seat.AvailableSeatRequest getDefaultInstanceForType() {
+      return grpc.services.reserve_seat.AvailableSeatRequest.getDefaultInstance();
     }
 
-    @Override
-    public AvailableSeatRequest build() {
-      AvailableSeatRequest result = buildPartial();
+    @java.lang.Override
+    public grpc.services.reserve_seat.AvailableSeatRequest build() {
+      grpc.services.reserve_seat.AvailableSeatRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public AvailableSeatRequest buildPartial() {
-      AvailableSeatRequest result = new AvailableSeatRequest(this);
+    @java.lang.Override
+    public grpc.services.reserve_seat.AvailableSeatRequest buildPartial() {
+      grpc.services.reserve_seat.AvailableSeatRequest result = new grpc.services.reserve_seat.AvailableSeatRequest(this);
       result.availableSeatRequest_ = availableSeatRequest_;
       onBuilt();
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
-        Descriptors.FieldDescriptor field,
-        Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
-        Descriptors.FieldDescriptor field) {
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
-        Descriptors.OneofDescriptor oneof) {
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
-        Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
-        Descriptors.FieldDescriptor field,
-        Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
-    @Override
-    public Builder mergeFrom(Message other) {
-      if (other instanceof AvailableSeatRequest) {
-        return mergeFrom((AvailableSeatRequest)other);
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof grpc.services.reserve_seat.AvailableSeatRequest) {
+        return mergeFrom((grpc.services.reserve_seat.AvailableSeatRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(AvailableSeatRequest other) {
-      if (other == AvailableSeatRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(grpc.services.reserve_seat.AvailableSeatRequest other) {
+      if (other == grpc.services.reserve_seat.AvailableSeatRequest.getDefaultInstance()) return this;
       if (other.getAvailableSeatRequest() != 0) {
         setAvailableSeatRequest(other.getAvailableSeatRequest());
       }
@@ -375,21 +368,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
-        CodedInputStream input,
-        ExtensionRegistryLite extensionRegistry)
-        throws IOException {
-      AvailableSeatRequest parsedMessage = null;
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      grpc.services.reserve_seat.AvailableSeatRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (InvalidProtocolBufferException e) {
-        parsedMessage = (AvailableSeatRequest) e.getUnfinishedMessage();
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (grpc.services.reserve_seat.AvailableSeatRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -424,19 +417,17 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
-        final UnknownFieldSet unknownFields) {
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
-        final UnknownFieldSet unknownFields) {
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
-
 
 
     // @@protoc_insertion_point(builder_scope:office_service.AvailableSeatRequest)

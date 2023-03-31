@@ -8,17 +8,17 @@ public interface ReserveSeatResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 reserve_seat_request = 1;</code>
+   * <code>int32 reserve_seat_response = 1;</code>
    */
-  int getReserveSeatRequest();
+  int getReserveSeatResponse();
 
   /**
-   * <code>string reserve_seat_request_message = 2;</code>
+   * <code>string reserve_seat_response_message = 2;</code>
    */
-  java.lang.String getReserveSeatRequestMessage();
+  java.lang.String getReserveSeatResponseMessage();
   /**
-   * <code>string reserve_seat_request_message = 2;</code>
+   * <code>string reserve_seat_response_message = 2;</code>
    */
   com.google.protobuf.ByteString
-      getReserveSeatRequestMessageBytes();
+      getReserveSeatResponseMessageBytes();
 }

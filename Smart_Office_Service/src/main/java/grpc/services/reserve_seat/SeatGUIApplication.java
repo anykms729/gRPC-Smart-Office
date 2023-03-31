@@ -3,14 +3,13 @@ package grpc.services.reserve_seat;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
+
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceEvent;
 import javax.jmdns.ServiceInfo;
 import javax.jmdns.ServiceListener;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -20,11 +19,8 @@ public class SeatGUIApplication {
     private static ReserveSeatServiceGrpc.ReserveSeatServiceStub asyncStub;
 
     private ServiceInfo reserveSeatService;
-
-
     private JFrame frame;
     private JTextField textNumber1;
-    private JTextArea textResponse;
 
 
     public static void main(String[] args) {
@@ -48,7 +44,7 @@ public class SeatGUIApplication {
                 .build();
 
         //stubs -- generate from proto
-//        blockingStub = ReserveSeatServiceGrpc.newBlockingStub(channel);
+        blockingStub = ReserveSeatServiceGrpc.newBlockingStub(channel);
         asyncStub = ReserveSeatServiceGrpc.newStub(channel);
 
         initialize();
@@ -104,9 +100,6 @@ public class SeatGUIApplication {
     }
 
 
-    /**
-     * Initialize the contents of the frame.
-     */
     private void initialize() {
         frame = new JFrame();
         frame.setTitle("Seat Reservation Service");
@@ -129,50 +122,28 @@ public class SeatGUIApplication {
         textNumber1.setColumns(10);
 
         JButton btnReserve = new JButton("Reserve");
+        panel_service_1.add(btnReserve);
         JButton btnAvailableSeat = new JButton("Available Seat");
+        panel_service_1.add(btnAvailableSeat);
 
-//        btnReserve.addActionListener(new ActionListener() {
-//
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                int num1 = Integer.parseInt(textNumber1.getText());
-//
-//                AvailableSeatRequest reserveSeatRequest = AvailableSeatRequest.newBuilder().setSeatNumber(num1).build();
-//                StreamObserver<AvailableSeatResponse> responseObserver = new StreamObserver<AvailableSeatResponse>() {
-//
-//
-//                    @Override
-//                    public void onNext(AvailableSeatResponse seat) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable t) {
-//                        t.printStackTrace();
-//
-//                    }
-//
-//                    @Override
-//                    public void onCompleted() {
-//                        System.out.println("Seat reservation is done");
-//                    }
-//                };
-//                asyncStub.reserve(reserveSeatRequest, responseObserver);
-//
-//                try {
-//                    Thread.sleep(1000);
-//                } catch (InterruptedException Ie) {
-//                    // TODO Auto-generated catch block
-//                    Ie.printStackTrace();
-//                }
-//            }
-//        });
-
-        btnAvailableSeat.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        btnReserve.addActionListener(e -> {
             int num1 = Integer.parseInt(textNumber1.getText());
-            AvailableSeatRequest req = AvailableSeatRequest.newBuilder().setAvailableSeatRequest(num1).build();
-            StreamObserver<AvailableSeatResponse> responseObserver = new StreamObserver<AvailableSeatResponse>() {
+            ReserveSeatRequest reserveSeatRequest = ReserveSeatRequest.newBuilder().setReserveSeatRequest(num1).build();
+            ReserveSeatResponse response = blockingStub.reserveSeat(reserveSeatRequest);
+            JOptionPane.showMessageDialog(panel_service_1, "Seat " + response.getReserveSeatResponse() + " " + response.getReserveSeatResponseMessage());
+            System.out.println("Unary reply is completed ...");
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException Ie) {
+                // TODO Auto-generated catch block
+                Ie.printStackTrace();
+            }
+        });
+
+        btnAvailableSeat.addActionListener(e -> {
+            AvailableSeatRequest req = AvailableSeatRequest.newBuilder().setAvailableSeatRequest(1).build();
+            StreamObserver<AvailableSeatResponse> responseObserver = new StreamObserver<>() {
                 @Override
                 public void onNext(AvailableSeatResponse seat) {
                     panel_service_1.add(new JButton("Seat " + seat.getAvailableSeatResponse()));
@@ -186,7 +157,7 @@ public class SeatGUIApplication {
 
                 @Override
                 public void onCompleted() {
-                    System.out.println("Stream is completed ... received all available seats number");
+                    System.out.println("Stream is completed ... Received all available seats number");
                 }
             };
             asyncStub.availableSeat(req, responseObserver);
@@ -198,27 +169,10 @@ public class SeatGUIApplication {
                 Ie.printStackTrace();
             }
 
+            if (e.getSource() == "Next") {
+
             }
-        }
-        );
-
-
-        panel_service_1.add(btnReserve);
-        panel_service_1.add(btnAvailableSeat);
-
-//        textResponse = new JTextArea(3, 20);
-//        textResponse.setLineWrap(true);
-//        textResponse.setWrapStyleWord(true);
-//
-//        JScrollPane scrollPane = new JScrollPane(textResponse);
-//
-//        panel_service_1.add(scrollPane);
-//
-//
-//        JPanel panel_service_2 = new JPanel();
-//        frame.getContentPane().add(panel_service_2);
-//
-//        JPanel panel_service_3 = new JPanel();
-//        frame.getContentPane().add(panel_service_3);
+        });
     }
+
 }

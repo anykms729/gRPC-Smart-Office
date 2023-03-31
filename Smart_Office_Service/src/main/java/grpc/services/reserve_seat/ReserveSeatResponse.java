@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ReserveSeatResponse() {
-    reserveSeatRequest_ = 0;
-    reserveSeatRequestMessage_ = "";
+    reserveSeatResponse_ = 0;
+    reserveSeatResponseMessage_ = "";
   }
 
   @java.lang.Override
@@ -46,13 +46,13 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            reserveSeatRequest_ = input.readInt32();
+            reserveSeatResponse_ = input.readInt32();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            reserveSeatRequestMessage_ = s;
+            reserveSeatResponseMessage_ = s;
             break;
           }
           default: {
@@ -87,43 +87,43 @@ private static final long serialVersionUID = 0L;
             grpc.services.reserve_seat.ReserveSeatResponse.class, grpc.services.reserve_seat.ReserveSeatResponse.Builder.class);
   }
 
-  public static final int RESERVE_SEAT_REQUEST_FIELD_NUMBER = 1;
-  private int reserveSeatRequest_;
+  public static final int RESERVE_SEAT_RESPONSE_FIELD_NUMBER = 1;
+  private int reserveSeatResponse_;
   /**
-   * <code>int32 reserve_seat_request = 1;</code>
+   * <code>int32 reserve_seat_response = 1;</code>
    */
-  public int getReserveSeatRequest() {
-    return reserveSeatRequest_;
+  public int getReserveSeatResponse() {
+    return reserveSeatResponse_;
   }
 
-  public static final int RESERVE_SEAT_REQUEST_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object reserveSeatRequestMessage_;
+  public static final int RESERVE_SEAT_RESPONSE_MESSAGE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object reserveSeatResponseMessage_;
   /**
-   * <code>string reserve_seat_request_message = 2;</code>
+   * <code>string reserve_seat_response_message = 2;</code>
    */
-  public java.lang.String getReserveSeatRequestMessage() {
-    java.lang.Object ref = reserveSeatRequestMessage_;
+  public java.lang.String getReserveSeatResponseMessage() {
+    java.lang.Object ref = reserveSeatResponseMessage_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      reserveSeatRequestMessage_ = s;
+      reserveSeatResponseMessage_ = s;
       return s;
     }
   }
   /**
-   * <code>string reserve_seat_request_message = 2;</code>
+   * <code>string reserve_seat_response_message = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getReserveSeatRequestMessageBytes() {
-    java.lang.Object ref = reserveSeatRequestMessage_;
+      getReserveSeatResponseMessageBytes() {
+    java.lang.Object ref = reserveSeatResponseMessage_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      reserveSeatRequestMessage_ = b;
+      reserveSeatResponseMessage_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -144,11 +144,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (reserveSeatRequest_ != 0) {
-      output.writeInt32(1, reserveSeatRequest_);
+    if (reserveSeatResponse_ != 0) {
+      output.writeInt32(1, reserveSeatResponse_);
     }
-    if (!getReserveSeatRequestMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reserveSeatRequestMessage_);
+    if (!getReserveSeatResponseMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reserveSeatResponseMessage_);
     }
     unknownFields.writeTo(output);
   }
@@ -159,12 +159,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (reserveSeatRequest_ != 0) {
+    if (reserveSeatResponse_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, reserveSeatRequest_);
+        .computeInt32Size(1, reserveSeatResponse_);
     }
-    if (!getReserveSeatRequestMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reserveSeatRequestMessage_);
+    if (!getReserveSeatResponseMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reserveSeatResponseMessage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -182,10 +182,10 @@ private static final long serialVersionUID = 0L;
     grpc.services.reserve_seat.ReserveSeatResponse other = (grpc.services.reserve_seat.ReserveSeatResponse) obj;
 
     boolean result = true;
-    result = result && (getReserveSeatRequest()
-        == other.getReserveSeatRequest());
-    result = result && getReserveSeatRequestMessage()
-        .equals(other.getReserveSeatRequestMessage());
+    result = result && (getReserveSeatResponse()
+        == other.getReserveSeatResponse());
+    result = result && getReserveSeatResponseMessage()
+        .equals(other.getReserveSeatResponseMessage());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -197,10 +197,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + RESERVE_SEAT_REQUEST_FIELD_NUMBER;
-    hash = (53 * hash) + getReserveSeatRequest();
-    hash = (37 * hash) + RESERVE_SEAT_REQUEST_MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getReserveSeatRequestMessage().hashCode();
+    hash = (37 * hash) + RESERVE_SEAT_RESPONSE_FIELD_NUMBER;
+    hash = (53 * hash) + getReserveSeatResponse();
+    hash = (37 * hash) + RESERVE_SEAT_RESPONSE_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getReserveSeatResponseMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -334,9 +334,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      reserveSeatRequest_ = 0;
+      reserveSeatResponse_ = 0;
 
-      reserveSeatRequestMessage_ = "";
+      reserveSeatResponseMessage_ = "";
 
       return this;
     }
@@ -364,8 +364,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public grpc.services.reserve_seat.ReserveSeatResponse buildPartial() {
       grpc.services.reserve_seat.ReserveSeatResponse result = new grpc.services.reserve_seat.ReserveSeatResponse(this);
-      result.reserveSeatRequest_ = reserveSeatRequest_;
-      result.reserveSeatRequestMessage_ = reserveSeatRequestMessage_;
+      result.reserveSeatResponse_ = reserveSeatResponse_;
+      result.reserveSeatResponseMessage_ = reserveSeatResponseMessage_;
       onBuilt();
       return result;
     }
@@ -414,11 +414,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(grpc.services.reserve_seat.ReserveSeatResponse other) {
       if (other == grpc.services.reserve_seat.ReserveSeatResponse.getDefaultInstance()) return this;
-      if (other.getReserveSeatRequest() != 0) {
-        setReserveSeatRequest(other.getReserveSeatRequest());
+      if (other.getReserveSeatResponse() != 0) {
+        setReserveSeatResponse(other.getReserveSeatResponse());
       }
-      if (!other.getReserveSeatRequestMessage().isEmpty()) {
-        reserveSeatRequestMessage_ = other.reserveSeatRequestMessage_;
+      if (!other.getReserveSeatResponseMessage().isEmpty()) {
+        reserveSeatResponseMessage_ = other.reserveSeatResponseMessage_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -450,97 +450,97 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int reserveSeatRequest_ ;
+    private int reserveSeatResponse_ ;
     /**
-     * <code>int32 reserve_seat_request = 1;</code>
+     * <code>int32 reserve_seat_response = 1;</code>
      */
-    public int getReserveSeatRequest() {
-      return reserveSeatRequest_;
+    public int getReserveSeatResponse() {
+      return reserveSeatResponse_;
     }
     /**
-     * <code>int32 reserve_seat_request = 1;</code>
+     * <code>int32 reserve_seat_response = 1;</code>
      */
-    public Builder setReserveSeatRequest(int value) {
+    public Builder setReserveSeatResponse(int value) {
       
-      reserveSeatRequest_ = value;
+      reserveSeatResponse_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 reserve_seat_request = 1;</code>
+     * <code>int32 reserve_seat_response = 1;</code>
      */
-    public Builder clearReserveSeatRequest() {
+    public Builder clearReserveSeatResponse() {
       
-      reserveSeatRequest_ = 0;
+      reserveSeatResponse_ = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object reserveSeatRequestMessage_ = "";
+    private java.lang.Object reserveSeatResponseMessage_ = "";
     /**
-     * <code>string reserve_seat_request_message = 2;</code>
+     * <code>string reserve_seat_response_message = 2;</code>
      */
-    public java.lang.String getReserveSeatRequestMessage() {
-      java.lang.Object ref = reserveSeatRequestMessage_;
+    public java.lang.String getReserveSeatResponseMessage() {
+      java.lang.Object ref = reserveSeatResponseMessage_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        reserveSeatRequestMessage_ = s;
+        reserveSeatResponseMessage_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string reserve_seat_request_message = 2;</code>
+     * <code>string reserve_seat_response_message = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getReserveSeatRequestMessageBytes() {
-      java.lang.Object ref = reserveSeatRequestMessage_;
+        getReserveSeatResponseMessageBytes() {
+      java.lang.Object ref = reserveSeatResponseMessage_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        reserveSeatRequestMessage_ = b;
+        reserveSeatResponseMessage_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string reserve_seat_request_message = 2;</code>
+     * <code>string reserve_seat_response_message = 2;</code>
      */
-    public Builder setReserveSeatRequestMessage(
+    public Builder setReserveSeatResponseMessage(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      reserveSeatRequestMessage_ = value;
+      reserveSeatResponseMessage_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string reserve_seat_request_message = 2;</code>
+     * <code>string reserve_seat_response_message = 2;</code>
      */
-    public Builder clearReserveSeatRequestMessage() {
+    public Builder clearReserveSeatResponseMessage() {
       
-      reserveSeatRequestMessage_ = getDefaultInstance().getReserveSeatRequestMessage();
+      reserveSeatResponseMessage_ = getDefaultInstance().getReserveSeatResponseMessage();
       onChanged();
       return this;
     }
     /**
-     * <code>string reserve_seat_request_message = 2;</code>
+     * <code>string reserve_seat_response_message = 2;</code>
      */
-    public Builder setReserveSeatRequestMessageBytes(
+    public Builder setReserveSeatResponseMessageBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      reserveSeatRequestMessage_ = value;
+      reserveSeatResponseMessage_ = value;
       onChanged();
       return this;
     }
