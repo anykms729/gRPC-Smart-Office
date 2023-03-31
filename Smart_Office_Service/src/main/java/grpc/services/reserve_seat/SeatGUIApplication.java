@@ -17,7 +17,6 @@ import java.net.UnknownHostException;
 public class SeatGUIApplication {
     private static ReserveSeatServiceGrpc.ReserveSeatServiceBlockingStub blockingStub;
     private static ReserveSeatServiceGrpc.ReserveSeatServiceStub asyncStub;
-
     private ServiceInfo reserveSeatService;
     private JFrame frame;
     private JTextField textNumber1;
@@ -169,9 +168,6 @@ public class SeatGUIApplication {
                 Ie.printStackTrace();
             }
 
-            if (e.getSource() == "Next") {
-
-            }
         });
     }
 

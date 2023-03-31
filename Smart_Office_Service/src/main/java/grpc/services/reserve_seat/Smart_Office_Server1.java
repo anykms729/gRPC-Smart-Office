@@ -3,13 +3,17 @@ package grpc.services.reserve_seat;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Smart_Office_Server1 extends ReserveSeatServiceGrpc.ReserveSeatServiceImplBase {
-    static List<Seat> seats;
-    int numSeats = 7;
+    //    public List<Seat> seats;
+    public List<Integer> seats;
+    public List<Integer> seatsReserved;
+    public int numSeats = 7;
+
 
     public static void main(String[] args) {
         Smart_Office_Server1 smart_office_server1 = new Smart_Office_Server1();
@@ -21,6 +25,14 @@ public class Smart_Office_Server1 extends ReserveSeatServiceGrpc.ReserveSeatServ
                     .start();
 
             System.out.println("Smart_Office_Server1 started, listening on " + port);
+
+            // Initialize the list of seats
+            smart_office_server1.seats = new ArrayList<>();
+            for (int i = 1; i <= smart_office_server1.numSeats; i++) {
+                smart_office_server1.seats.add(i);
+            }
+            smart_office_server1.seatsReserved = new ArrayList<>();
+            smart_office_server1.seatsReserved.add(0);
             server.awaitTermination();
 
         } catch (IOException e) {
@@ -33,18 +45,12 @@ public class Smart_Office_Server1 extends ReserveSeatServiceGrpc.ReserveSeatServ
     }
 
     public void availableSeat(AvailableSeatRequest available_seat_request, StreamObserver<AvailableSeatResponse> responseObserver) {
-        // Initialize the list of seats
-        seats = new ArrayList<>();
-        for (int i = 1; i <= numSeats; i++) {
-            seats.add(new Seat(i));
-        }
-
         System.out.println("Receiving Seat Reservation Request " + available_seat_request.getAvailableSeatRequest());
 
         // Display the available seats
         System.out.println("Available seats:");
-        for (int i = 1; i <= numSeats; i++) {
-            AvailableSeatResponse reply = AvailableSeatResponse.newBuilder().setAvailableSeatResponse(i).build();
+        for (int i = 0; i < numSeats; i++) {
+            AvailableSeatResponse reply = AvailableSeatResponse.newBuilder().setAvailableSeatResponse(seats.get(i)).build();
             responseObserver.onNext(reply);
 
             try {
@@ -55,37 +61,44 @@ public class Smart_Office_Server1 extends ReserveSeatServiceGrpc.ReserveSeatServ
                 e.printStackTrace();
             }
         }
-
         responseObserver.onCompleted();
     }
 
     public void reserveSeat(ReserveSeatRequest reserve_seat_request, StreamObserver<ReserveSeatResponse> responseObserver) {
+        Smart_Office_Server1 smart_office_server1 = new Smart_Office_Server1();
         int seatNum = reserve_seat_request.getReserveSeatRequest();
         String message = "";
 
         if (seatNum == 0) {
             message = "You choose exit option,bye!";
-        }
-        if (seatNum < 1 || seatNum > numSeats) {
+        } else if (seatNum < 1 || seatNum > numSeats) {
             message = "is in an invalid range";
+        } else {
+            try {
+                if (seatsReserved.contains(seatNum)) {
+                    message = "is already occupied, please choose another seat";
+                } else {
+                    message = "has reserved successfully";
+                    seatsReserved.add(seatNum);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        message = "has reserved successfully";
 
         ReserveSeatResponse reply = ReserveSeatResponse.newBuilder().setReserveSeatResponse(seatNum).setReserveSeatResponseMessage(message).build();
-
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
     }
 
 
-    class Seat {
-        private int seatNumber;
-        private boolean reserved;
+    public static class Seat {
+        public int seatNumber;
+        public boolean reserved = false;
 
 
         public Seat(int seatNumber) {
             this.seatNumber = seatNumber;
-            this.reserved = false;
         }
 
         public void setSeatNumber(int seatNumber) {
