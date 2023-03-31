@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Smart_Office_Server1 extends ReserveSeatServiceGrpc.ReserveSeatServiceImplBase {
-    //    public List<Seat> seats;
     public List<Integer> seats;
     public List<Integer> seatsReserved;
     public int numSeats = 7;

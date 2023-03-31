@@ -12,7 +12,7 @@ package office_service;
 
 // Interface exported by the server.
 service HRDepartmentService {
-  // rpc method for server streaming calls
+  // rpc method for Bidirectional streaming calls
   rpc check(stream WeeklyWorkingHourRequest) returns (stream WeeklyWorkingHourResponse);
 
   // rpc method for client streaming calls

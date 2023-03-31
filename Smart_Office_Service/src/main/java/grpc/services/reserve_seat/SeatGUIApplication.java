@@ -59,9 +59,7 @@ public class SeatGUIApplication {
                 @Override
                 public void serviceResolved(ServiceEvent event) {
                     System.out.println("Reserve Seat Service resolved: " + event.getInfo());
-
                     reserveSeatService = event.getInfo();
-
                     int port = reserveSeatService.getPort();
 
                     System.out.println("resolving " + service_type + " with properties ...");
@@ -98,7 +96,7 @@ public class SeatGUIApplication {
         }
     }
 
-
+// https://stackoverflow.com/questions/42465522/how-to-make-this-text-area-show-which-toggle-buttons-are-selected
     private void initialize() {
         frame = new JFrame();
         frame.setTitle("Seat Reservation Service");
@@ -170,5 +168,4 @@ public class SeatGUIApplication {
 
         });
     }
-
 }
