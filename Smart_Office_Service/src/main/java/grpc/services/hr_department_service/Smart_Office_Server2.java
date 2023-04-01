@@ -8,7 +8,6 @@ import java.io.IOException;
 
 public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentServiceImplBase {
 
-//    public int numSeats = 7;
 
     public static void main(String[] args) {
         grpc.services.hr_department_service.Smart_Office_Server2 smart_office_server2 = new grpc.services.hr_department_service.Smart_Office_Server2();
@@ -40,19 +39,23 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
             public void onNext(WeeklyWorkingHourRequest request) {
                 String weeklyWorkingHourMessage = "";
                 Integer statutoryWeeklyWorkingHours = 52;
-                System.out.println("Receiving Weekly Working Hours Status: "
-                        + request.getMondayWorkingHour()
-                        + request.getTuesdayWorkingHour() + request.getWednesdayWorkingHour()
-                        + request.getThursdayWorkingHour() + request.getFridayWorkingHour()
-                );
+
+
+                Integer accumulatedTillMonday = request.getMondayWorkingHour();
+                Integer accumulatedTillTuesday = request.getTuesdayWorkingHour() + accumulatedTillMonday;
+                Integer accumulatedTillWednesday = request.getWednesdayWorkingHour() + accumulatedTillTuesday;
+                Integer accumulatedTillThursday = request.getThursdayWorkingHour() + accumulatedTillWednesday;
+                Integer accumulatedTillFriday = request.getFridayWorkingHour() + accumulatedTillThursday;
+
 
                 Integer totalWeeklyWorkingHour = request.getMondayWorkingHour()
                         + request.getTuesdayWorkingHour() + request.getWednesdayWorkingHour()
                         + request.getThursdayWorkingHour() + request.getFridayWorkingHour();
 
+
                 try {
                     if (totalWeeklyWorkingHour > statutoryWeeklyWorkingHours) {
-                        weeklyWorkingHourMessage = "Your weekly working hour " + totalWeeklyWorkingHour + "exceeds " + statutoryWeeklyWorkingHours + " hours";
+                        weeklyWorkingHourMessage = "Your weekly working hours : " + totalWeeklyWorkingHour + " exceeds statutory" + statutoryWeeklyWorkingHours + " hours";
                     } else {
                         weeklyWorkingHourMessage = "You can still work " + (statutoryWeeklyWorkingHours - totalWeeklyWorkingHour) + " more hours in this week";
                     }

@@ -28,6 +28,7 @@ message WeeklyWorkingHourRequest {
   int32 wednesday_working_hour = 3;
   int32 thursday_working_hour = 4;
   int32 friday_working_hour = 5;
+  int32 dayCount = 6;
 }
 
 message WeeklyWorkingHourResponse {

@@ -63,7 +63,7 @@ public class HRGUIApplication {
 
                 @Override
                 public void serviceResolved(ServiceEvent event) {
-                    System.out.println("Reserve Seat Service resolved: " + event.getInfo());
+                    System.out.println("HR Department Service resolved: " + event.getInfo());
                     hrDepartmentService = event.getInfo();
                     int port = hrDepartmentService.getPort();
 
@@ -77,12 +77,12 @@ public class HRGUIApplication {
 
                 @Override
                 public void serviceRemoved(ServiceEvent event) {
-                    System.out.println("Reserve Seat Service removed: " + event.getInfo());
+                    System.out.println("HR Department Service removed: " + event.getInfo());
                 }
 
                 @Override
                 public void serviceAdded(ServiceEvent event) {
-                    System.out.println("Reserve Seat Service added: " + event.getInfo());
+                    System.out.println("HR Department Service added: " + event.getInfo());
                 }
             });
 
@@ -152,8 +152,8 @@ public class HRGUIApplication {
         panel_service_1.add(btnMonthlyPayroll);
 
         btnWeeklyWorkingHour.addActionListener(e -> {
-            int request_message_count = 0;
 
+            // Accumulated hour as the day goes by
             int monday = Integer.parseInt(textNumber1.getText());
             int tuesday = Integer.parseInt(textNumber2.getText());
             int wednesday = Integer.parseInt(textNumber3.getText());
@@ -161,7 +161,7 @@ public class HRGUIApplication {
             int friday = Integer.parseInt(textNumber5.getText());
 
 
-            StreamObserver<WeeklyWorkingHourResponse> responseObserver = new StreamObserver<WeeklyWorkingHourResponse>() {
+            StreamObserver<WeeklyWorkingHourResponse> responseObserver = new StreamObserver<>() {
 
                 @Override
                 public void onNext(WeeklyWorkingHourResponse response) {
@@ -183,7 +183,6 @@ public class HRGUIApplication {
             StreamObserver<WeeklyWorkingHourRequest> requestObserver = asyncStub.check(responseObserver);
 
             try {
-
                 requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setMondayWorkingHour(monday).build());
                 requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setTuesdayWorkingHour(tuesday).build());
                 requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setWednesdayWorkingHour(wednesday).build());
