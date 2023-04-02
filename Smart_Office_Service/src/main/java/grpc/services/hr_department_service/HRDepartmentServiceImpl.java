@@ -45,12 +45,12 @@ public final class HRDepartmentServiceImpl {
     java.lang.String[] descriptorData = {
       "\n\031HRDepartmentService.proto\022\016office_serv" +
       "ice\"\303\001\n\030WeeklyWorkingHourRequest\022\033\n\023mond" +
-      "ay_working_hour\030\001 \001(\005\022\034\n\024tuesday_working" +
-      "_hour\030\002 \001(\005\022\036\n\026wednesday_working_hour\030\003 " +
-      "\001(\005\022\035\n\025thursday_working_hour\030\004 \001(\005\022\033\n\023fr" +
-      "iday_working_hour\030\005 \001(\005\022\020\n\010dayCount\030\006 \001(" +
+      "ay_working_hour\030\001 \001(\001\022\034\n\024tuesday_working" +
+      "_hour\030\002 \001(\001\022\036\n\026wednesday_working_hour\030\003 " +
+      "\001(\001\022\035\n\025thursday_working_hour\030\004 \001(\001\022\033\n\023fr" +
+      "iday_working_hour\030\005 \001(\001\022\020\n\010dayCount\030\006 \001(" +
       "\005\"c\n\031WeeklyWorkingHourResponse\022!\n\031total_" +
-      "weekly_working_hour\030\001 \001(\005\022#\n\033weekly_work" +
+      "weekly_working_hour\030\001 \001(\001\022#\n\033weekly_work" +
       "ing_hour_message\030\002 \001(\t\"w\n\027Monthly_Payrol" +
       "l_Request\022\033\n\023normal_working_hour\030\001 \001(\005\022 " +
       "\n\030holiday_pay_working_hour\030\002 \001(\005\022\035\n\025over" +

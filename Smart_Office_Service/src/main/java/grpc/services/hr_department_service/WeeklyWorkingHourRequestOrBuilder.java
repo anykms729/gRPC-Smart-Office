@@ -8,29 +8,29 @@ public interface WeeklyWorkingHourRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 monday_working_hour = 1;</code>
+   * <code>double monday_working_hour = 1;</code>
    */
-  int getMondayWorkingHour();
+  double getMondayWorkingHour();
 
   /**
-   * <code>int32 tuesday_working_hour = 2;</code>
+   * <code>double tuesday_working_hour = 2;</code>
    */
-  int getTuesdayWorkingHour();
+  double getTuesdayWorkingHour();
 
   /**
-   * <code>int32 wednesday_working_hour = 3;</code>
+   * <code>double wednesday_working_hour = 3;</code>
    */
-  int getWednesdayWorkingHour();
+  double getWednesdayWorkingHour();
 
   /**
-   * <code>int32 thursday_working_hour = 4;</code>
+   * <code>double thursday_working_hour = 4;</code>
    */
-  int getThursdayWorkingHour();
+  double getThursdayWorkingHour();
 
   /**
-   * <code>int32 friday_working_hour = 5;</code>
+   * <code>double friday_working_hour = 5;</code>
    */
-  int getFridayWorkingHour();
+  double getFridayWorkingHour();
 
   /**
    * <code>int32 dayCount = 6;</code>

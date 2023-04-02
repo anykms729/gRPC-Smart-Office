@@ -16,11 +16,11 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private WeeklyWorkingHourRequest() {
-    mondayWorkingHour_ = 0;
-    tuesdayWorkingHour_ = 0;
-    wednesdayWorkingHour_ = 0;
-    thursdayWorkingHour_ = 0;
-    fridayWorkingHour_ = 0;
+    mondayWorkingHour_ = 0D;
+    tuesdayWorkingHour_ = 0D;
+    wednesdayWorkingHour_ = 0D;
+    thursdayWorkingHour_ = 0D;
+    fridayWorkingHour_ = 0D;
     dayCount_ = 0;
   }
 
@@ -48,29 +48,29 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 9: {
 
-            mondayWorkingHour_ = input.readInt32();
+            mondayWorkingHour_ = input.readDouble();
             break;
           }
-          case 16: {
+          case 17: {
 
-            tuesdayWorkingHour_ = input.readInt32();
+            tuesdayWorkingHour_ = input.readDouble();
             break;
           }
-          case 24: {
+          case 25: {
 
-            wednesdayWorkingHour_ = input.readInt32();
+            wednesdayWorkingHour_ = input.readDouble();
             break;
           }
-          case 32: {
+          case 33: {
 
-            thursdayWorkingHour_ = input.readInt32();
+            thursdayWorkingHour_ = input.readDouble();
             break;
           }
-          case 40: {
+          case 41: {
 
-            fridayWorkingHour_ = input.readInt32();
+            fridayWorkingHour_ = input.readDouble();
             break;
           }
           case 48: {
@@ -111,47 +111,47 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MONDAY_WORKING_HOUR_FIELD_NUMBER = 1;
-  private int mondayWorkingHour_;
+  private double mondayWorkingHour_;
   /**
-   * <code>int32 monday_working_hour = 1;</code>
+   * <code>double monday_working_hour = 1;</code>
    */
-  public int getMondayWorkingHour() {
+  public double getMondayWorkingHour() {
     return mondayWorkingHour_;
   }
 
   public static final int TUESDAY_WORKING_HOUR_FIELD_NUMBER = 2;
-  private int tuesdayWorkingHour_;
+  private double tuesdayWorkingHour_;
   /**
-   * <code>int32 tuesday_working_hour = 2;</code>
+   * <code>double tuesday_working_hour = 2;</code>
    */
-  public int getTuesdayWorkingHour() {
+  public double getTuesdayWorkingHour() {
     return tuesdayWorkingHour_;
   }
 
   public static final int WEDNESDAY_WORKING_HOUR_FIELD_NUMBER = 3;
-  private int wednesdayWorkingHour_;
+  private double wednesdayWorkingHour_;
   /**
-   * <code>int32 wednesday_working_hour = 3;</code>
+   * <code>double wednesday_working_hour = 3;</code>
    */
-  public int getWednesdayWorkingHour() {
+  public double getWednesdayWorkingHour() {
     return wednesdayWorkingHour_;
   }
 
   public static final int THURSDAY_WORKING_HOUR_FIELD_NUMBER = 4;
-  private int thursdayWorkingHour_;
+  private double thursdayWorkingHour_;
   /**
-   * <code>int32 thursday_working_hour = 4;</code>
+   * <code>double thursday_working_hour = 4;</code>
    */
-  public int getThursdayWorkingHour() {
+  public double getThursdayWorkingHour() {
     return thursdayWorkingHour_;
   }
 
   public static final int FRIDAY_WORKING_HOUR_FIELD_NUMBER = 5;
-  private int fridayWorkingHour_;
+  private double fridayWorkingHour_;
   /**
-   * <code>int32 friday_working_hour = 5;</code>
+   * <code>double friday_working_hour = 5;</code>
    */
-  public int getFridayWorkingHour() {
+  public double getFridayWorkingHour() {
     return fridayWorkingHour_;
   }
 
@@ -178,20 +178,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (mondayWorkingHour_ != 0) {
-      output.writeInt32(1, mondayWorkingHour_);
+    if (mondayWorkingHour_ != 0D) {
+      output.writeDouble(1, mondayWorkingHour_);
     }
-    if (tuesdayWorkingHour_ != 0) {
-      output.writeInt32(2, tuesdayWorkingHour_);
+    if (tuesdayWorkingHour_ != 0D) {
+      output.writeDouble(2, tuesdayWorkingHour_);
     }
-    if (wednesdayWorkingHour_ != 0) {
-      output.writeInt32(3, wednesdayWorkingHour_);
+    if (wednesdayWorkingHour_ != 0D) {
+      output.writeDouble(3, wednesdayWorkingHour_);
     }
-    if (thursdayWorkingHour_ != 0) {
-      output.writeInt32(4, thursdayWorkingHour_);
+    if (thursdayWorkingHour_ != 0D) {
+      output.writeDouble(4, thursdayWorkingHour_);
     }
-    if (fridayWorkingHour_ != 0) {
-      output.writeInt32(5, fridayWorkingHour_);
+    if (fridayWorkingHour_ != 0D) {
+      output.writeDouble(5, fridayWorkingHour_);
     }
     if (dayCount_ != 0) {
       output.writeInt32(6, dayCount_);
@@ -205,25 +205,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (mondayWorkingHour_ != 0) {
+    if (mondayWorkingHour_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, mondayWorkingHour_);
+        .computeDoubleSize(1, mondayWorkingHour_);
     }
-    if (tuesdayWorkingHour_ != 0) {
+    if (tuesdayWorkingHour_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, tuesdayWorkingHour_);
+        .computeDoubleSize(2, tuesdayWorkingHour_);
     }
-    if (wednesdayWorkingHour_ != 0) {
+    if (wednesdayWorkingHour_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, wednesdayWorkingHour_);
+        .computeDoubleSize(3, wednesdayWorkingHour_);
     }
-    if (thursdayWorkingHour_ != 0) {
+    if (thursdayWorkingHour_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, thursdayWorkingHour_);
+        .computeDoubleSize(4, thursdayWorkingHour_);
     }
-    if (fridayWorkingHour_ != 0) {
+    if (fridayWorkingHour_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, fridayWorkingHour_);
+        .computeDoubleSize(5, fridayWorkingHour_);
     }
     if (dayCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -245,16 +245,26 @@ private static final long serialVersionUID = 0L;
     grpc.services.hr_department_service.WeeklyWorkingHourRequest other = (grpc.services.hr_department_service.WeeklyWorkingHourRequest) obj;
 
     boolean result = true;
-    result = result && (getMondayWorkingHour()
-        == other.getMondayWorkingHour());
-    result = result && (getTuesdayWorkingHour()
-        == other.getTuesdayWorkingHour());
-    result = result && (getWednesdayWorkingHour()
-        == other.getWednesdayWorkingHour());
-    result = result && (getThursdayWorkingHour()
-        == other.getThursdayWorkingHour());
-    result = result && (getFridayWorkingHour()
-        == other.getFridayWorkingHour());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getMondayWorkingHour())
+        == java.lang.Double.doubleToLongBits(
+            other.getMondayWorkingHour()));
+    result = result && (
+        java.lang.Double.doubleToLongBits(getTuesdayWorkingHour())
+        == java.lang.Double.doubleToLongBits(
+            other.getTuesdayWorkingHour()));
+    result = result && (
+        java.lang.Double.doubleToLongBits(getWednesdayWorkingHour())
+        == java.lang.Double.doubleToLongBits(
+            other.getWednesdayWorkingHour()));
+    result = result && (
+        java.lang.Double.doubleToLongBits(getThursdayWorkingHour())
+        == java.lang.Double.doubleToLongBits(
+            other.getThursdayWorkingHour()));
+    result = result && (
+        java.lang.Double.doubleToLongBits(getFridayWorkingHour())
+        == java.lang.Double.doubleToLongBits(
+            other.getFridayWorkingHour()));
     result = result && (getDayCount()
         == other.getDayCount());
     result = result && unknownFields.equals(other.unknownFields);
@@ -269,15 +279,20 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MONDAY_WORKING_HOUR_FIELD_NUMBER;
-    hash = (53 * hash) + getMondayWorkingHour();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getMondayWorkingHour()));
     hash = (37 * hash) + TUESDAY_WORKING_HOUR_FIELD_NUMBER;
-    hash = (53 * hash) + getTuesdayWorkingHour();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getTuesdayWorkingHour()));
     hash = (37 * hash) + WEDNESDAY_WORKING_HOUR_FIELD_NUMBER;
-    hash = (53 * hash) + getWednesdayWorkingHour();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getWednesdayWorkingHour()));
     hash = (37 * hash) + THURSDAY_WORKING_HOUR_FIELD_NUMBER;
-    hash = (53 * hash) + getThursdayWorkingHour();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getThursdayWorkingHour()));
     hash = (37 * hash) + FRIDAY_WORKING_HOUR_FIELD_NUMBER;
-    hash = (53 * hash) + getFridayWorkingHour();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getFridayWorkingHour()));
     hash = (37 * hash) + DAYCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getDayCount();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -413,15 +428,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mondayWorkingHour_ = 0;
+      mondayWorkingHour_ = 0D;
 
-      tuesdayWorkingHour_ = 0;
+      tuesdayWorkingHour_ = 0D;
 
-      wednesdayWorkingHour_ = 0;
+      wednesdayWorkingHour_ = 0D;
 
-      thursdayWorkingHour_ = 0;
+      thursdayWorkingHour_ = 0D;
 
-      fridayWorkingHour_ = 0;
+      fridayWorkingHour_ = 0D;
 
       dayCount_ = 0;
 
@@ -505,19 +520,19 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(grpc.services.hr_department_service.WeeklyWorkingHourRequest other) {
       if (other == grpc.services.hr_department_service.WeeklyWorkingHourRequest.getDefaultInstance()) return this;
-      if (other.getMondayWorkingHour() != 0) {
+      if (other.getMondayWorkingHour() != 0D) {
         setMondayWorkingHour(other.getMondayWorkingHour());
       }
-      if (other.getTuesdayWorkingHour() != 0) {
+      if (other.getTuesdayWorkingHour() != 0D) {
         setTuesdayWorkingHour(other.getTuesdayWorkingHour());
       }
-      if (other.getWednesdayWorkingHour() != 0) {
+      if (other.getWednesdayWorkingHour() != 0D) {
         setWednesdayWorkingHour(other.getWednesdayWorkingHour());
       }
-      if (other.getThursdayWorkingHour() != 0) {
+      if (other.getThursdayWorkingHour() != 0D) {
         setThursdayWorkingHour(other.getThursdayWorkingHour());
       }
-      if (other.getFridayWorkingHour() != 0) {
+      if (other.getFridayWorkingHour() != 0D) {
         setFridayWorkingHour(other.getFridayWorkingHour());
       }
       if (other.getDayCount() != 0) {
@@ -552,132 +567,132 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int mondayWorkingHour_ ;
+    private double mondayWorkingHour_ ;
     /**
-     * <code>int32 monday_working_hour = 1;</code>
+     * <code>double monday_working_hour = 1;</code>
      */
-    public int getMondayWorkingHour() {
+    public double getMondayWorkingHour() {
       return mondayWorkingHour_;
     }
     /**
-     * <code>int32 monday_working_hour = 1;</code>
+     * <code>double monday_working_hour = 1;</code>
      */
-    public Builder setMondayWorkingHour(int value) {
+    public Builder setMondayWorkingHour(double value) {
       
       mondayWorkingHour_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 monday_working_hour = 1;</code>
+     * <code>double monday_working_hour = 1;</code>
      */
     public Builder clearMondayWorkingHour() {
       
-      mondayWorkingHour_ = 0;
+      mondayWorkingHour_ = 0D;
       onChanged();
       return this;
     }
 
-    private int tuesdayWorkingHour_ ;
+    private double tuesdayWorkingHour_ ;
     /**
-     * <code>int32 tuesday_working_hour = 2;</code>
+     * <code>double tuesday_working_hour = 2;</code>
      */
-    public int getTuesdayWorkingHour() {
+    public double getTuesdayWorkingHour() {
       return tuesdayWorkingHour_;
     }
     /**
-     * <code>int32 tuesday_working_hour = 2;</code>
+     * <code>double tuesday_working_hour = 2;</code>
      */
-    public Builder setTuesdayWorkingHour(int value) {
+    public Builder setTuesdayWorkingHour(double value) {
       
       tuesdayWorkingHour_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 tuesday_working_hour = 2;</code>
+     * <code>double tuesday_working_hour = 2;</code>
      */
     public Builder clearTuesdayWorkingHour() {
       
-      tuesdayWorkingHour_ = 0;
+      tuesdayWorkingHour_ = 0D;
       onChanged();
       return this;
     }
 
-    private int wednesdayWorkingHour_ ;
+    private double wednesdayWorkingHour_ ;
     /**
-     * <code>int32 wednesday_working_hour = 3;</code>
+     * <code>double wednesday_working_hour = 3;</code>
      */
-    public int getWednesdayWorkingHour() {
+    public double getWednesdayWorkingHour() {
       return wednesdayWorkingHour_;
     }
     /**
-     * <code>int32 wednesday_working_hour = 3;</code>
+     * <code>double wednesday_working_hour = 3;</code>
      */
-    public Builder setWednesdayWorkingHour(int value) {
+    public Builder setWednesdayWorkingHour(double value) {
       
       wednesdayWorkingHour_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 wednesday_working_hour = 3;</code>
+     * <code>double wednesday_working_hour = 3;</code>
      */
     public Builder clearWednesdayWorkingHour() {
       
-      wednesdayWorkingHour_ = 0;
+      wednesdayWorkingHour_ = 0D;
       onChanged();
       return this;
     }
 
-    private int thursdayWorkingHour_ ;
+    private double thursdayWorkingHour_ ;
     /**
-     * <code>int32 thursday_working_hour = 4;</code>
+     * <code>double thursday_working_hour = 4;</code>
      */
-    public int getThursdayWorkingHour() {
+    public double getThursdayWorkingHour() {
       return thursdayWorkingHour_;
     }
     /**
-     * <code>int32 thursday_working_hour = 4;</code>
+     * <code>double thursday_working_hour = 4;</code>
      */
-    public Builder setThursdayWorkingHour(int value) {
+    public Builder setThursdayWorkingHour(double value) {
       
       thursdayWorkingHour_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 thursday_working_hour = 4;</code>
+     * <code>double thursday_working_hour = 4;</code>
      */
     public Builder clearThursdayWorkingHour() {
       
-      thursdayWorkingHour_ = 0;
+      thursdayWorkingHour_ = 0D;
       onChanged();
       return this;
     }
 
-    private int fridayWorkingHour_ ;
+    private double fridayWorkingHour_ ;
     /**
-     * <code>int32 friday_working_hour = 5;</code>
+     * <code>double friday_working_hour = 5;</code>
      */
-    public int getFridayWorkingHour() {
+    public double getFridayWorkingHour() {
       return fridayWorkingHour_;
     }
     /**
-     * <code>int32 friday_working_hour = 5;</code>
+     * <code>double friday_working_hour = 5;</code>
      */
-    public Builder setFridayWorkingHour(int value) {
+    public Builder setFridayWorkingHour(double value) {
       
       fridayWorkingHour_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 friday_working_hour = 5;</code>
+     * <code>double friday_working_hour = 5;</code>
      */
     public Builder clearFridayWorkingHour() {
       
-      fridayWorkingHour_ = 0;
+      fridayWorkingHour_ = 0D;
       onChanged();
       return this;
     }

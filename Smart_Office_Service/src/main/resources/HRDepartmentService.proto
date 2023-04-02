@@ -23,16 +23,16 @@ service HRDepartmentService {
 // define each variable in rpc method separately
 
 message WeeklyWorkingHourRequest {
-  int32 monday_working_hour = 1;
-  int32 tuesday_working_hour = 2;
-  int32 wednesday_working_hour = 3;
-  int32 thursday_working_hour = 4;
-  int32 friday_working_hour = 5;
+  double monday_working_hour = 1;
+  double tuesday_working_hour = 2;
+  double wednesday_working_hour = 3;
+  double thursday_working_hour = 4;
+  double friday_working_hour = 5;
   int32 dayCount = 6;
 }
 
 message WeeklyWorkingHourResponse {
-  int32 total_weekly_working_hour = 1;
+  double total_weekly_working_hour = 1;
   string weekly_working_hour_message = 2;
 }
 

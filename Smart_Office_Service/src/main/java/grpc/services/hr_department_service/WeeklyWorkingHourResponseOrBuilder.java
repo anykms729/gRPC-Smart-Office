@@ -8,9 +8,9 @@ public interface WeeklyWorkingHourResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 total_weekly_working_hour = 1;</code>
+   * <code>double total_weekly_working_hour = 1;</code>
    */
-  int getTotalWeeklyWorkingHour();
+  double getTotalWeeklyWorkingHour();
 
   /**
    * <code>string weekly_working_hour_message = 2;</code>

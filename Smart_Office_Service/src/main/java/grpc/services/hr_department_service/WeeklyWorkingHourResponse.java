@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private WeeklyWorkingHourResponse() {
-    totalWeeklyWorkingHour_ = 0;
+    totalWeeklyWorkingHour_ = 0D;
     weeklyWorkingHourMessage_ = "";
   }
 
@@ -44,9 +44,9 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 9: {
 
-            totalWeeklyWorkingHour_ = input.readInt32();
+            totalWeeklyWorkingHour_ = input.readDouble();
             break;
           }
           case 18: {
@@ -88,11 +88,11 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOTAL_WEEKLY_WORKING_HOUR_FIELD_NUMBER = 1;
-  private int totalWeeklyWorkingHour_;
+  private double totalWeeklyWorkingHour_;
   /**
-   * <code>int32 total_weekly_working_hour = 1;</code>
+   * <code>double total_weekly_working_hour = 1;</code>
    */
-  public int getTotalWeeklyWorkingHour() {
+  public double getTotalWeeklyWorkingHour() {
     return totalWeeklyWorkingHour_;
   }
 
@@ -144,8 +144,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (totalWeeklyWorkingHour_ != 0) {
-      output.writeInt32(1, totalWeeklyWorkingHour_);
+    if (totalWeeklyWorkingHour_ != 0D) {
+      output.writeDouble(1, totalWeeklyWorkingHour_);
     }
     if (!getWeeklyWorkingHourMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, weeklyWorkingHourMessage_);
@@ -159,9 +159,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (totalWeeklyWorkingHour_ != 0) {
+    if (totalWeeklyWorkingHour_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, totalWeeklyWorkingHour_);
+        .computeDoubleSize(1, totalWeeklyWorkingHour_);
     }
     if (!getWeeklyWorkingHourMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, weeklyWorkingHourMessage_);
@@ -182,8 +182,10 @@ private static final long serialVersionUID = 0L;
     grpc.services.hr_department_service.WeeklyWorkingHourResponse other = (grpc.services.hr_department_service.WeeklyWorkingHourResponse) obj;
 
     boolean result = true;
-    result = result && (getTotalWeeklyWorkingHour()
-        == other.getTotalWeeklyWorkingHour());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getTotalWeeklyWorkingHour())
+        == java.lang.Double.doubleToLongBits(
+            other.getTotalWeeklyWorkingHour()));
     result = result && getWeeklyWorkingHourMessage()
         .equals(other.getWeeklyWorkingHourMessage());
     result = result && unknownFields.equals(other.unknownFields);
@@ -198,7 +200,8 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TOTAL_WEEKLY_WORKING_HOUR_FIELD_NUMBER;
-    hash = (53 * hash) + getTotalWeeklyWorkingHour();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getTotalWeeklyWorkingHour()));
     hash = (37 * hash) + WEEKLY_WORKING_HOUR_MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getWeeklyWorkingHourMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -334,7 +337,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      totalWeeklyWorkingHour_ = 0;
+      totalWeeklyWorkingHour_ = 0D;
 
       weeklyWorkingHourMessage_ = "";
 
@@ -414,7 +417,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(grpc.services.hr_department_service.WeeklyWorkingHourResponse other) {
       if (other == grpc.services.hr_department_service.WeeklyWorkingHourResponse.getDefaultInstance()) return this;
-      if (other.getTotalWeeklyWorkingHour() != 0) {
+      if (other.getTotalWeeklyWorkingHour() != 0D) {
         setTotalWeeklyWorkingHour(other.getTotalWeeklyWorkingHour());
       }
       if (!other.getWeeklyWorkingHourMessage().isEmpty()) {
@@ -450,28 +453,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int totalWeeklyWorkingHour_ ;
+    private double totalWeeklyWorkingHour_ ;
     /**
-     * <code>int32 total_weekly_working_hour = 1;</code>
+     * <code>double total_weekly_working_hour = 1;</code>
      */
-    public int getTotalWeeklyWorkingHour() {
+    public double getTotalWeeklyWorkingHour() {
       return totalWeeklyWorkingHour_;
     }
     /**
-     * <code>int32 total_weekly_working_hour = 1;</code>
+     * <code>double total_weekly_working_hour = 1;</code>
      */
-    public Builder setTotalWeeklyWorkingHour(int value) {
+    public Builder setTotalWeeklyWorkingHour(double value) {
       
       totalWeeklyWorkingHour_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 total_weekly_working_hour = 1;</code>
+     * <code>double total_weekly_working_hour = 1;</code>
      */
     public Builder clearTotalWeeklyWorkingHour() {
       
-      totalWeeklyWorkingHour_ = 0;
+      totalWeeklyWorkingHour_ = 0D;
       onChanged();
       return this;
     }
