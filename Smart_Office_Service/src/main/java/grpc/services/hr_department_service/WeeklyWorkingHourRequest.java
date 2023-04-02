@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     wednesdayWorkingHour_ = 0;
     thursdayWorkingHour_ = 0;
     fridayWorkingHour_ = 0;
+    dayCount_ = 0;
   }
 
   @java.lang.Override
@@ -70,6 +71,11 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             fridayWorkingHour_ = input.readInt32();
+            break;
+          }
+          case 48: {
+
+            dayCount_ = input.readInt32();
             break;
           }
           default: {
@@ -149,6 +155,15 @@ private static final long serialVersionUID = 0L;
     return fridayWorkingHour_;
   }
 
+  public static final int DAYCOUNT_FIELD_NUMBER = 6;
+  private int dayCount_;
+  /**
+   * <code>int32 dayCount = 6;</code>
+   */
+  public int getDayCount() {
+    return dayCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -177,6 +192,9 @@ private static final long serialVersionUID = 0L;
     }
     if (fridayWorkingHour_ != 0) {
       output.writeInt32(5, fridayWorkingHour_);
+    }
+    if (dayCount_ != 0) {
+      output.writeInt32(6, dayCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -207,6 +225,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, fridayWorkingHour_);
     }
+    if (dayCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, dayCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -233,6 +255,8 @@ private static final long serialVersionUID = 0L;
         == other.getThursdayWorkingHour());
     result = result && (getFridayWorkingHour()
         == other.getFridayWorkingHour());
+    result = result && (getDayCount()
+        == other.getDayCount());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -254,6 +278,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getThursdayWorkingHour();
     hash = (37 * hash) + FRIDAY_WORKING_HOUR_FIELD_NUMBER;
     hash = (53 * hash) + getFridayWorkingHour();
+    hash = (37 * hash) + DAYCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getDayCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -397,6 +423,8 @@ private static final long serialVersionUID = 0L;
 
       fridayWorkingHour_ = 0;
 
+      dayCount_ = 0;
+
       return this;
     }
 
@@ -428,6 +456,7 @@ private static final long serialVersionUID = 0L;
       result.wednesdayWorkingHour_ = wednesdayWorkingHour_;
       result.thursdayWorkingHour_ = thursdayWorkingHour_;
       result.fridayWorkingHour_ = fridayWorkingHour_;
+      result.dayCount_ = dayCount_;
       onBuilt();
       return result;
     }
@@ -490,6 +519,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getFridayWorkingHour() != 0) {
         setFridayWorkingHour(other.getFridayWorkingHour());
+      }
+      if (other.getDayCount() != 0) {
+        setDayCount(other.getDayCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -646,6 +678,32 @@ private static final long serialVersionUID = 0L;
     public Builder clearFridayWorkingHour() {
       
       fridayWorkingHour_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int dayCount_ ;
+    /**
+     * <code>int32 dayCount = 6;</code>
+     */
+    public int getDayCount() {
+      return dayCount_;
+    }
+    /**
+     * <code>int32 dayCount = 6;</code>
+     */
+    public Builder setDayCount(int value) {
+      
+      dayCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 dayCount = 6;</code>
+     */
+    public Builder clearDayCount() {
+      
+      dayCount_ = 0;
       onChanged();
       return this;
     }

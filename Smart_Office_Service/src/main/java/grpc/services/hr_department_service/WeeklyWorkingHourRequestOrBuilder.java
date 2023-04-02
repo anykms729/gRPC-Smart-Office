@@ -31,4 +31,9 @@ public interface WeeklyWorkingHourRequestOrBuilder extends
    * <code>int32 friday_working_hour = 5;</code>
    */
   int getFridayWorkingHour();
+
+  /**
+   * <code>int32 dayCount = 6;</code>
+   */
+  int getDayCount();
 }

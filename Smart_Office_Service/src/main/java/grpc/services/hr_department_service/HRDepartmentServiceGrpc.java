@@ -126,7 +126,7 @@ public final class HRDepartmentServiceGrpc {
 
     /**
      * <pre>
-     * rpc method for server streaming calls
+     * rpc method for Bidirectional streaming calls
      * </pre>
      */
     public io.grpc.stub.StreamObserver<grpc.services.hr_department_service.WeeklyWorkingHourRequest> check(
@@ -187,7 +187,7 @@ public final class HRDepartmentServiceGrpc {
 
     /**
      * <pre>
-     * rpc method for server streaming calls
+     * rpc method for Bidirectional streaming calls
      * </pre>
      */
     public io.grpc.stub.StreamObserver<grpc.services.hr_department_service.WeeklyWorkingHourRequest> check(

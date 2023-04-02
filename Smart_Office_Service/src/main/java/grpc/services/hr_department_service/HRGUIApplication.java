@@ -165,7 +165,7 @@ public class HRGUIApplication {
 
                 @Override
                 public void onNext(WeeklyWorkingHourResponse response) {
-                    System.out.println("Receiving Weekly Total Working Hour: " + response.getTotalWeeklyWorkingHour() + " with message: " + response.getWeeklyWorkingHourMessage());
+                    System.out.println(response.getWeeklyWorkingHourMessage());
                 }
 
                 @Override
@@ -183,11 +183,17 @@ public class HRGUIApplication {
             StreamObserver<WeeklyWorkingHourRequest> requestObserver = asyncStub.check(responseObserver);
 
             try {
-                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setMondayWorkingHour(monday).build());
-                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setTuesdayWorkingHour(tuesday).build());
-                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setWednesdayWorkingHour(wednesday).build());
-                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setThursdayWorkingHour(thursday).build());
-                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setFridayWorkingHour(friday).build());
+                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setMondayWorkingHour(monday).setDayCount(1).build());
+                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setTuesdayWorkingHour(tuesday).setDayCount(2).build());
+                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setWednesdayWorkingHour(wednesday).setDayCount(3).build());
+                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setThursdayWorkingHour(thursday).setDayCount(4).build());
+                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setFridayWorkingHour(friday).setDayCount(5).build());
+
+//                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setMondayWorkingHour(monday).build());
+//                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setTuesdayWorkingHour(tuesday).build());
+//                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setWednesdayWorkingHour(wednesday).build());
+//                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setThursdayWorkingHour(thursday).build());
+//                requestObserver.onNext(WeeklyWorkingHourRequest.newBuilder().setFridayWorkingHour(friday).build());
 
 
                 // Mark the end of requests

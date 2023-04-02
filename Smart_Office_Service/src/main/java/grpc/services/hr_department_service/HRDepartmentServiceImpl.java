@@ -44,26 +44,26 @@ public final class HRDepartmentServiceImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\031HRDepartmentService.proto\022\016office_serv" +
-      "ice\"\261\001\n\030WeeklyWorkingHourRequest\022\033\n\023mond" +
+      "ice\"\303\001\n\030WeeklyWorkingHourRequest\022\033\n\023mond" +
       "ay_working_hour\030\001 \001(\005\022\034\n\024tuesday_working" +
       "_hour\030\002 \001(\005\022\036\n\026wednesday_working_hour\030\003 " +
       "\001(\005\022\035\n\025thursday_working_hour\030\004 \001(\005\022\033\n\023fr" +
-      "iday_working_hour\030\005 \001(\005\"c\n\031WeeklyWorking" +
-      "HourResponse\022!\n\031total_weekly_working_hou" +
-      "r\030\001 \001(\005\022#\n\033weekly_working_hour_message\030\002" +
-      " \001(\t\"w\n\027Monthly_Payroll_Request\022\033\n\023norma" +
-      "l_working_hour\030\001 \001(\005\022 \n\030holiday_pay_work" +
-      "ing_hour\030\002 \001(\005\022\035\n\025overtime_working_hour\030" +
-      "\003 \001(\005\";\n\030Monthly_Payroll_Response\022\037\n\027mon" +
-      "thly_payroll_message\030\001 \001(\t2\332\001\n\023HRDepartm" +
-      "entService\022`\n\005check\022(.office_service.Wee" +
-      "klyWorkingHourRequest\032).office_service.W" +
-      "eeklyWorkingHourResponse(\0010\001\022a\n\ninput_ho" +
-      "ur\022\'.office_service.Monthly_Payroll_Requ" +
-      "est\032(.office_service.Monthly_Payroll_Res" +
-      "ponse(\001B@\n#grpc.services.hr_department_s" +
-      "erviceB\027HRDepartmentServiceImplP\001b\006proto" +
-      "3"
+      "iday_working_hour\030\005 \001(\005\022\020\n\010dayCount\030\006 \001(" +
+      "\005\"c\n\031WeeklyWorkingHourResponse\022!\n\031total_" +
+      "weekly_working_hour\030\001 \001(\005\022#\n\033weekly_work" +
+      "ing_hour_message\030\002 \001(\t\"w\n\027Monthly_Payrol" +
+      "l_Request\022\033\n\023normal_working_hour\030\001 \001(\005\022 " +
+      "\n\030holiday_pay_working_hour\030\002 \001(\005\022\035\n\025over" +
+      "time_working_hour\030\003 \001(\005\";\n\030Monthly_Payro" +
+      "ll_Response\022\037\n\027monthly_payroll_message\030\001" +
+      " \001(\t2\332\001\n\023HRDepartmentService\022`\n\005check\022(." +
+      "office_service.WeeklyWorkingHourRequest\032" +
+      ").office_service.WeeklyWorkingHourRespon" +
+      "se(\0010\001\022a\n\ninput_hour\022\'.office_service.Mo" +
+      "nthly_Payroll_Request\032(.office_service.M" +
+      "onthly_Payroll_Response(\001B@\n#grpc.servic" +
+      "es.hr_department_serviceB\027HRDepartmentSe" +
+      "rviceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -82,7 +82,7 @@ public final class HRDepartmentServiceImpl {
     internal_static_office_service_WeeklyWorkingHourRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_office_service_WeeklyWorkingHourRequest_descriptor,
-        new java.lang.String[] { "MondayWorkingHour", "TuesdayWorkingHour", "WednesdayWorkingHour", "ThursdayWorkingHour", "FridayWorkingHour", });
+        new java.lang.String[] { "MondayWorkingHour", "TuesdayWorkingHour", "WednesdayWorkingHour", "ThursdayWorkingHour", "FridayWorkingHour", "DayCount", });
     internal_static_office_service_WeeklyWorkingHourResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_office_service_WeeklyWorkingHourResponse_fieldAccessorTable = new
