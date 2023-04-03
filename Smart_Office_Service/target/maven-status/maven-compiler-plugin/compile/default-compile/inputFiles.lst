@@ -5,8 +5,6 @@ C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\j
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\hr_department_service\WeeklyWorkingHourRequest.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\hr_department_service\WeeklyWorkingHourResponseOrBuilder.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\sales_department_service\Stock_Request.java
-C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\hr_department_service\HRGUIApplication.java
-C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\hr_department_service\Smart_Office_Server2.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\reserve_seat\AvailableSeatResponseOrBuilder.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\reserve_seat\ReserveSeatResponseOrBuilder.java
 C:\Users\user\Documents\GitHub\gRPC_Smart_Office\Smart_Office_Service\src\main\java\grpc\services\hr_department_service\Monthly_Payroll_RequestOrBuilder.java

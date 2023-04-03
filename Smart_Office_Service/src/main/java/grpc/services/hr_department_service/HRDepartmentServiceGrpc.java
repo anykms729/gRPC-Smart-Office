@@ -66,7 +66,7 @@ public final class HRDepartmentServiceGrpc {
       grpc.services.hr_department_service.Monthly_Payroll_Response> getInputHourMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "input_hour",
+      fullMethodName = SERVICE_NAME + '/' + "inputHour",
       requestType = grpc.services.hr_department_service.Monthly_Payroll_Request.class,
       responseType = grpc.services.hr_department_service.Monthly_Payroll_Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
@@ -80,13 +80,13 @@ public final class HRDepartmentServiceGrpc {
               io.grpc.MethodDescriptor.<grpc.services.hr_department_service.Monthly_Payroll_Request, grpc.services.hr_department_service.Monthly_Payroll_Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "office_service.HRDepartmentService", "input_hour"))
+                  "office_service.HRDepartmentService", "inputHour"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.services.hr_department_service.Monthly_Payroll_Request.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.services.hr_department_service.Monthly_Payroll_Response.getDefaultInstance()))
-                  .setSchemaDescriptor(new HRDepartmentServiceMethodDescriptorSupplier("input_hour"))
+                  .setSchemaDescriptor(new HRDepartmentServiceMethodDescriptorSupplier("inputHour"))
                   .build();
           }
         }

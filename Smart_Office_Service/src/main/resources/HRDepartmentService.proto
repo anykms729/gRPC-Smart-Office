@@ -16,7 +16,7 @@ service HRDepartmentService {
   rpc check(stream WeeklyWorkingHourRequest) returns (stream WeeklyWorkingHourResponse);
 
   // rpc method for client streaming calls
-  rpc input_hour(stream Monthly_Payroll_Request) returns (Monthly_Payroll_Response);
+  rpc inputHour(stream Monthly_Payroll_Request) returns (Monthly_Payroll_Response);
 
 }
 

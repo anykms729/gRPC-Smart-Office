@@ -56,14 +56,14 @@ public final class HRDepartmentServiceImpl {
       "\n\030holiday_pay_working_hour\030\002 \001(\005\022\035\n\025over" +
       "time_working_hour\030\003 \001(\005\";\n\030Monthly_Payro" +
       "ll_Response\022\037\n\027monthly_payroll_message\030\001" +
-      " \001(\t2\332\001\n\023HRDepartmentService\022`\n\005check\022(." +
+      " \001(\t2\331\001\n\023HRDepartmentService\022`\n\005check\022(." +
       "office_service.WeeklyWorkingHourRequest\032" +
       ").office_service.WeeklyWorkingHourRespon" +
-      "se(\0010\001\022a\n\ninput_hour\022\'.office_service.Mo" +
-      "nthly_Payroll_Request\032(.office_service.M" +
-      "onthly_Payroll_Response(\001B@\n#grpc.servic" +
-      "es.hr_department_serviceB\027HRDepartmentSe" +
-      "rviceImplP\001b\006proto3"
+      "se(\0010\001\022`\n\tinputHour\022\'.office_service.Mon" +
+      "thly_Payroll_Request\032(.office_service.Mo" +
+      "nthly_Payroll_Response(\001B@\n#grpc.service" +
+      "s.hr_department_serviceB\027HRDepartmentSer" +
+      "viceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

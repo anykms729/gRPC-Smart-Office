@@ -53,9 +53,7 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
     }
 
     public StreamObserver<WeeklyWorkingHourRequest> check(StreamObserver<WeeklyWorkingHourResponse> responseObserver) {
-
         return new StreamObserver<>() {
-
             @Override
             public void onNext(WeeklyWorkingHourRequest request) {
                 String weeklyWorkingHourMessage = "";
@@ -63,23 +61,23 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
                 try {
                     if (request.getDayCount() == 1) {
                         myWorkingHour.add(0, request.getMondayWorkingHour());
-                        weeklyWorkingHourMessage = "Your working hours till Monday: " + (addAllWorkingHours((ArrayList<Double>) myWorkingHour)) + " hours with Monday break " + checkWorkBreak(myWorkingHour.get(0)) + " minutes";
+                        weeklyWorkingHourMessage = "Accumulated working hours till Monday: " + (addAllWorkingHours((ArrayList<Double>) myWorkingHour)) + " hours with Monday break " + checkWorkBreak(myWorkingHour.get(0)) + " minutes";
                     }
                     if (request.getDayCount() == 2) {
                         myWorkingHour.add(1, request.getTuesdayWorkingHour());
-                        weeklyWorkingHourMessage = "Your working hours till Tuesday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Tuesday break " + checkWorkBreak(myWorkingHour.get(1)) + " minutes";
+                        weeklyWorkingHourMessage = "Accumulated working hours till Tuesday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Tuesday break " + checkWorkBreak(myWorkingHour.get(1)) + " minutes";
                     }
                     if (request.getDayCount() == 3) {
                         myWorkingHour.add(2, request.getWednesdayWorkingHour());
-                        weeklyWorkingHourMessage = "Your working hours till Wednesday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Wednesday break " + checkWorkBreak(myWorkingHour.get(2)) + " minutes";
+                        weeklyWorkingHourMessage = "Accumulated working hours till Wednesday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Wednesday break " + checkWorkBreak(myWorkingHour.get(2)) + " minutes";
                     }
                     if (request.getDayCount() == 4) {
                         myWorkingHour.add(3, request.getThursdayWorkingHour());
-                        weeklyWorkingHourMessage = "Your working hours till Thursday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Thursday break " + checkWorkBreak(myWorkingHour.get(3)) + " minutes";
+                        weeklyWorkingHourMessage = "Accumulated working hours till Thursday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Thursday break " + checkWorkBreak(myWorkingHour.get(3)) + " minutes";
                     }
                     if (request.getDayCount() == 5) {
                         myWorkingHour.add(4, request.getFridayWorkingHour());
-                        weeklyWorkingHourMessage = "Your working hours till Friday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Friday break " + checkWorkBreak(myWorkingHour.get(4)) + " minutes";
+                        weeklyWorkingHourMessage = "Accumulated working hours till Friday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Friday break " + checkWorkBreak(myWorkingHour.get(4)) + " minutes";
                     }
 
                 } catch (Exception e) {
@@ -107,4 +105,41 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
         };
     }
 
+    public StreamObserver<Monthly_Payroll_Request> inputHour(StreamObserver<Monthly_Payroll_Response> responseObserver) {
+        final ArrayList<Double> totalSum = new ArrayList<>();
+
+        return new StreamObserver<>() {
+            @Override
+            public void onNext(Monthly_Payroll_Request request) {
+                System.out.println("Receiving Monthly Working hours fall under each different category...");
+                totalSum.add(request.getNormalWorkingHour() * 12.7);
+                totalSum.add(request.getHolidayPayWorkingHour() * 12.7 * 1.5);
+                totalSum.add(request.getOvertimeWorkingHour() * 12.7 * 1.78);
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onCompleted() {
+                double temp = 0;
+
+                System.out.printf("Receiving Monthly Payroll is completed \n");
+                for (double totalSumArray : totalSum) {
+                    temp += temp + totalSumArray;
+                }
+
+                String totalSum_Message = "This month you will get paid EUR" + temp;
+
+                Monthly_Payroll_Response monthly_payroll_message = Monthly_Payroll_Response.newBuilder().setMonthlyPayrollMessage(totalSum_Message).build();
+
+                responseObserver.onNext(monthly_payroll_message);
+
+                responseObserver.onCompleted();
+            }
+        };
+    }
 }
