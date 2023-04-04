@@ -18,7 +18,7 @@ public class SeatGUIApplication {
     private static ReserveSeatServiceGrpc.ReserveSeatServiceBlockingStub blockingStub;
     private static ReserveSeatServiceGrpc.ReserveSeatServiceStub asyncStub;
     private ServiceInfo reserveSeatService;
-    private JFrame frame;
+    public JFrame frame;
     private JTextField textNumber1;
 
 
@@ -96,8 +96,7 @@ public class SeatGUIApplication {
         }
     }
 
-// https://stackoverflow.com/questions/42465522/how-to-make-this-text-area-show-which-toggle-buttons-are-selected
-    private void initialize() {
+     private void initialize() {
         frame = new JFrame();
         frame.setTitle("Seat Reservation Service");
         frame.setBounds(100, 100, 500, 300);

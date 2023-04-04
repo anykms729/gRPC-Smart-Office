@@ -7,7 +7,7 @@ option java_multiple_files = true;
 // Package inside the src/main/java where generated classes will reside.
 option java_package = "grpc.services.sales_department_service";
 // Class name of the wrapper class which represent this file.
-option java_outer_classname = "HRDepartmentServiceImpl";
+option java_outer_classname = "SalesDepartmentServiceImpl";
 
 // package name to avoid name collisions
 package office_service;
@@ -15,26 +15,29 @@ package office_service;
 // Interface exported by the server.
 service SalesDepartmentService {
   // rpc method for bidirectional streaming calls
-  rpc check_stock (Stock_Request) returns (Stock_Response) {}
-  rpc order_confirmation (stream Order_Request) returns (stream Order_Response) {}
+  rpc checkStock (StockRequest) returns (StockResponse) {}
+  rpc orderConfirmation (stream OrderRequest) returns (stream OrderResponse) {}
 }
 
 // define each variable in rpc method separately
 
-message Stock_Request {
-  string stock_request = 1;
+message StockRequest {
+  int32  stock_request_product_quantity = 1;
+  string stock_request_product_type = 2;
+  string stock_request_message = 3;
 }
 
-message Stock_Response {
-  string Stock_response = 1;
+message StockResponse {
+  int32  stock_response_product_quantity = 1;
+  string Stock_response_message = 2;
 }
-message Order_Request {
+message OrderRequest {
   string delivery_area = 1;
   string product_name = 2;
   int32 product_quantity = 3;
 }
 
-message Order_Response {
+message OrderResponse {
   string order_response_message = 1;
   string order_confirmation = 2;
 }

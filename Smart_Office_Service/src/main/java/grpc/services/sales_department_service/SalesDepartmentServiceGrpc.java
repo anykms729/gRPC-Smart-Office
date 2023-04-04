@@ -1,16 +1,14 @@
 package grpc.services.sales_department_service;
 
+import io.grpc.stub.StreamObserver;
+
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
@@ -30,31 +28,31 @@ public final class SalesDepartmentServiceGrpc {
   public static final String SERVICE_NAME = "office_service.SalesDepartmentService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<grpc.services.sales_department_service.Stock_Request,
-      grpc.services.sales_department_service.Stock_Response> getCheckStockMethod;
+  private static volatile io.grpc.MethodDescriptor<grpc.services.sales_department_service.StockRequest,
+      grpc.services.sales_department_service.StockResponse> getCheckStockMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "check_stock",
-      requestType = grpc.services.sales_department_service.Stock_Request.class,
-      responseType = grpc.services.sales_department_service.Stock_Response.class,
+      fullMethodName = SERVICE_NAME + '/' + "checkStock",
+      requestType = grpc.services.sales_department_service.StockRequest.class,
+      responseType = grpc.services.sales_department_service.StockResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<grpc.services.sales_department_service.Stock_Request,
-      grpc.services.sales_department_service.Stock_Response> getCheckStockMethod() {
-    io.grpc.MethodDescriptor<grpc.services.sales_department_service.Stock_Request, grpc.services.sales_department_service.Stock_Response> getCheckStockMethod;
+  public static io.grpc.MethodDescriptor<grpc.services.sales_department_service.StockRequest,
+      grpc.services.sales_department_service.StockResponse> getCheckStockMethod() {
+    io.grpc.MethodDescriptor<grpc.services.sales_department_service.StockRequest, grpc.services.sales_department_service.StockResponse> getCheckStockMethod;
     if ((getCheckStockMethod = SalesDepartmentServiceGrpc.getCheckStockMethod) == null) {
       synchronized (SalesDepartmentServiceGrpc.class) {
         if ((getCheckStockMethod = SalesDepartmentServiceGrpc.getCheckStockMethod) == null) {
           SalesDepartmentServiceGrpc.getCheckStockMethod = getCheckStockMethod = 
-              io.grpc.MethodDescriptor.<grpc.services.sales_department_service.Stock_Request, grpc.services.sales_department_service.Stock_Response>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.services.sales_department_service.StockRequest, grpc.services.sales_department_service.StockResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "office_service.SalesDepartmentService", "check_stock"))
+                  "office_service.SalesDepartmentService", "checkStock"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.services.sales_department_service.Stock_Request.getDefaultInstance()))
+                  grpc.services.sales_department_service.StockRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.services.sales_department_service.Stock_Response.getDefaultInstance()))
-                  .setSchemaDescriptor(new SalesDepartmentServiceMethodDescriptorSupplier("check_stock"))
+                  grpc.services.sales_department_service.StockResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new SalesDepartmentServiceMethodDescriptorSupplier("checkStock"))
                   .build();
           }
         }
@@ -62,31 +60,31 @@ public final class SalesDepartmentServiceGrpc {
      return getCheckStockMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<grpc.services.sales_department_service.Order_Request,
-      grpc.services.sales_department_service.Order_Response> getOrderConfirmationMethod;
+  private static volatile io.grpc.MethodDescriptor<grpc.services.sales_department_service.OrderRequest,
+      grpc.services.sales_department_service.OrderResponse> getOrderConfirmationMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "order_confirmation",
-      requestType = grpc.services.sales_department_service.Order_Request.class,
-      responseType = grpc.services.sales_department_service.Order_Response.class,
+      fullMethodName = SERVICE_NAME + '/' + "orderConfirmation",
+      requestType = grpc.services.sales_department_service.OrderRequest.class,
+      responseType = grpc.services.sales_department_service.OrderResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<grpc.services.sales_department_service.Order_Request,
-      grpc.services.sales_department_service.Order_Response> getOrderConfirmationMethod() {
-    io.grpc.MethodDescriptor<grpc.services.sales_department_service.Order_Request, grpc.services.sales_department_service.Order_Response> getOrderConfirmationMethod;
+  public static io.grpc.MethodDescriptor<grpc.services.sales_department_service.OrderRequest,
+      grpc.services.sales_department_service.OrderResponse> getOrderConfirmationMethod() {
+    io.grpc.MethodDescriptor<grpc.services.sales_department_service.OrderRequest, grpc.services.sales_department_service.OrderResponse> getOrderConfirmationMethod;
     if ((getOrderConfirmationMethod = SalesDepartmentServiceGrpc.getOrderConfirmationMethod) == null) {
       synchronized (SalesDepartmentServiceGrpc.class) {
         if ((getOrderConfirmationMethod = SalesDepartmentServiceGrpc.getOrderConfirmationMethod) == null) {
           SalesDepartmentServiceGrpc.getOrderConfirmationMethod = getOrderConfirmationMethod = 
-              io.grpc.MethodDescriptor.<grpc.services.sales_department_service.Order_Request, grpc.services.sales_department_service.Order_Response>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.services.sales_department_service.OrderRequest, grpc.services.sales_department_service.OrderResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "office_service.SalesDepartmentService", "order_confirmation"))
+                  "office_service.SalesDepartmentService", "orderConfirmation"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.services.sales_department_service.Order_Request.getDefaultInstance()))
+                  grpc.services.sales_department_service.OrderRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.services.sales_department_service.Order_Response.getDefaultInstance()))
-                  .setSchemaDescriptor(new SalesDepartmentServiceMethodDescriptorSupplier("order_confirmation"))
+                  grpc.services.sales_department_service.OrderResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new SalesDepartmentServiceMethodDescriptorSupplier("orderConfirmation"))
                   .build();
           }
         }
@@ -129,15 +127,15 @@ public final class SalesDepartmentServiceGrpc {
      * rpc method for bidirectional streaming calls
      * </pre>
      */
-    public void checkStock(grpc.services.sales_department_service.Stock_Request request,
-        io.grpc.stub.StreamObserver<grpc.services.sales_department_service.Stock_Response> responseObserver) {
+    public void checkStock(grpc.services.sales_department_service.StockRequest request,
+        io.grpc.stub.StreamObserver<grpc.services.sales_department_service.StockResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getCheckStockMethod(), responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<grpc.services.sales_department_service.Order_Request> orderConfirmation(
-        io.grpc.stub.StreamObserver<grpc.services.sales_department_service.Order_Response> responseObserver) {
+    public io.grpc.stub.StreamObserver<grpc.services.sales_department_service.OrderRequest> orderConfirmation(
+        io.grpc.stub.StreamObserver<grpc.services.sales_department_service.OrderResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getOrderConfirmationMethod(), responseObserver);
     }
 
@@ -147,15 +145,15 @@ public final class SalesDepartmentServiceGrpc {
             getCheckStockMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                grpc.services.sales_department_service.Stock_Request,
-                grpc.services.sales_department_service.Stock_Response>(
+                grpc.services.sales_department_service.StockRequest,
+                grpc.services.sales_department_service.StockResponse>(
                   this, METHODID_CHECK_STOCK)))
           .addMethod(
             getOrderConfirmationMethod(),
             asyncBidiStreamingCall(
               new MethodHandlers<
-                grpc.services.sales_department_service.Order_Request,
-                grpc.services.sales_department_service.Order_Response>(
+                grpc.services.sales_department_service.OrderRequest,
+                grpc.services.sales_department_service.OrderResponse>(
                   this, METHODID_ORDER_CONFIRMATION)))
           .build();
     }
@@ -187,16 +185,16 @@ public final class SalesDepartmentServiceGrpc {
      * rpc method for bidirectional streaming calls
      * </pre>
      */
-    public void checkStock(grpc.services.sales_department_service.Stock_Request request,
-        io.grpc.stub.StreamObserver<grpc.services.sales_department_service.Stock_Response> responseObserver) {
+    public void checkStock(grpc.services.sales_department_service.StockRequest request,
+        io.grpc.stub.StreamObserver<grpc.services.sales_department_service.StockResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCheckStockMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<grpc.services.sales_department_service.Order_Request> orderConfirmation(
-        io.grpc.stub.StreamObserver<grpc.services.sales_department_service.Order_Response> responseObserver) {
+    public io.grpc.stub.StreamObserver<grpc.services.sales_department_service.OrderRequest> orderConfirmation(
+            StreamObserver<OrderResponse> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getOrderConfirmationMethod(), getCallOptions()), responseObserver);
     }
@@ -228,7 +226,7 @@ public final class SalesDepartmentServiceGrpc {
      * rpc method for bidirectional streaming calls
      * </pre>
      */
-    public grpc.services.sales_department_service.Stock_Response checkStock(grpc.services.sales_department_service.Stock_Request request) {
+    public grpc.services.sales_department_service.StockResponse checkStock(grpc.services.sales_department_service.StockRequest request) {
       return blockingUnaryCall(
           getChannel(), getCheckStockMethod(), getCallOptions(), request);
     }
@@ -260,8 +258,8 @@ public final class SalesDepartmentServiceGrpc {
      * rpc method for bidirectional streaming calls
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.services.sales_department_service.Stock_Response> checkStock(
-        grpc.services.sales_department_service.Stock_Request request) {
+    public com.google.common.util.concurrent.ListenableFuture<grpc.services.sales_department_service.StockResponse> checkStock(
+        grpc.services.sales_department_service.StockRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCheckStockMethod(), getCallOptions()), request);
     }
@@ -288,8 +286,8 @@ public final class SalesDepartmentServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CHECK_STOCK:
-          serviceImpl.checkStock((grpc.services.sales_department_service.Stock_Request) request,
-              (io.grpc.stub.StreamObserver<grpc.services.sales_department_service.Stock_Response>) responseObserver);
+          serviceImpl.checkStock((grpc.services.sales_department_service.StockRequest) request,
+              (io.grpc.stub.StreamObserver<grpc.services.sales_department_service.StockResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -303,7 +301,7 @@ public final class SalesDepartmentServiceGrpc {
       switch (methodId) {
         case METHODID_ORDER_CONFIRMATION:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.orderConfirmation(
-              (io.grpc.stub.StreamObserver<grpc.services.sales_department_service.Order_Response>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.services.sales_department_service.OrderResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -316,7 +314,7 @@ public final class SalesDepartmentServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return grpc.services.sales_department_service.HRDepartmentServiceImpl.getDescriptor();
+      return grpc.services.sales_department_service.SalesDepartmentServiceImpl.getDescriptor();
     }
 
     @java.lang.Override
