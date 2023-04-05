@@ -49,18 +49,19 @@ public final class SalesDepartmentServiceImpl {
       "t_product_type\030\002 \001(\t\022\035\n\025stock_request_me" +
       "ssage\030\003 \001(\t\"X\n\rStockResponse\022\'\n\037stock_re" +
       "sponse_product_quantity\030\001 \001(\005\022\036\n\026Stock_r" +
-      "esponse_message\030\002 \001(\t\"U\n\014OrderRequest\022\025\n" +
+      "esponse_message\030\002 \001(\t\"m\n\014OrderRequest\022\025\n" +
       "\rdelivery_area\030\001 \001(\t\022\024\n\014product_name\030\002 \001" +
-      "(\t\022\030\n\020product_quantity\030\003 \001(\005\"K\n\rOrderRes" +
-      "ponse\022\036\n\026order_response_message\030\001 \001(\t\022\032\n" +
-      "\022order_confirmation\030\002 \001(\t2\275\001\n\026SalesDepar" +
-      "tmentService\022K\n\ncheckStock\022\034.office_serv" +
-      "ice.StockRequest\032\035.office_service.StockR" +
-      "esponse\"\000\022V\n\021orderConfirmation\022\034.office_" +
-      "service.OrderRequest\032\035.office_service.Or" +
-      "derResponse\"\000(\0010\001BF\n&grpc.services.sales" +
-      "_department_serviceB\032SalesDepartmentServ" +
-      "iceImplP\001b\006proto3"
+      "(\t\022\030\n\020product_quantity\030\003 \001(\005\022\026\n\016set_fiel" +
+      "d_name\030\004 \001(\005\"_\n\rOrderResponse\022\036\n\026order_r" +
+      "esponse_message\030\001 \001(\t\022.\n&remaining_quant" +
+      "ity_after_order_message\030\002 \001(\t2\275\001\n\026SalesD" +
+      "epartmentService\022K\n\ncheckStock\022\034.office_" +
+      "service.StockRequest\032\035.office_service.St" +
+      "ockResponse\"\000\022V\n\021orderConfirmation\022\034.off" +
+      "ice_service.OrderRequest\032\035.office_servic" +
+      "e.OrderResponse\"\000(\0010\001BF\n&grpc.services.s" +
+      "ales_department_serviceB\032SalesDepartment" +
+      "ServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -91,13 +92,13 @@ public final class SalesDepartmentServiceImpl {
     internal_static_office_service_OrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_office_service_OrderRequest_descriptor,
-        new java.lang.String[] { "DeliveryArea", "ProductName", "ProductQuantity", });
+        new java.lang.String[] { "DeliveryArea", "ProductName", "ProductQuantity", "SetFieldName", });
     internal_static_office_service_OrderResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_office_service_OrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_office_service_OrderResponse_descriptor,
-        new java.lang.String[] { "OrderResponseMessage", "OrderConfirmation", });
+        new java.lang.String[] { "OrderResponseMessage", "RemainingQuantityAfterOrderMessage", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

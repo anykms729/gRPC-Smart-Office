@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private OrderResponse() {
     orderResponseMessage_ = "";
-    orderConfirmation_ = "";
+    remainingQuantityAfterOrderMessage_ = "";
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            orderConfirmation_ = s;
+            remainingQuantityAfterOrderMessage_ = s;
             break;
           }
           default: {
@@ -122,34 +122,34 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ORDER_CONFIRMATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object orderConfirmation_;
+  public static final int REMAINING_QUANTITY_AFTER_ORDER_MESSAGE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object remainingQuantityAfterOrderMessage_;
   /**
-   * <code>string order_confirmation = 2;</code>
+   * <code>string remaining_quantity_after_order_message = 2;</code>
    */
-  public java.lang.String getOrderConfirmation() {
-    java.lang.Object ref = orderConfirmation_;
+  public java.lang.String getRemainingQuantityAfterOrderMessage() {
+    java.lang.Object ref = remainingQuantityAfterOrderMessage_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      orderConfirmation_ = s;
+      remainingQuantityAfterOrderMessage_ = s;
       return s;
     }
   }
   /**
-   * <code>string order_confirmation = 2;</code>
+   * <code>string remaining_quantity_after_order_message = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getOrderConfirmationBytes() {
-    java.lang.Object ref = orderConfirmation_;
+      getRemainingQuantityAfterOrderMessageBytes() {
+    java.lang.Object ref = remainingQuantityAfterOrderMessage_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      orderConfirmation_ = b;
+      remainingQuantityAfterOrderMessage_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -173,8 +173,8 @@ private static final long serialVersionUID = 0L;
     if (!getOrderResponseMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, orderResponseMessage_);
     }
-    if (!getOrderConfirmationBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, orderConfirmation_);
+    if (!getRemainingQuantityAfterOrderMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, remainingQuantityAfterOrderMessage_);
     }
     unknownFields.writeTo(output);
   }
@@ -188,8 +188,8 @@ private static final long serialVersionUID = 0L;
     if (!getOrderResponseMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, orderResponseMessage_);
     }
-    if (!getOrderConfirmationBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, orderConfirmation_);
+    if (!getRemainingQuantityAfterOrderMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, remainingQuantityAfterOrderMessage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -209,8 +209,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getOrderResponseMessage()
         .equals(other.getOrderResponseMessage());
-    result = result && getOrderConfirmation()
-        .equals(other.getOrderConfirmation());
+    result = result && getRemainingQuantityAfterOrderMessage()
+        .equals(other.getRemainingQuantityAfterOrderMessage());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -224,8 +224,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ORDER_RESPONSE_MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getOrderResponseMessage().hashCode();
-    hash = (37 * hash) + ORDER_CONFIRMATION_FIELD_NUMBER;
-    hash = (53 * hash) + getOrderConfirmation().hashCode();
+    hash = (37 * hash) + REMAINING_QUANTITY_AFTER_ORDER_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getRemainingQuantityAfterOrderMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -361,7 +361,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       orderResponseMessage_ = "";
 
-      orderConfirmation_ = "";
+      remainingQuantityAfterOrderMessage_ = "";
 
       return this;
     }
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
     public grpc.services.sales_department_service.OrderResponse buildPartial() {
       grpc.services.sales_department_service.OrderResponse result = new grpc.services.sales_department_service.OrderResponse(this);
       result.orderResponseMessage_ = orderResponseMessage_;
-      result.orderConfirmation_ = orderConfirmation_;
+      result.remainingQuantityAfterOrderMessage_ = remainingQuantityAfterOrderMessage_;
       onBuilt();
       return result;
     }
@@ -443,8 +443,8 @@ private static final long serialVersionUID = 0L;
         orderResponseMessage_ = other.orderResponseMessage_;
         onChanged();
       }
-      if (!other.getOrderConfirmation().isEmpty()) {
-        orderConfirmation_ = other.orderConfirmation_;
+      if (!other.getRemainingQuantityAfterOrderMessage().isEmpty()) {
+        remainingQuantityAfterOrderMessage_ = other.remainingQuantityAfterOrderMessage_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -545,71 +545,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object orderConfirmation_ = "";
+    private java.lang.Object remainingQuantityAfterOrderMessage_ = "";
     /**
-     * <code>string order_confirmation = 2;</code>
+     * <code>string remaining_quantity_after_order_message = 2;</code>
      */
-    public java.lang.String getOrderConfirmation() {
-      java.lang.Object ref = orderConfirmation_;
+    public java.lang.String getRemainingQuantityAfterOrderMessage() {
+      java.lang.Object ref = remainingQuantityAfterOrderMessage_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        orderConfirmation_ = s;
+        remainingQuantityAfterOrderMessage_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string order_confirmation = 2;</code>
+     * <code>string remaining_quantity_after_order_message = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getOrderConfirmationBytes() {
-      java.lang.Object ref = orderConfirmation_;
+        getRemainingQuantityAfterOrderMessageBytes() {
+      java.lang.Object ref = remainingQuantityAfterOrderMessage_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        orderConfirmation_ = b;
+        remainingQuantityAfterOrderMessage_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string order_confirmation = 2;</code>
+     * <code>string remaining_quantity_after_order_message = 2;</code>
      */
-    public Builder setOrderConfirmation(
+    public Builder setRemainingQuantityAfterOrderMessage(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      orderConfirmation_ = value;
+      remainingQuantityAfterOrderMessage_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string order_confirmation = 2;</code>
+     * <code>string remaining_quantity_after_order_message = 2;</code>
      */
-    public Builder clearOrderConfirmation() {
+    public Builder clearRemainingQuantityAfterOrderMessage() {
       
-      orderConfirmation_ = getDefaultInstance().getOrderConfirmation();
+      remainingQuantityAfterOrderMessage_ = getDefaultInstance().getRemainingQuantityAfterOrderMessage();
       onChanged();
       return this;
     }
     /**
-     * <code>string order_confirmation = 2;</code>
+     * <code>string remaining_quantity_after_order_message = 2;</code>
      */
-    public Builder setOrderConfirmationBytes(
+    public Builder setRemainingQuantityAfterOrderMessageBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      orderConfirmation_ = value;
+      remainingQuantityAfterOrderMessage_ = value;
       onChanged();
       return this;
     }

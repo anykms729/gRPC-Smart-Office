@@ -8,15 +8,30 @@ import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepartmentServiceImplBase {
-    Map<String, Integer> stockList = new HashMap<>();
-    List<String> deliveryArea = new ArrayList<>();
+    Map<String, Integer> stockMap = new HashMap<>();
+    Map<String, Integer> deliveryAreaMap = new HashMap<>();
+    ArrayList<String> productNameHistory = new ArrayList<>();
 
     public static void main(String[] args) {
         grpc.services.sales_department_service.Smart_Office_Server3 smart_office_server3 = new grpc.services.sales_department_service.Smart_Office_Server3();
+        smart_office_server3.stockMap.put("A Product", 40);
+        smart_office_server3.stockMap.put("B Product", 40);
+        smart_office_server3.stockMap.put("C Product", 60);
+        smart_office_server3.stockMap.put("D Product", 19);
+        smart_office_server3.stockMap.put("E Product", 77);
+        smart_office_server3.stockMap.put("F Product", 84);
+
+        // Delivery Area and delivery days taken for each area
+        smart_office_server3.deliveryAreaMap.put("Dublin A", 2);
+        smart_office_server3.deliveryAreaMap.put("Dublin B", 4);
+        smart_office_server3.deliveryAreaMap.put("Dublin C", 3);
+        smart_office_server3.deliveryAreaMap.put("Dublin D", 15);
+        smart_office_server3.deliveryAreaMap.put("Dublin E", 22);
+
+
         int port = 50055;
         try {
             Server server = ServerBuilder.forPort(port)
@@ -37,21 +52,23 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
         }
     }
 
-    public int searchInHashMap(String productType) {
+    public int searchProductQuantity(String productType) {
         Integer productQuantity;
 
-        stockList.put("A Product", 30);
-        stockList.put("B Product", 40);
-        stockList.put("C Product", 60);
-        stockList.put("D Product", 19);
-        stockList.put("E Product", 77);
-        stockList.put("F Product", 84);
-
-        if (stockList.containsKey(productType)) {
-            productQuantity = stockList.get(productType);
+        if (stockMap.containsKey(productType)) {
+            productQuantity = stockMap.get(productType);
         } else
             productQuantity = 0;
         return productQuantity;
+    }
+
+    public int searchDeliveryTimeTaken(String orderArea) {
+        int deliveryTimeTaken;
+        if (deliveryAreaMap.containsKey(orderArea)) {
+            deliveryTimeTaken = deliveryAreaMap.get(orderArea);
+        } else
+            deliveryTimeTaken = 0;
+        return deliveryTimeTaken;
     }
 
     public void checkStock(StockRequest stockRequest, StreamObserver<StockResponse> responseObserver) {
@@ -63,8 +80,8 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
             stockMessage = "Please enter product name!";
         } else {
             try {
-                if (searchInHashMap(stockProduct) != 0) {
-                    stockMessage = searchInHashMap(stockProduct) + " units of " + stockProduct + " are in stock";
+                if (searchProductQuantity(stockProduct) != 0) {
+                    stockMessage = searchProductQuantity(stockProduct) + " units of " + stockProduct + " are in stock";
                 } else {
                     stockMessage = stockProduct + " is out of stock";
                 }
@@ -80,36 +97,34 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
 
     // Bi-Direction Service
     public StreamObserver<OrderRequest> orderConfirmation(StreamObserver<OrderResponse> responseObserver) {
-        deliveryArea.add("Dublin A");
-        deliveryArea.add("Dublin B");
-        deliveryArea.add("Dublin C");
-        deliveryArea.add("Dublin D");
-        deliveryArea.add("Dublin E");
-
         return new StreamObserver<>() {
             @Override
             public void onNext(OrderRequest request) {
                 String orderConfirmationMessage = "";
                 try {
-                    if (!request.getDeliveryArea().isBlank() && !request.getProductName().isBlank() && request.getProductQuantity() > 0) {
-                        if (!stockList.containsKey(request.getProductName())) {
-                            orderConfirmationMessage = "Entered Product name doesn't exist in our stock, sorry!";
+                    if (request.getSetFieldName() == 1) {
+                        if (deliveryAreaMap.containsKey(request.getDeliveryArea())) {
+                            orderConfirmationMessage = request.getDeliveryArea() + " is available delivery area and take " +searchDeliveryTimeTaken(request.getDeliveryArea())+" business days to be delivered";
+                        } else {
+                            orderConfirmationMessage = request.getDeliveryArea() + " is not available delivery area";
                         }
-                        else if (stockList.get(request.getProductName()) < request.getProductQuantity()) {
-                            orderConfirmationMessage = "Required Quantity is more than available stock quantity!";
-                        }
-                        else if (!deliveryArea.contains(request.getDeliveryArea())) {
-                            orderConfirmationMessage = "Entered delivery Area is not a valid area, sorry!";
-                        }
-                        else {
-                            orderConfirmationMessage = request.getProductName()+" will be delivered to "+request.getDeliveryArea();
-                        }
-                    } else {
-                        orderConfirmationMessage = "Please check your order again, field can't be empty neither quantity can't be 0!";
                     }
-
-                } catch (
-                        Exception e) {
+                    if (request.getSetFieldName() == 2) {
+                        if (stockMap.containsKey(request.getProductName())) {
+                            orderConfirmationMessage = request.getProductName() + " is currently in stock";
+                            productNameHistory.add(request.getProductName());
+                        } else {
+                            orderConfirmationMessage = request.getProductName() + " is not our product, sorry!";
+                        }
+                    }
+                    if (request.getSetFieldName() == 3) {
+                        if (searchProductQuantity(productNameHistory.get(0)) > request.getProductQuantity()) {
+                            orderConfirmationMessage = "Number of stock for " + productNameHistory.get(0) + " is " + searchProductQuantity(productNameHistory.get(0));
+                        } else {
+                            orderConfirmationMessage = productNameHistory.get(0) + " is out of stock";
+                        }
+                    }
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -128,11 +143,9 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
 
                 //completed too
                 responseObserver.onCompleted();
-//                myWorkingHour.clear();
+//                productNameHistory.clear();
             }
-        }
-
-                ;
+        };
     }
 }
 

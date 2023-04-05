@@ -31,4 +31,9 @@ public interface OrderRequestOrBuilder extends
    * <code>int32 product_quantity = 3;</code>
    */
   int getProductQuantity();
+
+  /**
+   * <code>int32 set_field_name = 4;</code>
+   */
+  int getSetFieldName();
 }

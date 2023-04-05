@@ -14,6 +14,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Random;
 
 public class SalesGUIApplication {
     public static SalesDepartmentServiceGrpc.SalesDepartmentServiceBlockingStub blockingStub;
@@ -127,7 +128,8 @@ public class SalesGUIApplication {
             String productType = textNumber1.getText();
             StockRequest stockRequest = StockRequest.newBuilder().setStockRequestProductType(productType).build();
             StockResponse response = blockingStub.checkStock(stockRequest);
-            JOptionPane.showMessageDialog(panel_service_1, response.getStockResponseMessage());
+            JFrame frame3 = new JFrame();
+            JOptionPane.showMessageDialog(frame3, response.getStockResponseMessage());
             System.out.println("Unary Service is completed ...");
 
             try {
@@ -142,6 +144,7 @@ public class SalesGUIApplication {
             initialize2();
         });
     }
+
     private void initialize2() {
         frame.setVisible(false);
         frame2 = new JFrame();
@@ -188,10 +191,9 @@ public class SalesGUIApplication {
             StreamObserver<OrderResponse> responseObserver = new StreamObserver<>() {
                 @Override
                 public void onNext(OrderResponse response) {
-                    System.out.println("Receiving Order Confirmation Response... ");
                     frame2.setVisible(false);
-//                    JFrame frame3 = new JFrame();
-                     JOptionPane.showMessageDialog(container,response.getOrderResponseMessage());
+                    JFrame frame4 = new JFrame();
+                    JOptionPane.showMessageDialog(frame4, response.getOrderResponseMessage());
                 }
 
                 @Override
@@ -201,31 +203,32 @@ public class SalesGUIApplication {
 
                 @Override
                 public void onCompleted() {
-                    System.out.println("BiDirection Service is completed ...");
+                    System.out.println("Bi-Direction Service is completed ...");
                 }
             };
 
             StreamObserver<OrderRequest> requestObserver = asyncStub.orderConfirmation(responseObserver);
             try {
-                requestObserver.onNext(OrderRequest.newBuilder().setDeliveryArea((textFields[0].getText())).build());
-                Thread.sleep(500);
-
-                requestObserver.onNext(OrderRequest.newBuilder().setProductName(textFields[1].getText()).build());
-                Thread.sleep(500);
-
-                requestObserver.onNext(OrderRequest.newBuilder().setProductQuantity(Integer.parseInt(textFields[2].getText())).build());
-                Thread.sleep(500);
+                requestObserver.onNext(OrderRequest.newBuilder().setDeliveryArea((textFields[0].getText())).setSetFieldName(1).build());
+                requestObserver.onNext(OrderRequest.newBuilder().setProductName(textFields[1].getText()).setSetFieldName(2).build());
+                requestObserver.onNext(OrderRequest.newBuilder().setProductQuantity(Integer.parseInt(textFields[2].getText())).setSetFieldName(3).build());
 
                 // Mark the end of requests
                 requestObserver.onCompleted();
 
-
-                Thread.sleep(10000);
+                Thread.sleep(new Random().nextInt(1000) + 500);
 
             } catch (RuntimeException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException iee) {
+                // TODO Auto-generated catch block
+                iee.printStackTrace();
             }
         });
 
@@ -234,11 +237,11 @@ public class SalesGUIApplication {
         {
             frame2.setVisible(false);
         });
-        
+
     }
 
     private void addToCenter(Component guiComponent) {
-        frame2.add(guiComponent, BorderLayout.CENTER); 
+        frame2.add(guiComponent, BorderLayout.CENTER);
     }
 
 }

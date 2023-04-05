@@ -18,12 +18,12 @@ public interface OrderResponseOrBuilder extends
       getOrderResponseMessageBytes();
 
   /**
-   * <code>string order_confirmation = 2;</code>
+   * <code>string remaining_quantity_after_order_message = 2;</code>
    */
-  java.lang.String getOrderConfirmation();
+  java.lang.String getRemainingQuantityAfterOrderMessage();
   /**
-   * <code>string order_confirmation = 2;</code>
+   * <code>string remaining_quantity_after_order_message = 2;</code>
    */
   com.google.protobuf.ByteString
-      getOrderConfirmationBytes();
+      getRemainingQuantityAfterOrderMessageBytes();
 }

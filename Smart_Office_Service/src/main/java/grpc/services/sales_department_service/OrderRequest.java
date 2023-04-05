@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     deliveryArea_ = "";
     productName_ = "";
     productQuantity_ = 0;
+    setFieldName_ = 0;
   }
 
   @java.lang.Override
@@ -60,6 +61,11 @@ private static final long serialVersionUID = 0L;
           case 24: {
 
             productQuantity_ = input.readInt32();
+            break;
+          }
+          case 32: {
+
+            setFieldName_ = input.readInt32();
             break;
           }
           default: {
@@ -171,6 +177,15 @@ private static final long serialVersionUID = 0L;
     return productQuantity_;
   }
 
+  public static final int SET_FIELD_NAME_FIELD_NUMBER = 4;
+  private int setFieldName_;
+  /**
+   * <code>int32 set_field_name = 4;</code>
+   */
+  public int getSetFieldName() {
+    return setFieldName_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -194,6 +209,9 @@ private static final long serialVersionUID = 0L;
     if (productQuantity_ != 0) {
       output.writeInt32(3, productQuantity_);
     }
+    if (setFieldName_ != 0) {
+      output.writeInt32(4, setFieldName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -212,6 +230,10 @@ private static final long serialVersionUID = 0L;
     if (productQuantity_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, productQuantity_);
+    }
+    if (setFieldName_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, setFieldName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -235,6 +257,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProductName());
     result = result && (getProductQuantity()
         == other.getProductQuantity());
+    result = result && (getSetFieldName()
+        == other.getSetFieldName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -252,6 +276,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProductName().hashCode();
     hash = (37 * hash) + PRODUCT_QUANTITY_FIELD_NUMBER;
     hash = (53 * hash) + getProductQuantity();
+    hash = (37 * hash) + SET_FIELD_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getSetFieldName();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -391,6 +417,8 @@ private static final long serialVersionUID = 0L;
 
       productQuantity_ = 0;
 
+      setFieldName_ = 0;
+
       return this;
     }
 
@@ -420,6 +448,7 @@ private static final long serialVersionUID = 0L;
       result.deliveryArea_ = deliveryArea_;
       result.productName_ = productName_;
       result.productQuantity_ = productQuantity_;
+      result.setFieldName_ = setFieldName_;
       onBuilt();
       return result;
     }
@@ -478,6 +507,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getProductQuantity() != 0) {
         setProductQuantity(other.getProductQuantity());
+      }
+      if (other.getSetFieldName() != 0) {
+        setSetFieldName(other.getSetFieldName());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -668,6 +700,32 @@ private static final long serialVersionUID = 0L;
     public Builder clearProductQuantity() {
       
       productQuantity_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int setFieldName_ ;
+    /**
+     * <code>int32 set_field_name = 4;</code>
+     */
+    public int getSetFieldName() {
+      return setFieldName_;
+    }
+    /**
+     * <code>int32 set_field_name = 4;</code>
+     */
+    public Builder setSetFieldName(int value) {
+      
+      setFieldName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 set_field_name = 4;</code>
+     */
+    public Builder clearSetFieldName() {
+      
+      setFieldName_ = 0;
       onChanged();
       return this;
     }

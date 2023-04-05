@@ -85,7 +85,6 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
                 }
 
                 WeeklyWorkingHourResponse reply = WeeklyWorkingHourResponse.newBuilder().setWeeklyWorkingHourMessage(weeklyWorkingHourMessage).build();
-
                 responseObserver.onNext(reply);
             }
 

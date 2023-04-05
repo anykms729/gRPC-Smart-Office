@@ -1,14 +1,16 @@
 package grpc.services.sales_department_service;
 
-import io.grpc.stub.StreamObserver;
-
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
@@ -194,7 +196,7 @@ public final class SalesDepartmentServiceGrpc {
     /**
      */
     public io.grpc.stub.StreamObserver<grpc.services.sales_department_service.OrderRequest> orderConfirmation(
-            StreamObserver<OrderResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.services.sales_department_service.OrderResponse> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getOrderConfirmationMethod(), getCallOptions()), responseObserver);
     }

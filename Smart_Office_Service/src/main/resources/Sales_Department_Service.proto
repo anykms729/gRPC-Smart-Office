@@ -35,9 +35,11 @@ message OrderRequest {
   string delivery_area = 1;
   string product_name = 2;
   int32 product_quantity = 3;
+  int32 set_field_name = 4;
 }
 
 message OrderResponse {
   string order_response_message = 1;
-  string order_confirmation = 2;
+  string remaining_quantity_after_order_message = 2;
+
 }
