@@ -36,7 +36,6 @@ public class SalesGUIApplication {
         });
     }
 
-
     public SalesGUIApplication() {
         String salesDepartment_service_type = "_sales._tcp.local.";
         discoverSalesDepartmentService(salesDepartment_service_type);

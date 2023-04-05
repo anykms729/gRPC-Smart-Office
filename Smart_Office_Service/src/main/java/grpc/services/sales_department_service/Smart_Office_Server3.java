@@ -18,7 +18,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
     public static void main(String[] args) {
         grpc.services.sales_department_service.Smart_Office_Server3 smart_office_server3 = new grpc.services.sales_department_service.Smart_Office_Server3();
         smart_office_server3.stockMap.put("A Product", 40);
-        smart_office_server3.stockMap.put("B Product", 40);
+        smart_office_server3.stockMap.put("B Product", 32);
         smart_office_server3.stockMap.put("C Product", 60);
         smart_office_server3.stockMap.put("D Product", 19);
         smart_office_server3.stockMap.put("E Product", 77);
@@ -104,7 +104,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
                 try {
                     if (request.getSetFieldName() == 1) {
                         if (deliveryAreaMap.containsKey(request.getDeliveryArea())) {
-                            orderConfirmationMessage = request.getDeliveryArea() + " is available delivery area and take " +searchDeliveryTimeTaken(request.getDeliveryArea())+" business days to be delivered";
+                            orderConfirmationMessage = request.getDeliveryArea() + " is available delivery area and take " + searchDeliveryTimeTaken(request.getDeliveryArea()) + " business days to be delivered";
                         } else {
                             orderConfirmationMessage = request.getDeliveryArea() + " is not available delivery area";
                         }
@@ -112,16 +112,16 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
                     if (request.getSetFieldName() == 2) {
                         if (stockMap.containsKey(request.getProductName())) {
                             orderConfirmationMessage = request.getProductName() + " is currently in stock";
-                            productNameHistory.add(request.getProductName());
                         } else {
                             orderConfirmationMessage = request.getProductName() + " is not our product, sorry!";
                         }
+                        productNameHistory.add(request.getProductName());
                     }
                     if (request.getSetFieldName() == 3) {
                         if (searchProductQuantity(productNameHistory.get(0)) > request.getProductQuantity()) {
                             orderConfirmationMessage = "Number of stock for " + productNameHistory.get(0) + " is " + searchProductQuantity(productNameHistory.get(0));
                         } else {
-                            orderConfirmationMessage = productNameHistory.get(0) + " is out of stock";
+                            orderConfirmationMessage = "Your request for " + request.getProductQuantity() + " units of " + productNameHistory.get(0) +" is more than we have in stock or we don't have such product";
                         }
                     }
                 } catch (Exception e) {
@@ -143,7 +143,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
 
                 //completed too
                 responseObserver.onCompleted();
-//                productNameHistory.clear();
+                productNameHistory.clear();
             }
         };
     }
