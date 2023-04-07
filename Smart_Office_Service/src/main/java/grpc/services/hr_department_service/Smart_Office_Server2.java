@@ -1,5 +1,4 @@
 package grpc.services.hr_department_service;
-
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
@@ -29,7 +28,6 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
         return workBreak;
     }
 
-
     public static void main(String[] args) {
         grpc.services.hr_department_service.Smart_Office_Server2 smart_office_server2 = new grpc.services.hr_department_service.Smart_Office_Server2();
         int port = 50054;
@@ -39,7 +37,7 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
                     .build()
                     .start();
 
-            System.out.println("Smart_Office_Server2 started, listening on " + port);
+            System.out.println("HR Department Smart Service Server started, listening on " + port);
 
             server.awaitTermination();
 
@@ -61,23 +59,23 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
                 try {
                     if (request.getDayCount() == 1) {
                         myWorkingHour.add(0, request.getMondayWorkingHour());
-                        weeklyWorkingHourMessage = "Accumulated working hours till Monday: " + (addAllWorkingHours((ArrayList<Double>) myWorkingHour)) + " hours with Monday break " + checkWorkBreak(myWorkingHour.get(0)) + " minutes";
+                        weeklyWorkingHourMessage = "Reply 1: Accumulated working hours till Monday: " + (addAllWorkingHours((ArrayList<Double>) myWorkingHour)) + " hours with Monday break " + checkWorkBreak(myWorkingHour.get(0)) + " hours";
                     }
                     if (request.getDayCount() == 2) {
                         myWorkingHour.add(1, request.getTuesdayWorkingHour());
-                        weeklyWorkingHourMessage = "Accumulated working hours till Tuesday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Tuesday break " + checkWorkBreak(myWorkingHour.get(1)) + " minutes";
+                        weeklyWorkingHourMessage = "Reply 2: Accumulated working hours till Tuesday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Tuesday break " + checkWorkBreak(myWorkingHour.get(1)) + " hours";
                     }
                     if (request.getDayCount() == 3) {
                         myWorkingHour.add(2, request.getWednesdayWorkingHour());
-                        weeklyWorkingHourMessage = "Accumulated working hours till Wednesday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Wednesday break " + checkWorkBreak(myWorkingHour.get(2)) + " minutes";
+                        weeklyWorkingHourMessage = "Reply 3: Accumulated working hours till Wednesday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Wednesday break " + checkWorkBreak(myWorkingHour.get(2)) + " hours";
                     }
                     if (request.getDayCount() == 4) {
                         myWorkingHour.add(3, request.getThursdayWorkingHour());
-                        weeklyWorkingHourMessage = "Accumulated working hours till Thursday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Thursday break " + checkWorkBreak(myWorkingHour.get(3)) + " minutes";
+                        weeklyWorkingHourMessage = "Reply 4: Accumulated working hours till Thursday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Thursday break " + checkWorkBreak(myWorkingHour.get(3)) + " hours";
                     }
                     if (request.getDayCount() == 5) {
                         myWorkingHour.add(4, request.getFridayWorkingHour());
-                        weeklyWorkingHourMessage = "Accumulated working hours till Friday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Friday break " + checkWorkBreak(myWorkingHour.get(4)) + " minutes";
+                        weeklyWorkingHourMessage = "Reply 5: Accumulated working hours till Friday: " + addAllWorkingHours((ArrayList<Double>) myWorkingHour) + " hours with Friday break " + checkWorkBreak(myWorkingHour.get(4)) + " hours";
                     }
 
                 } catch (Exception e) {

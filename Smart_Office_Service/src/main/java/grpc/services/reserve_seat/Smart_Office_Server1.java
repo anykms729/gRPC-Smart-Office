@@ -11,7 +11,7 @@ import java.util.List;
 public class Smart_Office_Server1 extends ReserveSeatServiceGrpc.ReserveSeatServiceImplBase {
     public List<Integer> seats;
     public List<Integer> seatsReserved;
-    public int numSeats = 7;
+    public int numSeats = 10;
 
 
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Smart_Office_Server1 extends ReserveSeatServiceGrpc.ReserveSeatServ
                     .build()
                     .start();
 
-            System.out.println("Smart_Office_Server1 started, listening on " + port);
+            System.out.println("Smart Seat Service started, listening on " + port);
 
             // Initialize the list of seats
             smart_office_server1.seats = new ArrayList<>();

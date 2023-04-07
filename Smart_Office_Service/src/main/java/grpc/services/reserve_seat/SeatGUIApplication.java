@@ -3,12 +3,12 @@ package grpc.services.reserve_seat;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
-
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceEvent;
 import javax.jmdns.ServiceInfo;
 import javax.jmdns.ServiceListener;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -19,6 +19,7 @@ public class SeatGUIApplication {
     private static ReserveSeatServiceGrpc.ReserveSeatServiceStub asyncStub;
     private ServiceInfo reserveSeatService;
     public JFrame frame;
+    public JFrame frame2;
     private JTextField textNumber1;
 
 
@@ -96,37 +97,50 @@ public class SeatGUIApplication {
         }
     }
 
-     private void initialize() {
+    private void initialize() {
         frame = new JFrame();
-        frame.setTitle("Seat Reservation Service");
-        frame.setBounds(100, 100, 500, 300);
+        frame.setTitle("Smart Seat Service | Reserve Seat");
+        frame.setBounds(100, 100, 480, 150);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        BoxLayout bl = new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS);
+        JLabel[] labels = {new JLabel("Reserve", JLabel.LEFT)};
+        JTextField[] textFields = new JTextField[labels.length];
+        JPanel container = new JPanel();
+        JPanel labelPanel = new JPanel(new GridLayout(labels.length, 1));
+        JPanel fieldPanel = new JPanel(new GridLayout(labels.length, 1));
+        JPanel btnPanel = new JPanel(new GridLayout(1, 8, 8, 8));
 
-        frame.getContentPane().setLayout(bl);
+        JButton btnAvailableSeat = new JButton("Check Available Seat");
+        JButton btnReserve = new JButton("Reserve Seat");
 
-        JPanel panel_service_1 = new JPanel();
-        frame.getContentPane().add(panel_service_1);
-        panel_service_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        btnPanel.add(btnAvailableSeat);
+        btnPanel.add(btnReserve);
 
-        JLabel lblNewLabel_1 = new JLabel("Seat Number");
-        panel_service_1.add(lblNewLabel_1);
+        container.add(labelPanel, BorderLayout.WEST);
+        container.add(fieldPanel, BorderLayout.CENTER);
 
-        textNumber1 = new JTextField();
-        panel_service_1.add(textNumber1);
-        textNumber1.setColumns(10);
+        for (int i = 0; i < labels.length; i++) {
+            textFields[i] = new JTextField(10);
+            labels[i].setLabelFor(textFields[i]);
+            labelPanel.add(labels[i]);
 
-        JButton btnReserve = new JButton("Reserve");
-        panel_service_1.add(btnReserve);
-        JButton btnAvailableSeat = new JButton("Available Seat");
-        panel_service_1.add(btnAvailableSeat);
+            JPanel p = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+            p.add(textFields[i]);
+            fieldPanel.add(p);
+        }
+
+        JPanel wrapper = new JPanel(new GridBagLayout());
+        wrapper.add(btnPanel);
+        container.setBorder(new EmptyBorder(15, 15, 15, 5));
+        container.add(wrapper, BorderLayout.SOUTH);
+        addToCenterOfFrame1(container);
 
         btnReserve.addActionListener(e -> {
-            int num1 = Integer.parseInt(textNumber1.getText());
-            ReserveSeatRequest reserveSeatRequest = ReserveSeatRequest.newBuilder().setReserveSeatRequest(num1).build();
+
+            int seatRequest = Integer.parseInt(textFields[0].getText());
+            ReserveSeatRequest reserveSeatRequest = ReserveSeatRequest.newBuilder().setReserveSeatRequest(seatRequest).build();
             ReserveSeatResponse response = blockingStub.reserveSeat(reserveSeatRequest);
-            JOptionPane.showMessageDialog(panel_service_1, "Seat " + response.getReserveSeatResponse() + " " + response.getReserveSeatResponseMessage());
+            JOptionPane.showMessageDialog(container, "Seat " + response.getReserveSeatResponse() + " " + response.getReserveSeatResponseMessage());
             System.out.println("Unary reply is completed ...");
 
             try {
@@ -138,12 +152,20 @@ public class SeatGUIApplication {
         });
 
         btnAvailableSeat.addActionListener(e -> {
-            AvailableSeatRequest req = AvailableSeatRequest.newBuilder().setAvailableSeatRequest(1).build();
+            frame.setVisible(false);
+            frame2 = new JFrame();
+            frame2.setVisible(true);
+            frame2.setTitle("Smart Seat Service | Available Seat");
+            frame2.setBounds(100, 100, 480, 100);
+            JPanel seatPanel = new JPanel();
+
+            AvailableSeatRequest request = AvailableSeatRequest.newBuilder().setAvailableSeatRequest(1).build();
             StreamObserver<AvailableSeatResponse> responseObserver = new StreamObserver<>() {
                 @Override
                 public void onNext(AvailableSeatResponse seat) {
-                    panel_service_1.add(new JButton("Seat " + seat.getAvailableSeatResponse()));
-                    panel_service_1.validate();
+                    seatPanel.add(new JButton("Seat " + seat.getAvailableSeatResponse())).setBounds(5,5,5,5);
+                    frame2.add(seatPanel);
+                    frame2.validate();
                 }
 
                 @Override
@@ -156,7 +178,7 @@ public class SeatGUIApplication {
                     System.out.println("Stream is completed ... Received all available seats number");
                 }
             };
-            asyncStub.availableSeat(req, responseObserver);
+            asyncStub.availableSeat(request, responseObserver);
 
             try {
                 Thread.sleep(1000);
@@ -166,5 +188,9 @@ public class SeatGUIApplication {
             }
 
         });
+    }
+
+    protected void addToCenterOfFrame1(Component guiComponent) {
+        frame.add(guiComponent, BorderLayout.CENTER);
     }
 }

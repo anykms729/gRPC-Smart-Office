@@ -39,7 +39,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
                     .build()
                     .start();
 
-            System.out.println("Smart_Office_Server3 started, listening on " + port);
+            System.out.println("Sales Department Smart Service Server started, listening on " + port);
 
             server.awaitTermination();
 

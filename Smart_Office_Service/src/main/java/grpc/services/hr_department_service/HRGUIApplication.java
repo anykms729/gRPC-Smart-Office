@@ -23,11 +23,6 @@ public class HRGUIApplication {
     private JFrame frame;
     private JFrame frame2;
 
-    private JTextField textNumber1;
-    private JTextField textNumber2;
-    private JTextField textNumber3;
-    private JTextField textNumber4;
-    private JTextField textNumber5;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
@@ -55,8 +50,6 @@ public class HRGUIApplication {
 
         initialize();
     }
-
-
     private void discoverHRDepartmentService(String service_type) {
         try {
             // Create a JmDNS instance
@@ -102,71 +95,65 @@ public class HRGUIApplication {
             e.printStackTrace();
         }
     }
-
     private void initialize() {
         frame = new JFrame();
         frame.setTitle("HR Department Smart Service | Weekly Working Hour");
-        frame.setBounds(100, 100, 500, 300);
+        frame.setBounds(200, 200, 380, 250);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        BoxLayout bl = new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS);
-
-        frame.getContentPane().setLayout(bl);
-
-        JPanel panel_service_1 = new JPanel();
-        frame.getContentPane().add(panel_service_1);
-        panel_service_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-
-        JLabel lblNewLabel_1 = new JLabel("Monday");
-        JLabel lblNewLabel_2 = new JLabel("Tuesday");
-        JLabel lblNewLabel_3 = new JLabel("Wednesday");
-        JLabel lblNewLabel_4 = new JLabel("Thursday");
-        JLabel lblNewLabel_5 = new JLabel("Friday");
-
-        panel_service_1.add(lblNewLabel_1);
-        panel_service_1.add(lblNewLabel_2);
-        panel_service_1.add(lblNewLabel_3);
-        panel_service_1.add(lblNewLabel_4);
-        panel_service_1.add(lblNewLabel_5);
-
-        textNumber1 = new JTextField();
-        textNumber2 = new JTextField();
-        textNumber3 = new JTextField();
-        textNumber4 = new JTextField();
-        textNumber5 = new JTextField();
-
-        panel_service_1.add(textNumber1);
-        panel_service_1.add(textNumber2);
-        panel_service_1.add(textNumber3);
-        panel_service_1.add(textNumber4);
-        panel_service_1.add(textNumber5);
-
-        textNumber1.setColumns(10);
-        textNumber2.setColumns(10);
-        textNumber3.setColumns(10);
-        textNumber4.setColumns(10);
-        textNumber5.setColumns(10);
+        JLabel[] labels = {new JLabel("Monday", JLabel.RIGHT), new JLabel("Tuesday", JLabel.RIGHT), new JLabel("Wednesday", JLabel.RIGHT), new JLabel("Thursday", JLabel.RIGHT), new JLabel("Friday", JLabel.RIGHT)};
+        JTextField[] textFields = new JTextField[labels.length];
+        JPanel container = new JPanel();
+        container.setLayout(new BorderLayout());
+        JPanel labelPanel = new JPanel(new GridLayout(labels.length, 1));
+        JPanel fieldPanel = new JPanel(new GridLayout(labels.length, 1));
+        JPanel btnPanel = new JPanel(new GridLayout(1, 8, 8, 8));
 
         JButton btnWeeklyWorkingHour = new JButton("Weekly Working hours");
-        panel_service_1.add(btnWeeklyWorkingHour);
-
         JButton btnMonthlyPayroll = new JButton("Monthly Payroll");
-        panel_service_1.add(btnMonthlyPayroll);
+
+        btnPanel.add(btnWeeklyWorkingHour);
+        btnPanel.add(btnMonthlyPayroll);
+
+        container.add(labelPanel, BorderLayout.WEST);
+        container.add(fieldPanel, BorderLayout.CENTER);
+
+        for (int i = 0; i < labels.length; i++) {
+            textFields[i] = new JTextField(10);
+            labels[i].setLabelFor(textFields[i]);
+            labelPanel.add(labels[i]);
+
+            JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
+            p.add(textFields[i]);
+            fieldPanel.add(p);
+        }
+
+        JPanel wrapper = new JPanel(new GridBagLayout());
+        wrapper.add(btnPanel);
+        container.setBorder(new EmptyBorder(15, 15, 15, 5));
+        container.add(wrapper, BorderLayout.SOUTH);
+        addToCenterOfFrame1(container);
+        JPanel jPanel = new JPanel();
+
 
         btnWeeklyWorkingHour.addActionListener(e -> {
-
+            JFrame frame3 = new JFrame();
             // Accumulated hour as the day goes by
-            int monday = Integer.parseInt(textNumber1.getText());
-            int tuesday = Integer.parseInt(textNumber2.getText());
-            int wednesday = Integer.parseInt(textNumber3.getText());
-            int thursday = Integer.parseInt(textNumber4.getText());
-            int friday = Integer.parseInt(textNumber5.getText());
+            int monday = Integer.parseInt(textFields[0].getText());
+            int tuesday = Integer.parseInt(textFields[1].getText());
+            int wednesday = Integer.parseInt(textFields[2].getText());
+            int thursday = Integer.parseInt(textFields[3].getText());
+            int friday = Integer.parseInt(textFields[4].getText());
 
             StreamObserver<WeeklyWorkingHourResponse> responseObserver = new StreamObserver<>() {
 
                 @Override
                 public void onNext(WeeklyWorkingHourResponse response) {
-                    System.out.println(response.getWeeklyWorkingHourMessage());
+                    frame.setVisible(false);
+                    frame3.setVisible(true);
+                    frame3.setBounds(100, 100, 600, 150);
+                    jPanel.add(new JLabel(response.getWeeklyWorkingHourMessage()));
+                    frame3.add(jPanel);
                 }
 
                 @Override
@@ -178,7 +165,6 @@ public class HRGUIApplication {
                 public void onCompleted() {
                     System.out.println("Bidirectional service is completed ... ");
                 }
-
             };
 
             StreamObserver<WeeklyWorkingHourRequest> requestObserver = asyncStub.check(responseObserver);
@@ -257,13 +243,12 @@ public class HRGUIApplication {
         wrapper.add(btnPanel);
         wrapper.setBorder(new EmptyBorder(10, 10, 10, 10));
         container.add(wrapper, BorderLayout.SOUTH);
-        addToCenter(container);
+        addToCenterOfFrame2(container);
 
         btnOkay.addActionListener(e1 -> {
             StreamObserver<Monthly_Payroll_Response> responseObserver = new StreamObserver<>() {
                 @Override
                 public void onNext(Monthly_Payroll_Response response) {
-                    System.out.println("Receiving Monthly_Payroll_Response... ");
                     frame2.setVisible(false);
                     JFrame frame3 = new JFrame();
                     JOptionPane.showMessageDialog(frame3, response.getMonthlyPayrollMessage());
@@ -276,7 +261,7 @@ public class HRGUIApplication {
 
                 @Override
                 public void onCompleted() {
-                    System.out.println("Client Stream Service is completed ... receiving converted numbers");
+                    System.out.println("Client Stream Service is completed ... Receiving Monthly Payroll");
                 }
             };
 
@@ -293,8 +278,6 @@ public class HRGUIApplication {
 
                 // Mark the end of requests
                 requestObserver.onCompleted();
-
-
                 Thread.sleep(10000);
 
             } catch (RuntimeException e) {
@@ -311,7 +294,11 @@ public class HRGUIApplication {
         });
     }
 
-    protected void addToCenter(Component guiComponent) {
+    protected void addToCenterOfFrame1(Component guiComponent) {
+        frame.add(guiComponent, BorderLayout.CENTER);
+    }
+
+    protected void addToCenterOfFrame2(Component guiComponent) {
         frame2.add(guiComponent, BorderLayout.CENTER);
     }
 
