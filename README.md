@@ -4,7 +4,7 @@
 <br>
 <ul> 
 <li><b>Smart Seat Reservation Service</b><br> 
-It can help employees book and manage their office seating arrangements in a smart office environment </li> 
+It can help employees book and manage their office seating arrangements in a smart office environment. </li> 
 <ol>
 <li> RPC Method (Server Stream RPC) : Show_Available_seat_no</li>
 <li> RPC Method (Unary RPC) : Reserve_Seat </li>
@@ -12,7 +12,7 @@ It can help employees book and manage their office seating arrangements in a sma
 
 <br>
 <li> <b>HR Department Smart Service</b><br>
-Employee Self-Service (Check weekly working hour & Monthly payroll) of the HR department can implement self-service portals or mobile apps that enable employees to access and manage their HR-related information and tasks</li>
+Employee Self-Service (Check weekly working hour & Monthly payroll) of the HR department can implement self-service portals or mobile apps that enable employees to access and manage their HR-related information and tasks.</li>
 <ol>
 <li>RPC Method (Bidirection RPC) : Weekly_Working_Hours</li>
 <li>RPC Method (Client Stream RPC) : Monthly_Payroll</li>
