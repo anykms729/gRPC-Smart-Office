@@ -25,7 +25,4 @@ Digital sales and e-commerce platforms can enable sales teams to sell products o
 <li>RPC Method (Biirection RPC) : Order_Confirmation</li>
 </ol>
 </ul>
-<br>
-<b>&#127793;The functionality of the Project &#127793;</b><br>
-
- &#128206;Video Explanation:  
+<br> 
