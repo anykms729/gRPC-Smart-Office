@@ -64,13 +64,12 @@ public class Smart_Office_Server1 extends ReserveSeatServiceGrpc.ReserveSeatServ
     }
 
     public void reserveSeat(ReserveSeatRequest reserve_seat_request, StreamObserver<ReserveSeatResponse> responseObserver) {
-        Smart_Office_Server1 smart_office_server1 = new Smart_Office_Server1();
         int seatNum = reserve_seat_request.getReserveSeatRequest();
         String message = "";
 
         if (seatNum == 0) {
             message = "You choose exit option,bye!";
-        } else if (seatNum < 1 || seatNum > numSeats) {
+        } else if (seatNum < 1 || seatNum > seats.size()) {
             message = "is in an invalid range";
         } else {
             try {

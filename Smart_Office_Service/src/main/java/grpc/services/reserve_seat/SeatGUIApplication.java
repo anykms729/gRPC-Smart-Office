@@ -20,7 +20,6 @@ public class SeatGUIApplication {
     private ServiceInfo reserveSeatService;
     public JFrame frame;
     public JFrame frame2;
-    private JTextField textNumber1;
 
 
     public static void main(String[] args) {

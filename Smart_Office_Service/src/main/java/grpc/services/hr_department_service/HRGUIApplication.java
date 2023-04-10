@@ -152,6 +152,7 @@ public class HRGUIApplication {
                     frame.setVisible(false);
                     frame3.setVisible(true);
                     frame3.setBounds(100, 100, 600, 150);
+                    frame3.setTitle("HR Department Smart Service | Weekly Working Hour");
                     jPanel.add(new JLabel(response.getWeeklyWorkingHourMessage()));
                     frame3.add(jPanel);
                 }

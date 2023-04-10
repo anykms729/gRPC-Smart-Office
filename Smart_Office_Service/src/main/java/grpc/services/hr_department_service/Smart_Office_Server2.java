@@ -110,8 +110,8 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
             public void onNext(Monthly_Payroll_Request request) {
                 System.out.println("Receiving Monthly Working hours fall under each different category...");
                 totalSum.add(request.getNormalWorkingHour() * 12.7);
-                totalSum.add(request.getHolidayPayWorkingHour() * 12.7 * 1.5);
-                totalSum.add(request.getOvertimeWorkingHour() * 12.7 * 1.78);
+                totalSum.add(request.getHolidayPayWorkingHour() * 14.60500);
+                totalSum.add(request.getOvertimeWorkingHour() * 22.60600);
             }
 
             @Override

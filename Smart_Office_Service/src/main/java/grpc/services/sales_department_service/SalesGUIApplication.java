@@ -45,7 +45,7 @@ public class SalesGUIApplication {
                 .usePlaintext()
                 .build();
 
-        //stubs -- generate from proto
+        // Creates a new blocking-style stub that supports unary and streaming output calls on the service
         blockingStub = SalesDepartmentServiceGrpc.newBlockingStub(channel);
         asyncStub = SalesDepartmentServiceGrpc.newStub(channel);
         initialize();
@@ -53,8 +53,9 @@ public class SalesGUIApplication {
 
     private void discoverSalesDepartmentService(String service_type) {
         try {
-            // Create a JmDNS instance
+            // Create an instance of JmDNS and bind it to a specific network interface given its IP-address
             JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+            // Listen for services of a given type. The type has to be a fully qualified type name such as _http._tcp.local
             jmdns.addServiceListener(service_type, new ServiceListener() {
 
                 @Override
@@ -99,7 +100,7 @@ public class SalesGUIApplication {
 
     private void initialize() {
         frame = new JFrame();
-        frame.setTitle("Sales Department Service");
+        frame.setTitle("Sales Department Smart Service");
         frame.setBounds(100, 100, 500, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

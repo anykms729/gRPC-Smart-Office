@@ -82,6 +82,8 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
             try {
                 if (searchProductQuantity(stockProduct) != 0) {
                     stockMessage = searchProductQuantity(stockProduct) + " units of " + stockProduct + " are in stock";
+                } else if (!stockMap.containsKey(stockProduct)) {
+                    stockMessage = stockProduct + " is not our Product";
                 } else {
                     stockMessage = stockProduct + " is out of stock";
                 }
@@ -121,7 +123,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
                         if (searchProductQuantity(productNameHistory.get(0)) > request.getProductQuantity()) {
                             orderConfirmationMessage = "Number of stock for " + productNameHistory.get(0) + " is " + searchProductQuantity(productNameHistory.get(0));
                         } else {
-                            orderConfirmationMessage = "Your request for " + request.getProductQuantity() + " units of " + productNameHistory.get(0) +" is more than we have in stock or we don't have such product";
+                            orderConfirmationMessage = "Your request for " + request.getProductQuantity() + " units of " + productNameHistory.get(0) + " is more than we have in stock or we don't have such product";
                         }
                     }
                 } catch (Exception e) {
