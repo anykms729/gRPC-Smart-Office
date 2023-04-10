@@ -26,3 +26,6 @@ Digital sales and e-commerce platforms can enable sales teams to sell products o
 </ol>
 </ul>
 <br> 
+
+<b>&#127797;Function Explanation in Video &#127797;</b>
+https://www.youtube.com/watch?v=XtgiH5Wg-J8&ab_channel=%EC%B9%B4%EC%9D%B4%EB%A1%9C%EC%8B%A0%EC%9E%85%EC%9D%BC%EA%B8%B0
