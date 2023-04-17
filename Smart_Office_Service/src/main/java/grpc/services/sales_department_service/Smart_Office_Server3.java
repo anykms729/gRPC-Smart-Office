@@ -5,7 +5,10 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceInfo;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +17,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
     Map<String, Integer> stockMap = new HashMap<>();
     Map<String, Integer> deliveryAreaMap = new HashMap<>();
     ArrayList<String> productNameHistory = new ArrayList<>();
+    static int port = 50055;
 
     public static void main(String[] args) {
         grpc.services.sales_department_service.Smart_Office_Server3 smart_office_server3 = new grpc.services.sales_department_service.Smart_Office_Server3();
@@ -32,7 +36,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
         smart_office_server3.deliveryAreaMap.put("Dublin E", 22);
 
 
-        int port = 50055;
+//        int port = 50055;
         try {
             Server server = ServerBuilder.forPort(port)
                     .addService(smart_office_server3)
@@ -40,7 +44,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
                     .start();
 
             System.out.println("Sales Department Smart Service Server started, listening on " + port);
-
+            testJMDNS();
             server.awaitTermination();
 
         } catch (IOException e) {
@@ -51,6 +55,26 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
             e.printStackTrace();
         }
     }
+
+    public static void testJMDNS() {
+        try {
+            // Create a JmDNS instance
+            JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+
+            // Register a service
+            ServiceInfo serviceInfo = ServiceInfo.create("_http._tcp.local.", "example", port, "path=index.html");
+            jmdns.registerService(serviceInfo);
+
+            // Wait a bit
+            Thread.sleep(20000);
+
+            // Unregister all services
+            //jmdns.unregisterAllServices();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+
 
     public int searchProductQuantity(String productType) {
         Integer productQuantity;

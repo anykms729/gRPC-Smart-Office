@@ -3,13 +3,18 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceInfo;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentServiceImplBase {
     List<Double> myWorkingHour = new ArrayList<>();
     double workBreak;
+    static int port = 50054;
+
 
     public double addAllWorkingHours(ArrayList<Double> myWorkingHour) {
         double dailyWorkingHour = 0;
@@ -30,7 +35,6 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
 
     public static void main(String[] args) {
         grpc.services.hr_department_service.Smart_Office_Server2 smart_office_server2 = new grpc.services.hr_department_service.Smart_Office_Server2();
-        int port = 50054;
         try {
             Server server = ServerBuilder.forPort(port)
                     .addService(smart_office_server2)
@@ -38,7 +42,7 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
                     .start();
 
             System.out.println("HR Department Smart Service Server started, listening on " + port);
-
+            testJMDNS();
             server.awaitTermination();
 
         } catch (IOException e) {
@@ -47,6 +51,24 @@ public class Smart_Office_Server2 extends HRDepartmentServiceGrpc.HRDepartmentSe
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }
+    }
+    public static void testJMDNS() {
+        try {
+            // Create a JmDNS instance
+            JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+
+            // Register a service
+            ServiceInfo serviceInfo = ServiceInfo.create("_http._tcp.local.", "example", port, "path=index.html");
+            jmdns.registerService(serviceInfo);
+
+            // Wait a bit
+            Thread.sleep(20000);
+
+            // Unregister all services
+            //jmdns.unregisterAllServices();
+        } catch (Exception e) {
+            // TODO: handle exception
         }
     }
 
