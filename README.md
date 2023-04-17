@@ -1,4 +1,4 @@
-<h1> gRPC_Smart_Office </h1><br>
+<h1> gRPC-Smart-Office </h1><br>
 
 <b>&#127797;Service Description &#127797;</b>
 <br>
