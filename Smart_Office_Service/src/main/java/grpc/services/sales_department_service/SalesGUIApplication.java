@@ -20,12 +20,17 @@ public class SalesGUIApplication {
     public static SalesDepartmentServiceGrpc.SalesDepartmentServiceBlockingStub blockingStub;
     public static SalesDepartmentServiceGrpc.SalesDepartmentServiceStub asyncStub;
     public ServiceInfo salesDepartmentService;
+    static String host = "_sales._tcp.local.";
+    static int port = 50055;
+    static String resolvedIP;
+
 
     public JTextField textNumber1;
     public JFrame frame;
     public JFrame frame2;
 
     public static void main(String[] args) {
+
         EventQueue.invokeLater(() -> {
             try {
                 grpc.services.sales_department_service.SalesGUIApplication window = new grpc.services.sales_department_service.SalesGUIApplication();
@@ -37,11 +42,9 @@ public class SalesGUIApplication {
     }
 
     public SalesGUIApplication() {
-        String salesDepartment_service_type = "_sales._tcp.local.";
-        discoverSalesDepartmentService(salesDepartment_service_type);
-
+        discoverSalesDepartmentService(host);
         ManagedChannel channel = ManagedChannelBuilder
-                .forAddress("localhost", 50055)
+                .forAddress(resolvedIP, port)
                 .usePlaintext()
                 .build();
 
@@ -51,18 +54,19 @@ public class SalesGUIApplication {
         initialize();
     }
 
-    private void discoverSalesDepartmentService(String service_type) {
+    public void discoverSalesDepartmentService(String service_type) {
         try {
             // Create an instance of JmDNS and bind it to a specific network interface given its IP-address
             JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+
             // Listen for services of a given type. The type has to be a fully qualified type name such as _http._tcp.local
             jmdns.addServiceListener(service_type, new ServiceListener() {
 
                 @Override
                 public void serviceResolved(ServiceEvent event) {
                     System.out.println("Sales Department Service resolved: " + event.getInfo());
-                    salesDepartmentService = event.getInfo();
-                    int port = salesDepartmentService.getPort();
+                    port = event.getInfo().getPort();
+                    resolvedIP = event.getInfo().getHostAddress();
 
                     System.out.println("resolving " + service_type + " with properties ...");
                     System.out.println("\t port: " + port);
@@ -82,10 +86,7 @@ public class SalesGUIApplication {
                     System.out.println("Sales Department Service added: " + event.getInfo());
                 }
             });
-
-            // Wait a bit
             Thread.sleep(1000);
-
             jmdns.close();
 
         } catch (UnknownHostException e) {

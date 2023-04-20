@@ -36,7 +36,6 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
         smart_office_server3.deliveryAreaMap.put("Dublin E", 22);
 
 
-//        int port = 50055;
         try {
             Server server = ServerBuilder.forPort(port)
                     .addService(smart_office_server3)
@@ -62,7 +61,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
             JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
 
             // Register a service
-            ServiceInfo serviceInfo = ServiceInfo.create("_http._tcp.local.", "example", port, "path=index.html");
+            ServiceInfo serviceInfo = ServiceInfo.create("_sales._tcp.local.", "SalesService", port, "path=index.html");
             jmdns.registerService(serviceInfo);
 
             // Wait a bit
