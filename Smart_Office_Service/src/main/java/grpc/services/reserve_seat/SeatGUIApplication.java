@@ -18,6 +18,10 @@ public class SeatGUIApplication {
     private static ReserveSeatServiceGrpc.ReserveSeatServiceBlockingStub blockingStub;
     private static ReserveSeatServiceGrpc.ReserveSeatServiceStub asyncStub;
     private ServiceInfo reserveSeatService;
+    static int port = 50053;
+    static String host = "_seats._tcp.local.";
+    static String resolvedIP;
+
     public JFrame frame;
     public JFrame frame2;
 
@@ -34,11 +38,11 @@ public class SeatGUIApplication {
     }
 
     public SeatGUIApplication() {
-        String seat_reserve_service_type = "_seats._tcp.local.";
-        discoverSeatReserveService(seat_reserve_service_type);
+        discoverSeatReserveService(host);
 
         ManagedChannel channel = ManagedChannelBuilder
-                .forAddress("localhost", 50053)
+                .forAddress("localhost", port)
+//                .forAddress(resolvedIP,port)
                 .usePlaintext()
                 .build();
 
@@ -60,7 +64,6 @@ public class SeatGUIApplication {
                 public void serviceResolved(ServiceEvent event) {
                     System.out.println("Reserve Seat Service resolved: " + event.getInfo());
                     reserveSeatService = event.getInfo();
-                    int port = reserveSeatService.getPort();
 
                     System.out.println("resolving " + service_type + " with properties ...");
                     System.out.println("\t port: " + port);

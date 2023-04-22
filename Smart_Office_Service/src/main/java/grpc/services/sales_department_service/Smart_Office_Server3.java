@@ -61,7 +61,7 @@ public class Smart_Office_Server3 extends SalesDepartmentServiceGrpc.SalesDepart
             JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
 
             // Register a service
-            ServiceInfo serviceInfo = ServiceInfo.create("_sales._tcp.local.", "SalesService", port, "path=index.html");
+            ServiceInfo serviceInfo = ServiceInfo.create("_sales._tcp.local.", "SalesService", port, "path");
             jmdns.registerService(serviceInfo);
 
             // Wait a bit

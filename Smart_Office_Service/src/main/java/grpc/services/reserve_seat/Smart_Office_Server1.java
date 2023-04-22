@@ -144,7 +144,3 @@ public class Smart_Office_Server1 extends ReserveSeatServiceGrpc.ReserveSeatServ
     }
 }
 
-
-
-
-

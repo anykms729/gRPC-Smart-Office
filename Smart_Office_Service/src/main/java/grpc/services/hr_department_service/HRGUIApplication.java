@@ -6,7 +6,6 @@ import io.grpc.stub.StreamObserver;
 
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceEvent;
-import javax.jmdns.ServiceInfo;
 import javax.jmdns.ServiceListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,11 +16,14 @@ import java.net.UnknownHostException;
 import java.util.Random;
 
 public class HRGUIApplication {
-    private static HRDepartmentServiceGrpc.HRDepartmentServiceBlockingStub blockingStub;
-    private static HRDepartmentServiceGrpc.HRDepartmentServiceStub asyncStub;
-    private ServiceInfo hrDepartmentService;
-    private JFrame frame;
-    private JFrame frame2;
+    public static HRDepartmentServiceGrpc.HRDepartmentServiceBlockingStub blockingStub;
+    public static HRDepartmentServiceGrpc.HRDepartmentServiceStub asyncStub;
+    static String host = "_hr._tcp.local.";
+    static int port = 50057;
+    static String resolvedIP;
+
+    public JFrame frame;
+    public JFrame frame2;
 
 
     public static void main(String[] args) {
@@ -36,38 +38,36 @@ public class HRGUIApplication {
     }
 
     public HRGUIApplication() {
-        String hrDepartment_service_type = "_hrDepartment._tcp.local.";
-        discoverHRDepartmentService(hrDepartment_service_type);
-
+//        discoverHRDepartmentService(host);
         ManagedChannel channel = ManagedChannelBuilder
-                .forAddress("localhost", 50054)
+                .forAddress("localhost", port)
+//                .forAddress(resolvedIP, port)
                 .usePlaintext()
                 .build();
 
-        //stubs -- generate from proto
+        // Creates a new blocking-style stub that supports unary and streaming output calls on the service
         blockingStub = HRDepartmentServiceGrpc.newBlockingStub(channel);
         asyncStub = HRDepartmentServiceGrpc.newStub(channel);
 
         initialize();
     }
-    private void discoverHRDepartmentService(String service_type) {
+
+    public void discoverHRDepartmentService(String service_type) {
         try {
-            // Create a JmDNS instance
             JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
             jmdns.addServiceListener(service_type, new ServiceListener() {
 
                 @Override
                 public void serviceResolved(ServiceEvent event) {
+                    resolvedIP = event.getInfo().getHostAddress();
                     System.out.println("HR Department Service resolved: " + event.getInfo());
-                    hrDepartmentService = event.getInfo();
-                    int port = hrDepartmentService.getPort();
 
                     System.out.println("resolving " + service_type + " with properties ...");
                     System.out.println("\t port: " + port);
                     System.out.println("\t type:" + event.getType());
                     System.out.println("\t name: " + event.getName());
-                    System.out.println("\t description/properties: " + hrDepartmentService.getNiceTextString());
-                    System.out.println("\t host: " + hrDepartmentService.getHostAddresses()[0]);
+                    System.out.println("\t description/properties: " + event.getInfo().getNiceTextString());
+                    System.out.println("\t host: " + event.getInfo().getHostAddresses()[0]);
                 }
 
                 @Override
@@ -81,9 +81,7 @@ public class HRGUIApplication {
                 }
             });
 
-            // Wait a bit
             Thread.sleep(1000);
-
             jmdns.close();
 
         } catch (UnknownHostException e) {
@@ -91,10 +89,10 @@ public class HRGUIApplication {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
+
     private void initialize() {
         frame = new JFrame();
         frame.setTitle("HR Department Smart Service | Weekly Working Hour");
